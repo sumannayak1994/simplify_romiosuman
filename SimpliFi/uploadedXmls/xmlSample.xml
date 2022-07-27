@@ -1,0 +1,976 @@
+﻿<?xml version='1.0'?>
+<package author="Suman Nayak (sumannayak@adobe.com)" buildDate="2022-07-20 11:18:17.859Z"
+         buildNumber="9187" buildVersion="6.7">
+  <entities schema="nms:delivery">
+    <delivery currentStatus="1" deliveryMode="4" internalName="CCX_NEWSLETTER_NAM_JUN_PAID"
+              isModel="1" label="CCX_NEWSLETTER_NAM_JUN_PAID" messageType="0" streamName="Paid_Individual_Loc"
+              xtkschema="nms:delivery">
+      <forecast>
+        <weightFormula>$(deliveryWeight)</weightFormula>
+      </forecast>
+      <scenario validityDuration="432000" webValidityDuration="10368000"/>
+      <fcpParameters>
+        <seedList>
+          <where filteringSchema="nms:seedMember"/>
+        </seedList>
+      </fcpParameters>
+      <mailParameters useDefaultErrorAddress="false">
+        <subject>&lt;%= profile.targetData.subjectLine %&gt;</subject>
+        <senderName>Adobe Express</senderName>
+        <senderAddress>mail@email.adobe.com</senderAddress>
+        <replyAddress>mail@email.adobe.com</replyAddress>
+        <replyName>Adobe Express</replyName>
+        <errorAddress>mail@email.adobe.com</errorAddress>
+      </mailParameters>
+      <smsParameters smsPriority="0"/>
+      <targets deduplicate="false" filteringSchema="cctc:profile" noRcpIdDedup="true"
+               targetMode="0" useBlackList="true"/>
+      <content>
+        <html>
+          <source>&lt;!DOCTYPE html&gt;
+&lt;%@ include view='cctcPreProcess' %&gt;
+&lt;% var optOutLinkLabel = 'unsubscribe.'; %&gt;
+&lt;html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"&gt;
+&lt;head&gt;
+&lt;link rel="icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon"&gt;
+&lt;link rel="shortcut icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon"&gt;
+&lt;meta name="x-apple-disable-message-reformatting"&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+&lt;meta name="format-detection" content="telephone=no"&gt;
+&lt;meta name="format-detection" content="date=no"&gt;
+&lt;meta name="format-detection" content="address=no"&gt;
+&lt;meta name="format-detection" content="email=no"&gt;
+&lt;title&gt;Adobe&lt;/title&gt;
+
+&lt;!--[if mso]&gt;
+&lt;style type="text/css"&gt;
+body, table, td {
+font-family:Helvetica Neue, Helvetica, Verdana, Arial, sans-serif !important;
+}
+&lt;/style&gt;
+&lt;xml&gt;
+  &lt;o:OfficeDocumentSettings&gt;
+    &lt;o:AllowPNG/&gt;
+    &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+  &lt;/o:OfficeDocumentSettings&gt;
+&lt;/xml&gt;
+&lt;![endif]--&gt;
+
+&lt;style type="text/css"&gt;
+@import url("https://use.typekit.net/onr8tbr.css");
+@media (prefers-color-scheme: dark)
+.ReadMsgBody { width:100%;}
+.ExternalClass {width:100%;}
+table {border-collapse:collapse; margin:0 auto;}
+a, a:visited {color:#1473E6; text-decoration:none;}
+.legal a {text-decoration:underline;}
+/* iOS BLUE LINKS */
+a[x-apple-data-detectors] {color:inherit !important; text-decoration:none !important; font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important;}
+
+.mobile {border-spacing:0;display:none!important;height:0;max-height:0;mso-hide:all;overflow:hidden;visibility:hidden;width:0;}
+  
+  @media only screen and (max-width:480px) {
+    u ~ div {
+      min-width:100vw;
+    }
+    div &gt; u ~ div {
+          min-width: 100%;
+    }
+    .web {
+       display:none !important;
+       }
+     
+     .mobile {
+       display:block !important;
+       width:auto !important;
+       overflow:visible !important;
+       height:auto !important;
+       max-height:inherit !important;
+       font-size:15px !important;
+       line-height:21px !important;
+       visibility:visible !important;
+       }
+     
+     .email-width {
+       width:84% !important;
+       }
+     .pod-width {
+       width:76% !important;
+       }
+     .full-width {
+       width:100% !important;
+       }
+     
+     .mobile-image {
+       height:auto !important;
+       width:100% !important;
+       }
+    
+    .social {
+      float:left !important;
+      padding-top:66px !important;
+      text-align:left !important;
+            
+    }
+        .feature-width {
+            width:44% !important;
+        }
+    
+  }
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body bgcolor="#E4E4E4" style="background-color:#E4E4E4; margin:0; padding:0;-webkit-font-smoothing:antialiased;width:100% !important;-webkit-text-size-adjust:none;" topmargin="0"&gt;&lt;div style="font-size:1px; color:#E4E4E4; display:none; overflow:hidden; visibility:hidden;"&gt;Grow your brand fast with timesaving tools. &amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&lt;/div&gt;
+
+&lt;table width="100%" bgcolor="#000B1D" style="background-color:#000B1D;" border="0" cellpadding="0" cellspacing="0" role="presentation"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;table class="full-width" align="center" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;"&gt;
+    &lt;tr&gt;
+           &lt;td bgcolor="#ffffff" style="background-color:#ffffff;"&gt;
+           
+            &lt;!-- pod1 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#2C2C2C; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:50px;"&gt;
+          &lt;table align="left" width="auto" border="0" cellpadding="0" cellspacing="0" role="presentation"&gt;
+            &lt;tr&gt;
+            &lt;td valign="middle" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:14px; line-height:20px;"&gt;&lt;img alt="" src="https://landing.adobe.com/dam/global/images/creative-cloud-express.icon.240x234.png" width="30" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+            &lt;td width="10" style="width:10px;"&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;td valign="top" style="color:#74777a; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:14px; line-height:20px;"&gt;&lt;img alt="Adobe Express" src="https://s7d9.scene7.com/is/image/AdobeDemandCreative/?fmt=png-alpha&amp;size=520,60&amp;wid=520&amp;textAttr=144,strong&amp;resolution=200&amp;textPs=%7B%5C*%5Ciscolortbl%3B74777a%3B%5Cfonttbl%7B%5Cf0%20Adobe%20Clean%20ExtraBold%3B%7D%7D%5Cf0%5Cfs40%5Csl-400%5Cvertalc%5Ckerningoptical%5Ccf1Adobe%20Express" width="260" height="30" border="0" hspace="0" vspace="0" style="color:#74777a; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:14px; line-height:20px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:10px; line-height:18px; padding-top:74px; letter-spacing:1px; font-weight:500;"&gt;&lt;strong&gt;JUNE NEWSLETTER&lt;/strong&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td class="header" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:40px; line-height:44px; padding-top:20px;font-weight:900;"&gt;Designed to scale.&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td&gt;
+          &lt;table class="full-width" align="left" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+            &lt;tr&gt;
+            &lt;td style="color:#2C2C2C; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:30px;"&gt;Kitiya Palaskas is an Australian craft&amp;#8209;based designer who 
+makes colorful content that stands out in a sea of social. 
+She uses timesaving templates and quick actions to create and 
+scale in a snap. Make standout content fast with Adobe&amp;nbsp;Express 
+and get growing&amp;nbsp;too.&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#5C5CE0; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:15px; line-height:20px; padding-top:40px; padding-bottom:12px;"&gt;&lt;!--[if gte mso 9]&gt;
+          &lt;v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:40px; v-text-anchor:middle; width:200px;" arcsize="50%" stroke="f" fillcolor="#5C5CE0"&gt;
+          &lt;v:textbox style="mso-fit-shape-to-text:t"&gt;
+          &lt;center style="color:#ffffff; font-family:Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:16px;"&gt;
+          &lt;![endif]--&gt;
+          &lt;a href="https://adobesparkpost.app.link/ZxMG6422crb?~tags=ActivityID=&lt;%=targetData.sourceCode%&gt;&amp;~tags=&amp;~tags=CCX_Jun_22_NL&amp;tags=LC-Tool&amp;trackingid=&lt;%=getTagId('CTA1')%&gt;&amp;mv=email" target="_blank" style="background-color:#5C5CE0;border-radius:20px;color:#ffffff;display:inline-block;font-size:16px;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;"&gt;&lt;strong&gt;Get started&lt;/strong&gt;&lt;/a&gt;
+          &lt;!--[if gte mso 9]&gt;
+          &lt;/center&gt;
+          &lt;p style="margin:0; font-size:0; line-height:0;"&gt;&lt;o:p xmlns:o="urn:schemas-microsoft-com:office:office"&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/p&gt;
+          &lt;/v:textbox&gt;
+          &lt;/v:roundrect&gt;
+          &lt;![endif]--&gt;
+        &lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod1 --&gt;
+      &lt;!-- pod1 marquee --&gt;
+            &lt;table class="full-width" align="center" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;"&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px;"&gt;&lt;a href="https://adobesparkpost.app.link/ZxMG6422crb?~tags=ActivityID=&lt;%=targetData.sourceCode%&gt;&amp;~tags=&amp;~tags=CCX_Jun_22_NL&amp;tags=LC-Tool&amp;trackingid=&lt;%=getTagId('CTA1')%&gt;&amp;mv=email" target="_blank" style="color:#1473E6;"&gt;
+        &lt;img class="mobile-image" 
+                alt="Designed to scale."
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.1200x1080-1.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.800x960-1.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.1200x1080-1.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="600" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod1 marquee --&gt;
+               
+            &lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;
+           &lt;td bgcolor="#5C5CE0" style="background-color:#5C5CE0;"&gt;
+       &lt;!-- pod2 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+       
+       &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:26px; padding-top:60px; font-weight:900;"&gt;&lt;img class="email-width"
+                alt="Featured templates"
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-2.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-2.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-2.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="341" height="36" 
+        border="0" hspace="0" vspace="0" style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td&gt;
+          &lt;table class="full-width" align="left" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+            &lt;tr&gt;
+            &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:16px; padding-bottom:36px;"&gt;Check out thousands of remixable templates designed to feed all your social needs and make it easy to stand out and scale&amp;nbsp;up.&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+             &lt;/tr&gt;
+             
+            &lt;/table&gt;
+            &lt;!-- END pod2 --&gt;
+            &lt;!-- pod3 marquee --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px;"&gt;
+        &lt;table align="left" class="full-width" width="500px" style="width:500px;" border="0" cellpadding="0" cellspacing="0" role="presentation"&gt;
+            &lt;tr&gt;
+            &lt;td class="feature-width" valign="middle" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:14px; line-height:12px;"&gt;&lt;a href="https://express.adobe.com/post/79bf5908-73c8-4177-8c00-1a086a41bdd3?trackingid=&lt;%=getTagId('CTA2')%&gt;&amp;mv=email" target="_blank" style="color:#1473E6;"&gt;&lt;img class="mobile-image"
+                alt="template 3"
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.524x932-2a.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.356x633-2a.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.524x932-2a.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="218" height="387" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/a&gt;
+                            
+                            
+                          &lt;/td&gt;
+            &lt;td width="14" style="width:14px;"&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;td valign="top" style="color:#74777a; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:14px; line-height:16px;"&gt;
+                          &lt;a href="https://express.adobe.com/post/70f29bf9-504b-473b-bace-1c2fd937f0fb?trackingid=&lt;%=getTagId('CTA3')%&gt;&amp;mv=email" target="_blank" style="color:#1473E6;"&gt;&lt;img class="mobile-image"
+                alt="template 3"
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.448x170-2b.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.306x116-2b.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.448x170-2b.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="269" height="102" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/a&gt;&lt;br/&gt;
+                          
+                        &lt;a href="https://express.adobe.com/post/8837836f-34fe-4b1d-9bcb-f1bbc0579717?trackingid=&lt;%=getTagId('CTA4')%&gt;&amp;mv=email" target="_blank" style="color:#1473E6;"&gt;&lt;img class="mobile-image"
+                alt="template 3"
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.448x448-2c.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.306x306-2c.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.448x448-2c.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="269" height="269" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/a&gt;
+                          &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+                &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:16px; line-height:20px; padding-top:40px; padding-bottom:100px;"&gt;&lt;a href="https://adobesparkpost.app.link/yr3MyIb2crb?~tags=ActivityID=&lt;%=targetData.sourceCode%&gt;&amp;~tags=&amp;~tags=CCX_Jun_22_NL_Pod2&amp;tags=LC-Tool&amp;trackingid=&lt;%=getTagId('CTA5')%&gt;&amp;mv=email" target="_blank" style="border:2px solid #ffffff;border-radius:20px;color:#ffffff;display:inline-block;font-size:16px;line-height:16px;padding:10px;outline:none;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;"&gt;&lt;strong&gt;Explore templates&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod3 marquee --&gt;
+                &lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;
+           &lt;td bgcolor="#ffffff" style="background-color:#ffffff;"&gt;
+      &lt;!-- pod 3 marquee --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; padding-top:80px;"&gt;&lt;a href="https://www.adobe.com/express/learn/blog/scaling-content-kitiya-palaskas?trackingid=&lt;%=getTagId('CTA6')%&gt;&amp;mv=email" target="_blank" style="color:#1473E6;"&gt;
+        &lt;img class="mobile-image" 
+                alt="Ready. Set. Scale."
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.1200x800-3.jpg"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.800x533-3.jpg 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.1200x800-3.jpg 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="500" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod 3 marquee --&gt;
+       &lt;!-- pod3 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:26px; padding-top:40px; font-weight:900;"&gt;&lt;img 
+                alt="How-to"
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-3.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-3.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-3.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="60" height="13" 
+        border="0" hspace="0" vspace="0" style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:26px; line-height:30px; padding-top:16px; font-weight:900;"&gt;Ready. Set. Scale.&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td&gt;
+          &lt;table class="full-width" align="left" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+            &lt;tr&gt;
+            &lt;td style="color:#2C2C2C; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:16px;"&gt;Get set to scale your brand with tips and tricks from Kitiya&amp;nbsp;Palaskas. Learn how easy it is to level up your skillset with timesaving 
+tools and create captivating content across multiple platforms 
+in a few&amp;nbsp;taps.&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#74777a; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:16px; line-height:20px; padding-top:40px; padding-bottom:100px;"&gt;&lt;a href="https://www.adobe.com/express/learn/blog/scaling-content-kitiya-palaskas?trackingid=&lt;%=getTagId('CTA6')%&gt;&amp;mv=email" target="_blank" style="border:2px solid #74777a;border-radius:20px;color:#74777a;display:inline-block;font-size:16px;line-height:16px;padding:10px;outline:none;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;"&gt;&lt;strong&gt;See how&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod3 --&gt;   
+               &lt;!-- pod 4 marquee --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; padding-top:80px; -moz-border-top-left-radius:10px; -webkit-border-top-left-radius:10px; border-top-left-radius:10px; -moz-border-top-right-radius:10px; -webkit-border-top-right-radius:10px; border-top-right-radius:10px;"&gt;&lt;a href="https://www.adobe.com/express/learn/blog/whats-trending-summer?trackingid=&lt;%=getTagId('CTA7')%&gt;&amp;mv=email" target="_blank" style="color:#1473E6;"&gt;
+        &lt;img class="mobile-image" 
+                alt="See what&amp;#8217;s trending."
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.1000x400-4.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.680x272-4.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.1000x400-4.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="500" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod 3 marquee --&gt;
+                &lt;!-- pod 4 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#5C5CE0" style="background-color:#5C5CE0; width:500px; border-collapse:separate; border-spacing: 0; -moz-border-bottom-left-radius:10px; -webkit-border-bottom-left-radius:10px; border-bottom-left-radius:10px; -moz-border-bottom-right-radius:10px; -webkit-border-bottom-right-radius:10px; border-bottom-right-radius:10px;"&gt;
+       &lt;tr&gt;&lt;td&gt;&lt;table class="pod-width" align="center" width="400" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#5C5CE0" style="background-color:#5C5CE0; width:400px;"&gt;
+           &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:26px; padding-top:50px; font-weight:900;"&gt;&lt;img 
+                alt="How-to"
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-4.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-4.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-4.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="94" height="17" 
+        border="0" hspace="0" vspace="0" style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:26px; line-height:30px; padding-top:20px; font-weight:900;"&gt;See what&amp;#8217;s trending.&lt;/td&gt;
+             &lt;/tr&gt;
+           &lt;tr&gt;
+            &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:20px;"&gt;Minimalism is out. Maximalism is in. Ride a wave of beachy summer vibes and retro eighties style, with a splash of luxe cocktail culture in the&amp;nbsp;mix.&lt;/td&gt;
+           &lt;/tr&gt;
+           &lt;tr&gt;
+            &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:20px; padding-top:40px; padding-bottom:60px;"&gt;&lt;a href="https://www.adobe.com/express/learn/blog/whats-trending-summer?trackingid=&lt;%=getTagId('CTA7')%&gt;&amp;mv=email" target="_blank" style="color:#ffffff; text-decoration:none;"&gt;&lt;strong&gt;Learn more&amp;nbsp;&amp;rsaquo;&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+           &lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod 4 --&gt; 
+               &lt;!-- pod5 marquee --&gt;
+            &lt;table class="full-width" align="center" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;"&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; padding-top:100px;"&gt;&lt;a href="https://express.adobe.com/sp/?trackingid=&lt;%=getTagId('CTA8')%&gt;&amp;mv=email" target="_blank" style="color:#1473E6;"&gt;
+        &lt;img class="mobile-image" 
+                alt="Supersize your social."
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.1200x900-5.jpg"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.800x600-5.jpg 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.1200x900-5.jpg 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="600" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod5 marquee --&gt;
+                &lt;!-- pod5 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:26px; padding-top:50px; font-weight:900;"&gt;&lt;img 
+                alt="How-to"
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-5.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-5.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1169/ccx-launch-june-nl.en.header-5.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="103" height="12" 
+        border="0" hspace="0" vspace="0" style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:26px; line-height:30px; padding-top:20px; font-weight:900;"&gt;Supersize your social.&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td&gt;
+          &lt;table class="full-width" align="left" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+            &lt;tr&gt;
+            &lt;td style="color:#2C2C2C; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:16px;"&gt;It&amp;#8217;s never been easier to feed your feeds fast across all channels and scale your brand. Check out customized templates, quick actions to trim and resize, and the Content Scheduler that lets you set it and forget&amp;nbsp;it.&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#74777a; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:16px; line-height:20px; padding-top:40px; padding-bottom:100px;"&gt;&lt;a href="https://express.adobe.com/sp/?trackingid=&lt;%=getTagId('CTA8')%&gt;&amp;mv=email" target="_blank" style="border:2px solid #74777a;border-radius:20px;color:#74777a;display:inline-block;font-size:16px;line-height:16px;padding:10px;outline:none;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;"&gt;&lt;strong&gt;Learn more&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod5 --&gt;   
+           &lt;!-- END email content --&gt;
+           &lt;/td&gt;
+        &lt;/tr&gt;
+               
+               
+    &lt;tr&gt;
+    &lt;td bgcolor="#F5F5F5" style="background-color:#F5F5F5;"&gt;
+      &lt;!-- banner --&gt;
+      &lt;table class="full-width" align="center" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;"&gt;
+       &lt;tr&gt;
+         &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:15px; line-height:20px;"&gt;&lt;img class="mobile-image" 
+        alt="Creativity for all."
+        src="https://landing.adobe.com/dam/global/images/creativity-for-all.footer.desktop.1200x600.png"
+        srcset="https://landing.adobe.com/dam/global/images/creativity-for-all.footer.mobile.800x600.png 621w,
+        https://landing.adobe.com/dam/global/images/creativity-for-all.footer.desktop.1200x600.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="600" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:15px; line-height:20px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;!-- END banner --&gt;
+      
+      &lt;!-- logo &amp; social --&gt;
+      &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+     &lt;tr&gt;
+      &lt;td valign="middle" style="padding-top:50px;"&gt;
+        &lt;div style="font-size:0;"&gt;
+          &lt;!--[if mso]&gt;
+          &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;&lt;tr&gt;&lt;td align="left" valign="middle" width="50%"&gt;
+          &lt;![endif]--&gt;
+          &lt;div style="display:inline-block; vertical-align:middle; width:50%; min-width:250px; max-width:100%; width:-webkit-calc(230400px - 48000%); min-width:-webkit-calc(50%); width:calc(230400px - 48000%); min-width:calc(50%);"&gt;
+          &lt;!-- left --&gt;
+          &lt;table align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"&gt;
+           &lt;tr&gt;
+            &lt;td style="color:#EB1000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:18px;"&gt;&lt;img alt="Adobe" src="https://landing.adobe.com/dam/global/images/adobe-logo.classic.160x222.png" width="30" height="auto" border="0" hspace="0" vspace="0" style="color:#EB1000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:18px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+           &lt;/tr&gt;
+          &lt;/table&gt;
+          &lt;!-- END left --&gt;
+          &lt;/div&gt;
+          &lt;!--[if mso]&gt;
+          &lt;/td&gt;&lt;td align="right" valign="middle" width="50%"&gt;
+          &lt;![endif]--&gt;
+          &lt;div style="display:inline-block; vertical-align:middle; width:50%; min-width:250px; max-width:100%; width:-webkit-calc(230400px - 48000%); min-width:-webkit-calc(50%); width:calc(230400px - 48000%); min-width:calc(50%);"&gt;
+          &lt;!-- right --&gt;
+          &lt;table class="social" align="right" width="auto" border="0" cellpadding="0" cellspacing="0" role="presentation" style="float:right;"&gt;
+           &lt;tr&gt;
+            &lt;td style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:12px;"&gt;&lt;a href="https://www.facebook.com/adobeexpress" alias="Facebook" target="_blank"&gt;&lt;img class="social" alt="Facebook" src="https://landing.adobe.com/dam/global/images/social/facebook.959595.png" width="10" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="30" style="width:30px;"&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;td style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:12px;"&gt;&lt;a href="https://www.instagram.com/adobeexpress" alias="Instagram" target="_blank"&gt;&lt;img class="social" alt="Instagram" src="https://landing.adobe.com/dam/global/images/social/instagram.959595.png" width="18" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="30" style="width:30px;"&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;td style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:12px;"&gt;&lt;a href="https://www.twitter.com/adobeexpress" alias="Twitter" target="_blank"&gt;&lt;img class="social" alt="Twitter" src="https://landing.adobe.com/dam/global/images/social/twitter.959595.png" width="20" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/a&gt;&lt;/td&gt;
+                        &lt;td width="30" style="width:30px;"&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;td style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:12px;"&gt;&lt;a href="https://www.tiktok.com/@adobeexpress" alias="TikTok" target="_blank"&gt;&lt;img class="social" alt="TikTok" src="https://landing.adobe.com/dam/global/images/social/tiktok.959595.png" width="20" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/a&gt;&lt;/td&gt;
+           &lt;/tr&gt;
+          &lt;/table&gt;
+          &lt;!-- END right --&gt;
+          &lt;/div&gt;
+        &lt;!--[if mso]&gt;
+        &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+        &lt;![endif]--&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+       &lt;/tr&gt;
+      &lt;/table&gt;      
+      &lt;!-- END logo &amp; social --&gt;
+      
+      &lt;!-- legal--&gt;
+      &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+      &lt;tr&gt;
+        &lt;td class="legal" style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:11px; line-height:18px; padding-top:50px; padding-bottom:100px;"&gt;
+      Adobe, the Adobe logo, Creative Cloud, the Creative Cloud logo, and Document Cloud are either registered trademarks or trademarks of Adobe in the United States and/or other countries.&lt;br/&gt;&lt;br/&gt;
+      This is not a comprehensive list of Adobe trademarks.  For a full list, refer to the &lt;a href="https://www.adobe.com/legal/permissions/trademarks.html" alias="FOOTER - Trademark Guidelines" target="_blank" style="color:#959595;"&gt;Adobe Trademark Guidelines&lt;/a&gt;. All other trademarks are the property of their respective owners.&lt;br/&gt;&lt;br/&gt;
+      This is a marketing email from Adobe, 345 Park Avenue, San Jose, CA 95110 USA. Click here to &lt;%@ include view='adbeGlobalMarketingComUnsubscriptionLink' %&gt; Please review the &lt;a href="https://www.adobe.com/privacy.html" alias="FOOTER - Privacy Policy" target="_blank" style="color:#959595;"&gt;Adobe&amp;nbsp;Privacy&amp;nbsp;Policy&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+      To ensure email delivery, add &lt;a href="https://landing.adobe.com/dam/downloads/vcards/adobe.vcf" alias="Add to address book - mail@email.adobe.com" target="_blank" style="color:#959595;"&gt;mail@email.adobe.com&lt;/a&gt; to your address book, contacts, or safe sender&amp;nbsp;list.
+      &lt;% if ( document.mode != 'mirror' &amp;&amp; document.mode != 'forward' ) { %&gt;&lt;br/&gt;&lt;br/&gt;&lt;a href="&lt;%@ include view='MirrorPageUrl' %&gt;" alias="Read Online" target="_blank" style="color:#959595;"&gt;Read online&lt;/a&gt;&lt;% } %&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;!-- END legal--&gt;
+      
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</source>
+        </html>
+        <text>
+          <source>&lt;% var optOutLinkLabel = '345 Park Avenue, San Jose, CA 95110 USA. Click below to unsubscribe'; %&gt;
+View Web Version:
+&lt;%@ include view='MirrorPageUrl' %&gt;
+
+Unfortunately, your email client cannot display HTML or your settings are turned off. To view this email, please click or  copy and paste the link above into your browser.
+
+******************************************************************
+
+This is a marketing email from Adobe Inc., &lt;%@ include view='adbeGlobalMarketingComUnsubscriptionLink' %&gt;
+Please review the Adobe Privacy Policy:
+https://www.adobe.com/privacy.html
+
+To ensure email delivery, add mail@email.adobe.com to your address book, contacts, or safe sender list.
+https://landing.adobe.com/dam/downloads/vcards/adobe.vcf</source>
+        </text>
+      </content>
+      <tracking enabled="true" openEnabled="true"/>
+      <advancedParameters forceCodepage="false"/>
+      <execution maxPersoTime="5" maxRetry="5" retryPeriod="3600"/>
+      <folder _operation="none" name="cctcDataFinityDeliveryTmp"/>
+      <folderProcess _operation="none" name="cctcCorpMarketingDelivery"/>
+      <deliveryProvider _operation="none" name="EmailDefaultMidEmailAdobe"/>
+      <typology _operation="none" name="defaultTypology"/>
+      <mapping _operation="none" name="cctcMapProfile"/>
+    </delivery>
+  </entities>
+  <entities schema="nms:delivery">
+    <delivery currentStatus="1" deliveryMode="4" internalName="CCX_NEWSLETTER_NAM_JULY_PAID"
+              isModel="1" label="CCX_NEWSLETTER_NAM_JULY_PAID" messageType="0" streamName="Paid_Individual_Loc"
+              xtkschema="nms:delivery">
+      <forecast>
+        <weightFormula>$(deliveryWeight)</weightFormula>
+      </forecast>
+      <scenario validityDuration="432000" webValidityDuration="10368000"/>
+      <fcpParameters>
+        <seedList>
+          <where filteringSchema="nms:seedMember"/>
+        </seedList>
+      </fcpParameters>
+      <mailParameters useDefaultErrorAddress="false">
+        <subject>&lt;%= profile.targetData.subjectLine %&gt;</subject>
+        <senderName>Adobe Express</senderName>
+        <senderAddress>mail@email.adobe.com</senderAddress>
+        <replyAddress>mail@email.adobe.com</replyAddress>
+        <replyName>Adobe Express</replyName>
+        <errorAddress>mail@email.adobe.com</errorAddress>
+      </mailParameters>
+      <smsParameters smsPriority="0"/>
+      <targets deduplicate="false" filteringSchema="cctc:profile" noRcpIdDedup="true"
+               targetMode="0" useBlackList="true"/>
+      <content>
+        <html>
+          <source>&lt;!DOCTYPE html&gt;
+&lt;%@ include view='cctcPreProcess' %&gt;
+&lt;% var optOutLinkLabel = 'unsubscribe.'; %&gt;
+&lt;html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"&gt;
+&lt;head&gt;
+&lt;link rel="icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon"&gt;
+&lt;link rel="shortcut icon" href="https://www.adobe.com/favicon.ico" type="image/x-icon"&gt;
+&lt;meta name="x-apple-disable-message-reformatting"&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+&lt;meta name="format-detection" content="telephone=no"&gt;
+&lt;meta name="format-detection" content="date=no"&gt;
+&lt;meta name="format-detection" content="address=no"&gt;
+&lt;meta name="format-detection" content="email=no"&gt;
+&lt;title&gt;Adobe&lt;/title&gt;
+
+&lt;!--[if mso]&gt;
+&lt;style type="text/css"&gt;
+body, table, td {
+font-family:Helvetica Neue, Helvetica, Verdana, Arial, sans-serif !important;
+}
+&lt;/style&gt;
+&lt;xml&gt;
+  &lt;o:OfficeDocumentSettings&gt;
+    &lt;o:AllowPNG/&gt;
+    &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+  &lt;/o:OfficeDocumentSettings&gt;
+&lt;/xml&gt;
+&lt;![endif]--&gt;
+
+&lt;style type="text/css"&gt;
+@import url("https://use.typekit.net/onr8tbr.css");
+@media (prefers-color-scheme: dark)
+.ReadMsgBody { width:100%;}
+.ExternalClass {width:100%;}
+table {border-collapse:collapse; margin:0 auto;}
+a, a:visited {color:#5C5CE0; text-decoration:none;}
+.legal a {text-decoration:underline;}
+/* iOS BLUE LINKS */
+a[x-apple-data-detectors] {color:inherit !important; text-decoration:none !important; font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important;}
+
+.mobile {border-spacing:0;display:none!important;height:0;max-height:0;mso-hide:all;overflow:hidden;visibility:hidden;width:0;}
+  
+  @media only screen and (max-width:480px) {
+    u ~ div {
+      min-width:100vw;
+    }
+    div &gt; u ~ div {
+          min-width: 100%;
+    }
+    .web {
+       display:none !important;
+       }
+     
+     .mobile {
+       display:block !important;
+       width:auto !important;
+       overflow:visible !important;
+       height:auto !important;
+       max-height:inherit !important;
+       font-size:15px !important;
+       line-height:21px !important;
+       visibility:visible !important;
+       }
+     
+     .email-width {
+       width:84% !important;
+       }
+     
+     .full-width {
+       width:100% !important;
+       }
+     
+     .mobile-image {
+       height:auto !important;
+       width:100% !important;
+       }
+    
+    .social {
+      float:left !important;
+      padding-top:66px !important;
+      text-align:left !important;
+    }
+    
+    .template-spacer {
+      width:10px !important;
+    }
+    
+    .template-padding {
+      padding-bottom:10px !important;
+    }
+  }
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body bgcolor="#E4E4E4" style="background-color:#E4E4E4; margin:0; padding:0;-webkit-font-smoothing:antialiased;width:100% !important;-webkit-text-size-adjust:none;" topmargin="0"&gt;&lt;div style="font-size:1px; color:#E4E4E4; display:none; overflow:hidden; visibility:hidden;"&gt;Expand your audience with tips, templates, and how-tos. &amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&lt;/div&gt;
+
+&lt;table width="100%" bgcolor="#E4E4E4" style="background-color:#E4E4E4;" border="0" cellpadding="0" cellspacing="0" role="presentation"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;table class="full-width" align="center" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;"&gt;
+    &lt;tr&gt;
+           &lt;td bgcolor="#ffffff" style="background-color:#ffffff;"&gt;
+           
+            &lt;!-- pod1 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:50px;"&gt;
+          &lt;table align="left" width="auto" border="0" cellpadding="0" cellspacing="0" role="presentation" style="float:left;"&gt;
+            &lt;tr&gt;
+            &lt;td valign="middle" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:14px; line-height:20px;"&gt;&lt;img alt="" src="https://landing.adobe.com/dam/global/images/creative-cloud-express.icon.240x234.png" width="30" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+            &lt;td width="10" style="width:10px;"&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;td valign="top" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:14px; line-height:20px;"&gt;&lt;img alt="Adobe Express" src="https://s7d9.scene7.com/is/image/AdobeDemandCreative/?fmt=png-alpha&amp;size=300,60&amp;wid=300&amp;textAttr=144,strong&amp;resolution=200&amp;textPs=%7B%5C*%5Ciscolortbl%3B74777A%3B%5Cfonttbl%7B%5Cf0%20Adobe%20Clean%20ExtraBold%3B%7D%7D%5Cf0%5Cfs40%5Csl-400%5Cvertalc%5Ckerningoptical%5Ccf1Adobe%20Express" width="150" height="30" border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:14px; line-height:20px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:18px; padding-top:66px;"&gt;&lt;strong&gt;JULY NEWSLETTER&lt;/strong&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td class="header" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:44px; font-weight:900; line-height:50px; padding-top:20px;"&gt;Prepared for every platform.&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#2C2C2C; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:10px;"&gt;Adobe Express Ambassador Katherine Pan knows what it takes to grow on Twitch, TikTok, YouTube, and beyond &amp;#8212; creating standout content for all of her channels on Adobe Express. See how you can push your content further with Adobe Express.&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#5C5CE0; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:15px; line-height:20px; padding-top:40px;"&gt;&lt;!--[if gte mso 9]&gt;
+          &lt;v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:40px; v-text-anchor:middle; width:200px;" arcsize="50%" stroke="f" fillcolor="#5C5CE0"&gt;
+          &lt;v:textbox style="mso-fit-shape-to-text:t"&gt;
+          &lt;center style="color:#ffffff; font-family:Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:16px;"&gt;
+          &lt;![endif]--&gt;
+          &lt;a href="https://adobesparkpost.app.link/duD61YFHLrb?~tags=ActivityID=&lt;%=targetData.sourceCode%&gt;&amp;~tags=&amp;~tags=CCX_Jul_22_NL&amp;tags=LC-Tool&amp;trackingid=&lt;%=getTagId('CTA1')%&gt;&amp;mv=email" target="_blank" style="background-color:#5C5CE0;border-radius:20px;color:#ffffff;display:inline-block;font-size:16px;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;"&gt;&lt;strong&gt;Get started&lt;/strong&gt;&lt;/a&gt;
+          &lt;!--[if gte mso 9]&gt;
+          &lt;/center&gt;
+          &lt;p style="margin:0; font-size:0; line-height:0;"&gt;&lt;o:p xmlns:o="urn:schemas-microsoft-com:office:office"&gt;&amp;nbsp;&lt;/o:p&gt;&lt;/p&gt;
+          &lt;/v:textbox&gt;
+          &lt;/v:roundrect&gt;
+          &lt;![endif]--&gt;
+        &lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod1 --&gt;
+         
+      &lt;!-- pod1 marquee --&gt;
+            &lt;table class="full-width" align="center" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;"&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px;"&gt;&lt;a href="https://adobesparkpost.app.link/duD61YFHLrb?~tags=ActivityID=&lt;%=targetData.sourceCode%&gt;&amp;~tags=&amp;~tags=CCX_Jun_22_NL&amp;tags=LC-Tool&amp;trackingid=&lt;%=getTagId('CTA1')%&gt;&amp;mv=email" target="_blank" style="color:#5C5CE0;"&gt;
+        &lt;img class="mobile-image" 
+                alt="Prepared for every platform."
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1206/ccx-newsletter-july.en.1200x1080.png"
+        srcset="https://landing.adobe.com/dam/2022/images/mwpe-1206/ccx-newsletter-july.en.800x960.png 621w,
+        https://landing.adobe.com/dam/2022/images/mwpe-1206/ccx-newsletter-july.en.1200x1080.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="600" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod1 marquee --&gt;
+         
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+           &lt;td bgcolor="#5C5CE0" style="background-color:#5C5CE0;"&gt;
+         
+      &lt;!-- pod2 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; padding-top:70px;"&gt;&lt;img alt="Featured templates" src="https://landing.adobe.com/dam/2022/images/mwpe-1061/ccx-newsletter-april.en.700x74.png" width="340" height="36" border="0" hspace="0" vspace="0" style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:10px;"&gt;Increasing your engagement and growing your audience online is easy with attention-grabbing templates.&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:36px;"&gt;&lt;a href="https://express.adobe.com/post/2cf3d388-fe79-4442-9757-d666aa4ea4e8?trackingid=&lt;%=getTagId('CTA2')%&gt;&amp;mv=email" target="_blank" style="color:#5C5CE0;"&gt;
+        &lt;img class="mobile-image" 
+        alt="Stream Starting Soon"
+        src="https://landing.adobe.com/dam/2022/images/mwpe-1206/ccx-newsletter-july.en.1000x563-1.png"
+        width="500" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; display:inline-block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:18px;"&gt;&lt;a href="https://express.adobe.com/post/311d8b83-e428-47b3-a4f8-658c4f5b7648?trackingid=&lt;%=getTagId('CTA3')%&gt;&amp;mv=email" target="_blank" style="color:#5C5CE0;"&gt;
+        &lt;img class="mobile-image" 
+        alt="Nimos Live Streaming"
+        src="https://landing.adobe.com/dam/2022/images/mwpe-1206/ccx-newsletter-july.en.1000x334.png"
+        width="500" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; display:inline-block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:18px;"&gt;&lt;a href="https://express.adobe.com/post/6eb9d406-ef9c-4b27-99de-609cfbb29149?trackingid=&lt;%=getTagId('CTA4')%&gt;&amp;mv=email" target="_blank" style="color:#5C5CE0;"&gt;
+        &lt;img class="mobile-image" 
+        alt="Travel Channel Twitch"
+        src="https://landing.adobe.com/dam/2022/images/mwpe-1206/ccx-newsletter-july.en.1000x563-2.png"
+        width="500" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; display:inline-block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:16px; line-height:20px; padding-top:40px; padding-bottom:120px;"&gt;&lt;a href="https://adobesparkpost.app.link/5Hx3DPFPMrb?~tags=ActivityID=&lt;%=targetData.sourceCode%&gt;&amp;~tags=&amp;~tags=CCX_Jun_22_NL&amp;tags=LC-Tool&amp;trackingid=&lt;%=getTagId('CTA5')%&gt;&amp;mv=email" target="_blank"style="border:2px solid #ffffff;border-radius:20px;color:#ffffff;display:inline-block;font-size:16px;line-height:16px;padding:10px;outline:none;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;"&gt;&lt;strong&gt;Explore templates&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod2 --&gt;
+         
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+           &lt;td bgcolor="#ffffff" style="background-color:#ffffff;"&gt;
+         
+      &lt;!-- pod3 marquee --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; padding-top:120px;"&gt;&lt;a href="https://www.adobe.com/express/learn/blog/ways-to-grow-your-channels?trackingid=&lt;%=getTagId('CTA6')%&gt;&amp;mv=email" target="_blank" style="color:#5C5CE0;"&gt;
+        &lt;img class="mobile-image" 
+                alt="Three new ways to grow your channels."
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1206/ccx-newsletter-july.en.1000x684.jpg"
+        width="500" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:inline-block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod3 marquee --&gt;
+         
+      &lt;!-- pod3 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; padding-top:30px;"&gt;&lt;img alt="How-to" src="https://landing.adobe.com/dam/2022/images/mwpe-885/ccx-newsletter-january.en.120x26.png" width="60" height="auto" border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:26px; font-weight:900; line-height:32px; padding-top:16px;"&gt;Three new ways to grow your channels.&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#2C2C2C; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:16px;"&gt;Keep up with your community and discover the best practices that creators are using around the world, from choosing the right platform to taking it all&amp;nbsp;the&amp;nbsp;way.&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#747474; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:16px; line-height:20px; padding-top:40px; padding-bottom:120px;"&gt;&lt;a href="https://www.adobe.com/express/learn/blog/ways-to-grow-your-channels?trackingid=&lt;%=getTagId('CTA6')%&gt;&amp;mv=email" target="_blank"style="border:2px solid #747474;border-radius:20px;color:#747474;display:inline-block;font-size:16px;line-height:16px;padding:10px;outline:none;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;"&gt;&lt;strong&gt;See how&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod3 --&gt;
+         
+      &lt;!-- pod5 marquee --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px;"&gt;&lt;a href="https://www.adobe.com/express/learn/blog/whats-trending-little-things?trackingid=&lt;%=getTagId('CTA7')%&gt;&amp;mv=email" target="_blank" style="color:#5C5CE0;"&gt;
+        &lt;img class="mobile-image" 
+                alt="See what&amp;#8217;s trending."
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1206/ccx-newsletter-july.en.1000x400.png"
+        width="500" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:inline-block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod5 marquee --&gt;
+         
+      &lt;!-- pod4 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#5C5CE0" style="background-color:#5C5CE0; border-radius:0 0 10px 10px; -webkit-border-radius:0 0 10px 10px; width:500px;"&gt;
+       &lt;tr&gt;
+        &lt;td class="mobile-spacer" width="50" style="width:50px;"&gt;&amp;nbsp;&lt;/td&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; padding-top:40px;"&gt;&lt;img alt="Get inspired" src="https://landing.adobe.com/dam/2022/images/mwpe-885/ccx-newsletter-january.en.188x34.png" width="94" height="auto" border="0" hspace="0" vspace="0" style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+        &lt;td class="mobile-spacer" width="50" style="width:50px;"&gt;&amp;nbsp;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+        &lt;td class="mobile-spacer" width="50" style="width:50px;"&gt;&amp;nbsp;&lt;/td&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:26px; font-weight:900; line-height:32px; padding-top:16px;"&gt;See what&amp;#8217;s trending.&lt;/td&gt;
+        &lt;td class="mobile-spacer" width="50" style="width:50px;"&gt;&amp;nbsp;&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+        &lt;td class="mobile-spacer" width="50" style="width:50px;"&gt;&amp;nbsp;&lt;/td&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:16px;"&gt;Start romanticizing your life, lean into a preppy look, and&amp;nbsp;more.&lt;/td&gt;
+        &lt;td class="mobile-spacer" width="50" style="width:50px;"&gt;&amp;nbsp;&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+        &lt;td class="mobile-spacer" width="50" style="width:50px;"&gt;&amp;nbsp;&lt;/td&gt;
+              &lt;td style="color:#ffffff; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:30px; padding-bottom:70px;"&gt;&lt;a href="https://www.adobe.com/express/learn/blog/whats-trending-little-things?trackingid=&lt;%=getTagId('CTA7')%&gt;&amp;mv=email" target="_blank" style="color:#ffffff; font-weight:bold; text-decoration:none;"&gt;Learn more &amp;rsaquo;&lt;/a&gt;&lt;/td&gt;
+        &lt;td class="mobile-spacer" width="50" style="width:50px;"&gt;&amp;nbsp;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod4 --&gt;
+         
+      &lt;!-- pod5 marquee --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; padding-top:60px;"&gt;&lt;a href="https://adobesparkpost.app.link/a970IE9PMrb?~tags=ActivityID=&lt;%=targetData.sourceCode%&gt;&amp;~tags=&amp;~tags=CCX_Jun_22_NL&amp;tags=LC-Tool&amp;trackingid=&lt;%=getTagId('CTA8')%&gt;&amp;mv=email" target="_blank" style="color:#5C5CE0;"&gt;
+        &lt;img class="mobile-image" 
+                alt="Now on the schedule: Pinterest and LinkedIn."
+                 src="https://landing.adobe.com/dam/2022/images/mwpe-1206/ccx-newsletter-july.en.1092x816.jpg"
+        width="500" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:inline-block; vertical-align:top;"/&gt;
+        &lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod5 marquee --&gt;
+         
+      &lt;!-- pod5 --&gt;
+            &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; padding-top:10px;"&gt;&lt;img alt="Product news" src="https://landing.adobe.com/dam/2022/images/mwpe-885/ccx-newsletter-january.en.208x26.png" width="104" height="auto" border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:22px; line-height:28px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+       &lt;tr&gt;
+              &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:26px; font-weight:900; line-height:32px; padding-top:16px;"&gt;Now on the schedule: Pinterest and&amp;nbsp;LinkedIn.&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#2C2C2C; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:18px; line-height:26px; padding-top:16px;"&gt;Your favorite timesaving tool, Content Scheduler, now allows you to publish to even more platforms. Plan, schedule, preview, and publish content with one click to all your favorite social channels including Instagram, Twitter, Facebook, Pinterest, and&amp;nbsp;LinkedIn.&lt;/td&gt;
+             &lt;/tr&gt;
+             &lt;tr&gt;
+              &lt;td style="color:#747474; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:16px; line-height:20px; padding-top:40px; padding-bottom:100px;"&gt;&lt;a href="https://adobesparkpost.app.link/a970IE9PMrb?~tags=ActivityID=&lt;%=targetData.sourceCode%&gt;&amp;~tags=&amp;~tags=CCX_Jun_22_NL&amp;tags=LC-Tool&amp;trackingid=&lt;%=getTagId('CTA8')%&gt;&amp;mv=email" target="_blank"style="border:2px solid #747474;border-radius:20px;color:#747474;display:inline-block;font-size:16px;line-height:16px;padding:10px;outline:none;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;"&gt;&lt;strong&gt;Get started&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;
+             &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!-- END pod5 --&gt;
+            
+           &lt;!-- END email content --&gt;
+           &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;tr&gt;
+    &lt;td bgcolor="#F5F5F5" style="background-color:#F5F5F5;"&gt;
+      
+        &lt;!-- banner --&gt;
+      &lt;table class="full-width" align="center" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;"&gt;
+       &lt;tr&gt;
+         &lt;td style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:15px; line-height:20px;"&gt;&lt;img class="mobile-image" 
+        alt="Creativity for all."
+        src="https://landing.adobe.com/dam/global/images/creativity-for-all.footer.desktop.1200x600.png"
+        srcset="https://landing.adobe.com/dam/global/images/creativity-for-all.footer.mobile.800x600.png 621w,
+        https://landing.adobe.com/dam/global/images/creativity-for-all.footer.desktop.1200x600.png 1200w"
+        sizes="(max-width: 480px) 50vw"
+        width="600" height="auto" 
+        border="0" hspace="0" vspace="0" style="color:#000000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:15px; line-height:20px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;!-- END banner --&gt;
+      
+      &lt;!-- logo &amp; social --&gt;
+      &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+     &lt;tr&gt;
+      &lt;td valign="middle" style="padding-top:50px;"&gt;
+        &lt;div style="font-size:0;"&gt;
+          &lt;!--[if mso]&gt;
+          &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;&lt;tr&gt;&lt;td align="left" valign="middle" width="50%"&gt;
+          &lt;![endif]--&gt;
+          &lt;div style="display:inline-block; vertical-align:middle; width:50%; min-width:250px; max-width:100%; width:-webkit-calc(230400px - 48000%); min-width:-webkit-calc(50%); width:calc(230400px - 48000%); min-width:calc(50%);"&gt;
+          &lt;!-- left --&gt;
+          &lt;table align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"&gt;
+           &lt;tr&gt;
+            &lt;td style="color:#EB1000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:18px;"&gt;&lt;img alt="Adobe" src="https://landing.adobe.com/dam/global/images/adobe-logo.classic.160x222.png" width="30" height="auto" border="0" hspace="0" vspace="0" style="color:#EB1000; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:18px; display:block; vertical-align:top;"/&gt;&lt;/td&gt;
+           &lt;/tr&gt;
+          &lt;/table&gt;
+          &lt;!-- END left --&gt;
+          &lt;/div&gt;
+          &lt;!--[if mso]&gt;
+          &lt;/td&gt;&lt;td align="right" valign="middle" width="50%"&gt;
+          &lt;![endif]--&gt;
+          &lt;div style="display:inline-block; vertical-align:middle; width:50%; min-width:250px; max-width:100%; width:-webkit-calc(230400px - 48000%); min-width:-webkit-calc(50%); width:calc(230400px - 48000%); min-width:calc(50%);"&gt;
+          &lt;!-- right --&gt;
+          &lt;table class="social" align="right" width="auto" border="0" cellpadding="0" cellspacing="0" role="presentation" style="float:right;"&gt;
+           &lt;tr&gt;
+            &lt;td style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:12px;"&gt;&lt;a href="https://www.facebook.com/adobeexpress" alias="Facebook" target="_blank"&gt;&lt;img class="social" alt="Facebook" src="https://landing.adobe.com/dam/global/images/social/facebook.959595.png" width="10" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="30" style="width:30px;"&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;td style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:12px;"&gt;&lt;a href="https://www.instagram.com/adobeexpress" alias="Instagram" target="_blank"&gt;&lt;img class="social" alt="Instagram" src="https://landing.adobe.com/dam/global/images/social/instagram.959595.png" width="18" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="30" style="width:30px;"&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;td style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:12px;"&gt;&lt;a href="https://www.twitter.com/AdobeExpress" alias="Twitter" target="_blank"&gt;&lt;img class="social" alt="Twitter" src="https://landing.adobe.com/dam/global/images/social/twitter.959595.png" width="20" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="30" style="width:30px;"&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;td style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:12px; line-height:12px;"&gt;&lt;a href="https://www.tiktok.com/@adobeexpress" alias="TikTok" target="_blank"&gt;&lt;img class="social" alt="TikTok" src="https://landing.adobe.com/dam/global/images/social/tiktok.959595.png" width="20" height="auto" border="0" hspace="0" vspace="0" style="display:block; vertical-align:top;"/&gt;&lt;/a&gt;&lt;/td&gt;
+           &lt;/tr&gt;
+          &lt;/table&gt;
+          &lt;!-- END right --&gt;
+          &lt;/div&gt;
+        &lt;!--[if mso]&gt;
+        &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+        &lt;![endif]--&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+       &lt;/tr&gt;
+      &lt;/table&gt;      
+      &lt;!-- END logo &amp; social --&gt;
+      
+      &lt;!-- legal--&gt;
+      &lt;table class="email-width" align="center" width="500" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:500px;"&gt;
+      &lt;tr&gt;
+        &lt;td class="legal" style="color:#959595; font-family:adobe-clean, Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; font-size:11px; line-height:18px; padding-top:50px; padding-bottom:100px;"&gt;
+       Adobe, the Adobe logo, Creative Cloud, the Creative Cloud logo, and Document Cloud are either registered trademarks or trademarks of Adobe in the United States and/or other countries.&lt;br/&gt;&lt;br/&gt;
+      This is not a comprehensive list of Adobe trademarks. For a full list, refer to the &lt;a href="https://www.adobe.com/legal/permissions/trademarks.html" alias="FOOTER - Trademark Guidelines" target="_blank" style="color:#959595;"&gt;Adobe Trademark Guidelines&lt;/a&gt;. All other trademarks are the property of their respective owners.&lt;br/&gt;&lt;br/&gt;
+      This is a marketing email from Adobe, 345 Park Avenue, San Jose, CA 95110 USA. Click here to &lt;%@ include view='adbeGlobalMarketingComUnsubscriptionLink' %&gt; Please review the &lt;a href="https://www.adobe.com/privacy.html" alias="FOOTER - Privacy Policy" target="_blank" style="color:#959595;"&gt;Adobe&amp;nbsp;Privacy&amp;nbsp;Policy&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+      To ensure email delivery, add &lt;a href="https://landing.adobe.com/dam/downloads/vcards/adobe.vcf" alias="Add to address book - mail@mail.adobe.com" target="_blank" style="color:#959595;"&gt;mail@mail.adobe.com&lt;/a&gt; to your address book, contacts, or safe sender&amp;nbsp;list.
+      &lt;% if ( document.mode != 'mirror' &amp;&amp; document.mode != 'forward' ) { %&gt;&lt;br/&gt;&lt;br/&gt;&lt;a href="&lt;%@ include view='MirrorPageUrl' %&gt;" alias="Read Online" target="_blank" style="color:#959595;"&gt;Read online&lt;/a&gt;&lt;% } %&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;!-- END legal--&gt;
+      
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</source>
+        </html>
+        <text>
+          <source>&lt;% var optOutLinkLabel = '345 Park Avenue, San Jose, CA 95110 USA. Click below to unsubscribe'; %&gt;
+View Web Version:
+&lt;%@ include view='MirrorPageUrl' %&gt;
+
+Unfortunately, your email client cannot display HTML or your settings are turned off. To view this email, please click or  copy and paste the link above into your browser.
+
+******************************************************************
+
+This is a marketing email from Adobe Inc., &lt;%@ include view='adbeGlobalMarketingComUnsubscriptionLink' %&gt;
+Please review the Adobe Privacy Policy:
+https://www.adobe.com/privacy.html
+
+To ensure email delivery, add mail@email.adobe.com to your address book, contacts, or safe sender list.
+https://landing.adobe.com/dam/downloads/vcards/adobe.vcf</source>
+        </text>
+      </content>
+      <tracking enabled="true" openEnabled="true"/>
+      <advancedParameters forceCodepage="false"/>
+      <execution maxPersoTime="5" maxRetry="5" retryPeriod="3600"/>
+      <folder _operation="none" name="cctcDataFinityDeliveryTmp"/>
+      <folderProcess _operation="none" name="cctcCorpMarketingDelivery"/>
+      <deliveryProvider _operation="none" name="EmailDefaultMidEmailAdobe"/>
+      <typology _operation="none" name="defaultTypology"/>
+      <mapping _operation="none" name="cctcMapProfile"/>
+    </delivery>
+  </entities>
+</package>

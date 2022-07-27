@@ -1,0 +1,30 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+/// <summary>
+/// AccountSettings
+/// 
+/// Replace this class with an interface to your own applications account settings. 
+/// 
+/// Each account should as a minimum have the following:
+///  - A URL pointing to the identity provider for sending Auth Requests
+///  - A X.509 certificate for validating the SAML Responses from the identity provider
+/// 
+/// These should be retrieved from the account store/database on each request in the authentication flow.
+/// </summary>
+public class AccountSettings
+{
+    //public string certificate = "-----BEGIN CERTIFICATE-----MIIDpDCCAoygAwIBAgIGAXHGyT9LMA0GCSqGSIb3DQEBCwUAMIGSMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEUMBIGA1UECwwLU1NPUHJvdmlkZXIxEzARBgNVBAMMCmRldi04NTUwNjAxHDAaBgkqhkiG9w0BCQEWDWluZm9Ab2t0YS5jb20wHhcNMjAwNDI5MTYzMjI5WhcNMzAwNDI5MTYzMzI5WjCBkjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xDTALBgNVBAoMBE9rdGExFDASBgNVBAsMC1NTT1Byb3ZpZGVyMRMwEQYDVQQDDApkZXYtODU1MDYwMRwwGgYJKoZIhvcNAQkBFg1pbmZvQG9rdGEuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuLvWlNsBAfjQVsNWgcW36FBNMRXK+tDYmLEln4j7NikJcr3g4gZw8M7vUA3rT+fANnANnM4wS7eQoF65ajbG1c96AU10bjw0DpKALgf6TIwvQ3xv84U9kZIzH0c3ZokWNyHkCq/oPjz6Zd+qYpoGN6FDkXj1VT01Mui8fbMPdRqoGVa8vo2rCnWjlG1q6VfvmQA/AV4j8NeuBMCyk//Ozr8gXRqZibLTLfPzkSgWlTkbgrZ+SCI5STDsZF6bjfqGKghuT2KTQeesYrWQKIwLKovgg8jwf1k1bsoN4RnC65bY06Wy76yQVurf+mfXnmhQNceD6MV7t6HLbllzl/3MvwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBptCPf8zIjjtE6jIC79fEj5Nbc/igYbgbdrh83uS+NSxgMzeoDWJpznZVyFdYRxcgZ3WWQJw4+HLAOPFOhSA+RcTOCXlRZqagvtK4XMB9ppm9QofGBaT6/vtkfd0JAV3NKbwmfxwVTTd/YKU800AdJKtQKM6dXJcRyMpKEImxV3yQQcWrLk0wchb6hiDu7/xOBIjkpceQDC/81HJQo6ijo7e7hVDKuZFuaPEjeDPVSPUbEj6uke6b3xkVGztrI1cOCWrr5TFAn9039zSOLfVdv7iTYcvdEwLKDNrJcCj6s4nn+Sqw/FhfRa/znEzXrEjhhYDUfV8EIH7h32POXjilB-----END CERTIFICATE-----";
+    //public string idp_sso_target_url = "https://dev-855060.okta.com/home/adobeincdev855060_testapp_1/0oab2hxyxp0GVMJW44x6/alnb2j87j9KPR816t4x6";
+
+    //Adobe
+    public string certificate = "-----BEGIN CERTIFICATE-----MIIDmjCCAoKgAwIBAgIGAV2h11wBMA0GCSqGSIb3DQEBCwUAMIGNMQswCQYDVQQGEwJVUzETMBEG A1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEU MBIGA1UECwwLU1NPUHJvdmlkZXIxDjAMBgNVBAMMBWFkb2JlMRwwGgYJKoZIhvcNAQkBFg1pbmZv QG9rdGEuY29tMB4XDTE3MDgwMjA3MjYxMVoXDTI3MDgwMjA3MjcxMVowgY0xCzAJBgNVBAYTAlVT MRMwEQYDVQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1TYW4gRnJhbmNpc2NvMQ0wCwYDVQQKDARP a3RhMRQwEgYDVQQLDAtTU09Qcm92aWRlcjEOMAwGA1UEAwwFYWRvYmUxHDAaBgkqhkiG9w0BCQEW DWluZm9Ab2t0YS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCvEXN88QAk5+y8 B4rykZRYTlxpFMquhwLJzXVa9iGqYFPnxVaiu+DxfsBP28e/d66eevAw2Ifox8A6nwZ3ldbIQoFt VEULVoTLDLXq4P3JpseXd/ea4pu8QyPMFYH4GxwJ+jHbqLhqORAZJMxPxnjwV55JBEp/CWheVx9L wbr6LfFktssM7V/kKwz8Z59X32pMNCEWnulgqm3N/S01lpJENhDupiR0/UmUvPuGM8/JGtumebns wkIc0o6GjDY+LYAPeEAU1IV4rKJSLVOo/f7EVj2veG8GD2FbyW1LkE95ku00mhywVmOggwgbnB5x xIMB0aLHceOcGwAKJHA9a4lbAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAFUi+12Ny7pCfuhpDh1W 48ikIVlnYq+E22iJFzY/nFzO2kkTmbFlNrN2IVv85qeQsySTsdDqrZMkuP3SBFUfFm4nb08ceIIp XRAJ1AsmSG4zAA7ePIc//0v9I1LHQbndpQxALW1V+NzVQZ/kRgARRbg/Koa5bEepkZ3FLbzkEZLb Qd1QligvvfjazVf70DgCJhbUUd08Fym2p1ovRSsq/P87j0keeNoqGngErsxmZw60cKD1romND/Y8 Npqn0fbGJpSH2cjEvrDM7HYTwNj08ldZ8wXpFrei+ke/EYclQQhfVf6g5NuaPpawC7nUOrFthdox huSVETmWS1a4SbgipLw=-----END CERTIFICATE-----";
+    public string idp_sso_target_url = "https://adobe.okta.com/app/adobeinc_simplifi_1/exk1inc8oelHOy1hT0h8/sso/saml";
+}

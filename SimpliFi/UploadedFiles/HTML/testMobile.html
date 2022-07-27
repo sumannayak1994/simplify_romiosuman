@@ -1,0 +1,2969 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://codemirror.net/2/lib/codemirror.css"> 
+      <script type="text/javascript" src="https://codemirror.net/2/lib/codemirror.js"></script> 
+      <script type="text/javascript" src="https://codemirror.net/2/lib/util/formatting.js"></script> 
+      <script type="text/javascript" src="https://codemirror.net/2/mode/css/css.js"></script> 
+      <script type="text/javascript" src="https://codemirror.net/2/mode/xml/xml.js"></script> 
+      <script type="text/javascript" src="https://codemirror.net/2/mode/htmlmixed/htmlmixed.js"></script> 
+      <script type="text/javascript" src="https://codemirror.net/2/mode/javascript/javascript.js"></script> 
+	  <script src="../lib/codemirror.js"></script>
+	  <script src="../addon/display/placeholder.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://codemirror.net/2/doc/docs.css"> 
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript">
+var editor = CodeMirror.fromTextArea(document.getElementById("writtenHTML"), {
+        lineNumbers: true,
+        mode: "htmlmixed",
+        extraKeys:{"Shift-Tab":autoFormatSelection}
+      });
+function renderHTMLTablet()
+{
+
+var iframe = document.getElementById('previewTablet'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+document.getElementById('idSmartPhone').style.display="none";
+document.getElementById('idPC').style.display="none";
+document.getElementById('idTablet').style.display="block";
+}
+function renderHTML()
+{
+var iframe = document.getElementById('preview'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+document.getElementById('idTablet').style.display="none";
+document.getElementById('idPC').style.display="none";
+document.getElementById('idSmartPhone').style.display="block";
+}
+function renderHTMLPC()
+{
+var iframe = document.getElementById('previewPC'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+document.getElementById('idTablet').style.display="none";
+document.getElementById('idSmartPhone').style.display="none";
+document.getElementById('idPC').style.display="block";
+}
+/* iPhone */
+/* Hiding the Divs */
+function hideDivs()
+{
+	var divs = ["iPhone12ProMax","iPhone12Pro","iPhone12","iPhone11","iPhoneXR","iPhoneXS","iPhoneXSMax","iPhoneX","iPhone8Plus","iPhone8","iPhone7Plus","iPhone7","iPhone6Plus","iPhone6","iPhone5","iPadPro","iPadThirdAndFourthGeneration","iPadAir1And2","iPadMini2And3","iPadMini","nexus9","nexus7","samsungGalaxyTab10","chromebookPixel","appleThunderboltDisplay27","appleCinemaDisplay30","googleChromebookPixel","appleiMac21","appleiMac27","appleMacBookAir11","appleMacBookAir13","appleMacBookPro13","appleMacBookPro15","appleMacBookPro17"];
+	for (var i=0;i<divs.length;i++)
+	{
+    
+	document.getElementById(divs[i]).style.display="none";		
+	}
+}
+
+
+
+/* appleThunderboltDisplay27 */
+function appleThunderboltDisplay27 ()
+{
+var iframe = document.getElementById('previewappleThunderboltDisplay27'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('appleThunderboltDisplay27').style.display="block";
+}
+
+
+/* appleCinemaDisplay30 */
+function appleCinemaDisplay30()
+{
+var iframe = document.getElementById('previewappleCinemaDisplay30'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('appleCinemaDisplay30').style.display="block";
+}
+
+
+
+/* googleChromebookPixel */
+function googleChromebookPixel()
+{
+var iframe = document.getElementById('previewgoogleChromebookPixel'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('googleChromebookPixel').style.display="block";
+}
+
+
+
+/* appleiMac21 */
+function appleiMac21()
+{
+var iframe = document.getElementById('previewappleiMac21'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('appleiMac21').style.display="block";
+}
+
+
+
+/* appleiMac27 */
+function appleiMac27()
+{
+var iframe = document.getElementById('previewappleiMac27'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('appleiMac27').style.display="block";
+}
+
+/* appleMacBookAir11 */
+function appleMacBookAir11()
+{
+var iframe = document.getElementById('previewappleMacBookAir11'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('appleMacBookAir11').style.display="block";
+}
+
+
+/* appleMacBookAir13 */
+function appleMacBookAir13()
+{
+var iframe = document.getElementById('previewappleMacBookAir13'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('appleMacBookAir13').style.display="block";
+}
+
+
+
+/* appleMacBookPro13 */
+function appleMacBookPro13()
+{
+var iframe = document.getElementById('previewappleMacBookPro13'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('appleMacBookPro13').style.display="block";
+}
+
+
+
+/* appleMacBookPro15 */
+function appleMacBookPro15()
+{
+var iframe = document.getElementById('previewappleMacBookPro15'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('appleMacBookPro15').style.display="block";
+}
+
+
+/* appleMacBookPro17 */
+function appleMacBookPro17()
+{
+var iframe = document.getElementById('previewappleMacBookPro17'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('appleMacBookPro17').style.display="block";
+}
+/* iPhone12ProMax */
+function iPhone12ProMax()
+{
+var iframe = document.getElementById('previewiPhone12ProMax'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone12ProMax').style.display="block";
+}
+/* iPadPro */
+function iPadPro()
+{
+
+var iframe = document.getElementById('previewiPadPro'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPadPro').style.display="block";
+}
+
+/* iPadThirdAndFourthGeneration */
+function iPadThirdAndFourthGeneration()
+{
+
+var iframe = document.getElementById('previewiPadThirdAndFourthGeneration'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPadThirdAndFourthGeneration').style.display="block";
+}
+
+/* iPadAir1And2 */
+function iPadAir1And2()
+{
+
+var iframe = document.getElementById('previewiPadAir1And2'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPadAir1And2').style.display="block";
+}
+
+/* iPadMini2And3 */
+function iPadMini2And3()
+{
+
+var iframe = document.getElementById('previewiPadMini2And3'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPadMini2And3').style.display="block";
+}
+
+/* iPadMini */
+function iPadMini()
+{
+
+var iframe = document.getElementById('previewiPadMini'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPadMini').style.display="block";
+}
+
+
+/* nexus9 */
+function nexus9()
+{
+
+var iframe = document.getElementById('previewnexus9'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('nexus9').style.display="block";
+}
+
+
+
+/* nexus7 */
+function nexus7()
+{
+
+var iframe = document.getElementById('previewnexus7'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('nexus7').style.display="block";
+}
+
+
+
+/* samsungGalaxyTab10 */
+function samsungGalaxyTab10()
+{
+
+var iframe = document.getElementById('previewsamsungGalaxyTab10'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('samsungGalaxyTab10').style.display="block";
+}
+
+
+
+/* chromebookPixel */
+function chromebookPixel()
+{
+
+var iframe = document.getElementById('previewchromebookPixel'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('chromebookPixel').style.display="block";
+}
+
+
+
+/* iPhone12Pro */
+function iPhone12Pro()
+{
+var iframe = document.getElementById('previewiPhone12Pro'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone12Pro').style.display="block";
+}
+
+/* iPhone12 */
+function iPhone12()
+{
+var iframe = document.getElementById('previewiPhone12'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone12').style.display="block";
+}
+
+
+/* iPhone11 */
+function iPhone11()
+{
+var iframe = document.getElementById('previewiPhone11'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone11').style.display="block";
+}
+
+
+/* iPhoneXR */
+function iPhoneXR()
+{
+var iframe = document.getElementById('previewiPhoneXR'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhoneXR').style.display="block";
+}
+
+/* iPhoneXS */
+function iPhoneXS()
+{
+var iframe = document.getElementById('previewiPhoneXS'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhoneXS').style.display="block";
+}
+/* iPhoneXSMax */
+function iPhoneXSMax()
+{
+var iframe = document.getElementById('previewiPhoneXSMax'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhoneXSMax').style.display="block";
+}
+
+
+/* iPhoneX */
+function iPhoneX()
+{
+var iframe = document.getElementById('previewiPhoneX'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhoneX').style.display="block";
+}
+
+/* iPhone8Plus */
+function iPhone8Plus()
+{
+var iframe = document.getElementById('previewiPhone8Plus'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone8Plus').style.display="block";
+}
+/* iPhone8 */
+function iPhone8()
+{
+var iframe = document.getElementById('previewiPhone8'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone8').style.display="block";
+}
+/* iPhone7Plus */
+function iPhone7Plus()
+{
+var iframe = document.getElementById('previewiPhone7Plus'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone7Plus').style.display="block";
+}
+
+/* iPhone7 */
+function iPhone7()
+{
+var iframe = document.getElementById('previewiPhone7'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone7').style.display="block";
+}
+
+/* iPhone6Plus */
+function iPhone6Plus()
+{
+var iframe = document.getElementById('previewiPhone6Plus'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone6Plus').style.display="block";
+}
+
+/* iPhone6 */
+function iPhone6()
+{
+var iframe = document.getElementById('previewiPhone6'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone6').style.display="block";
+}
+
+/* iPhone5 */
+function iPhone5()
+{
+var iframe = document.getElementById('previewiPhone5'),
+    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	
+iframedoc.body.innerHTML = document.getElementById('writtenHTML').value;
+hideDivs();
+document.getElementById('iPhone5').style.display="block";
+}
+
+
+
+
+
+</script>
+<style>
+::placeholder {
+  color: #A82FBE;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #A82FBE;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #A82FBE;
+}
+ textarea {
+        overflow-y: scroll;
+        resize: none; /* Remove this if you want the user to resize the textarea */
+    }
+#writtenHTML{
+  width:1000px;
+  height:400px;
+}
+body {
+  background: #eaafc8;
+  background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
+  background: linear-gradient(to right, #eaafc8, #654ea3);
+  min-height: 100vh;
+}
+/* tablet */
+.tablet {
+  position: relative;
+  width: 768px;
+  height: 1024px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.tablet:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.tablet:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.tablet .content {
+  width: 768px;
+  height: 1024px;
+  background: white;
+  margin: -1px;
+}
+/* iPadPro */
+.iPadPro {
+  position: relative;
+  width: 1024px;
+  height: 1366px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPadPro:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPadPro:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPadPro .contentiPadPro {
+  width: 1024px;
+  height: 1366px;
+  background: white;
+  margin: -1px;
+}
+
+
+
+/* iPadThirdAndFourthGeneration */
+.iPadThirdAndFourthGeneration {
+  position: relative;
+  width: 768px;
+  height: 1024px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPadThirdAndFourthGeneration:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPadThirdAndFourthGeneration:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPadThirdAndFourthGeneration .contentiPadThirdAndFourthGeneration {
+  width: 768px;
+  height: 1024px;
+  background: white;
+  margin: -1px;
+}
+
+
+/* iPadAir1And2 */
+.iPadAir1And2 {
+  position: relative;
+  width: 768px;
+  height: 1024px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPadAir1And2:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPadAir1And2:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPadAir1And2 .contentiPadAir1And2 {
+  width: 768px;
+  height: 1024px;
+  background: white;
+  margin: -1px;
+}
+
+
+
+/* iPadMini2And3  */
+.iPadMini2And3 {
+  position: relative;
+  width: 768px;
+  height: 1024px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPadMini2And3:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPadMini2And3:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPadMini2And3 .contentiPadMini2And3 {
+  width: 768px;
+  height: 1024px;
+  background: white;
+  margin: -1px;
+}
+
+
+/* iPadMini */
+.iPadMini {
+  position: relative;
+  width: 768px;
+  height: 1024px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPadMini:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPadMini:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPadMini .contentiPadMini {
+  width: 768px;
+  height: 1024px;
+  background: white;
+  margin: -1px;
+}
+
+
+/* Tablet Demo */
+.nexus9 {
+  position: relative;
+  width: 768px;
+  height: 1024px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.nexus9:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.nexus9:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.nexus9 .contentnexus9 {
+  width: 768px;
+  height: 1024px;
+  background: white;
+  margin: -1px;
+}
+
+
+/* nexus7 */
+.nexus7 {
+  position: relative;
+  width: 600px;
+  height: 960px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.nexus7:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.nexus7:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.nexus7 .contentnexus7 {
+  width: 600px;
+  height: 960px;
+  background: white;
+  margin: -1px;
+}
+
+
+/* samsungGalaxyTab10  */
+.samsungGalaxyTab10 {
+  position: relative;
+  width: 800px;
+  height: 1280px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.samsungGalaxyTab10:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.samsungGalaxyTab10:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.samsungGalaxyTab10 .contentsamsungGalaxyTab10 {
+  width: 800px;
+  height: 1280px;
+  background: white;
+  margin: -1px;
+}
+
+
+/* chromebookPixel */
+.chromebookPixel {
+  position: relative;
+  width: 1280px;
+  height: 850px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.chromebookPixel:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.chromebookPixel:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.chromebookPixel .contentchromebookPixel {
+  width: 1280px;
+  height: 850px;
+  background: white;
+  margin: -1px;
+}
+
+
+
+.laptop {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 1366px;
+  height: 800px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.laptop:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.laptop:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.laptop .contentPC {
+  width: 1366px;
+  height: 800px;
+ 
+  border: none;
+}
+
+
+/* appleThunderboltDisplay27 */
+.appleThunderboltDisplay27 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 2560px;
+  height: 1440px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.appleThunderboltDisplay27:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.appleThunderboltDisplay27:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.appleThunderboltDisplay27 .contentappleThunderboltDisplay27 {
+ width: 2560px;
+  height: 1440px;
+ 
+  border: none;
+}
+
+
+/* appleCinemaDisplay30 */
+.appleCinemaDisplay30 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 2560px;
+  height: 1600px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.appleCinemaDisplay30:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.appleCinemaDisplay30:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.appleCinemaDisplay30 .contentappleCinemaDisplay30 {
+width: 2560px;
+  height: 1600px;
+ 
+  border: none;
+}
+
+
+/* googleChromebookPixel */
+.googleChromebookPixel {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 2560px;
+  height: 1700px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.googleChromebookPixel:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.googleChromebookPixel:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.googleChromebookPixel .contentgoogleChromebookPixel {
+ width: 2560px;
+  height: 1700px;
+  border: none;
+}
+
+
+/* appleiMac21 */
+.appleiMac21 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 1921px;
+  height: 1080px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.appleiMac21:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.appleiMac21:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.appleiMac21 .contentappleiMac21 {
+  width: 1921px;
+  height: 1080px;
+ 
+  border: none;
+}
+
+/* appleiMac27 */
+.appleiMac27 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 2560px;
+  height: 1440px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.appleiMac27:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.appleiMac27:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.appleiMac27 .contentappleiMac27 {
+width: 2560px;
+  height: 1440px;
+ 
+  border: none;
+}
+
+/* appleMacBookAir11 */
+.appleMacBookAir11 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 1366px;
+  height: 768px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.appleMacBookAir11:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.appleMacBookAir11:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.appleMacBookAir11 .contentappleMacBookAir11 {
+ width: 1366px;
+  height: 768px;
+ 
+  border: none;
+}
+
+/* appleMacBookAir13 */
+.appleMacBookAir13 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.appleMacBookAir13:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.appleMacBookAir13:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.appleMacBookAir13 .contentappleMacBookAir13 {
+ width: 1440px;
+  height: 900px;
+ 
+  border: none;
+}
+
+/* appleMacBookPro13 */
+.appleMacBookPro13 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 1280px;
+  height: 800px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.appleMacBookPro13:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.appleMacBookPro13:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.appleMacBookPro13 .contentappleMacBookPro13 {
+   width: 1280px;
+  height: 800px;
+ 
+  border: none;
+  
+  
+}/* appleMacBookPro15 */
+.appleMacBookPro15 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.appleMacBookPro15:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.appleMacBookPro15:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.appleMacBookPro15 .contentappleMacBookPro15 {
+  width: 1440px;
+  height: 900px;
+ 
+  border: none;
+}
+
+/* appleMacBookPro17 */
+.appleMacBookPro17 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: relative;
+  width: 1920px;
+  height: 1200px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #595959;
+  border-width: 24px 24px 80px;
+  background-color: white;
+
+}
+
+/* The keyboard of the laptop */
+.appleMacBookPro17:after {
+  
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: white;
+  border-radius: 6px;
+  
+ 
+}
+
+/* The top of the keyboard */
+.appleMacBookPro17:before {
+  
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.appleMacBookPro17 .contentappleMacBookPro17 {
+    width: 1920px;
+  height: 1200px;
+ 
+  border: none;
+}
+
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .contentSmartPhone {
+  width: 360px;
+  height: 640px;
+  background: white;
+}
+
+/* iPhone Style Elements */
+
+
+/* iPhone12ProMax */
+.iPhone12ProMax {
+  position: relative;
+  width: 428px;
+  height: 926px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone12ProMax:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone12ProMax:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone12ProMax .contentiPhone12ProMax {
+  width: 428px;
+  height: 926px;
+  background: white;
+}
+
+/* iPhone12Pro */
+.iPhone12Pro {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone12Pro:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone12Pro:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone12Pro .contentiPhone12Pro {
+  width: 390px;
+  height: 844px;
+  background: white;
+}
+
+
+/* iPhone12 */
+.iPhone12 {
+  position: relative;
+  width: 414px;
+  height: 895px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone12:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone12:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone12 .contentiPhone12 {
+  width: 414px;
+  height: 895px;
+  background: white;
+}
+
+
+/* iPhone11 */
+.iPhone11 {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone11:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone11:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone11 .contentiPhone11 {
+  width: 390px;
+  height: 844px;
+  background: white;
+}
+
+
+/* iPhoneXR */
+.iPhoneXR {
+  position: relative;
+  width: 414px;
+  height: 896px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhoneXR:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhoneXR:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhoneXR .contentiPhoneXR {
+  width: 414px;
+  height: 896px;
+  background: white;
+}
+
+
+/* iPhoneXS */
+.iPhoneXS {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhoneXS:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhoneXS:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhoneXS .contentiPhoneXS {
+  width: 375px;
+  height: 812px;
+  background: white;
+}
+
+
+/* iPhoneXSMax */
+.iPhoneXSMax {
+  position: relative;
+  width: 414px;
+  height: 896px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhoneXSMax:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhoneXSMax:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhoneXSMax .contentiPhoneXSMax {
+  width: 414px;
+  height: 896px;
+  background: white;
+}
+
+
+
+/* iPhoneX */
+.iPhoneX {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhoneX:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhoneX:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhoneX .contentiPhoneX {
+  width: 375px;
+  height: 812px;
+  background: white;
+}
+
+
+/* iPhone8Plus */
+.iPhone8Plus {
+  position: relative;
+  width: 414px;
+  height: 736px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone8Plus:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone8Plus:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone8Plus .contentiPhone8Plus {
+  width: 414px;
+  height: 736px;
+  background: white;
+}
+
+
+/* iPhone8 */
+.iPhone8 {
+  position: relative;
+  width: 375px;
+  height: 667px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone8:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone8:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone8 .contentiPhone8 {
+  width: 375px;
+  height: 667px;
+  background: white;
+}
+
+
+/* iPhone7Plus */
+.iPhone7Plus {
+  position: relative;
+  width: 414px;
+  height: 736px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone7Plus:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone7Plus:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone7Plus .contentiPhone7Plus {
+  width: 414px;
+  height: 736px;
+  background: white;
+}
+
+
+/* iPhone7 */
+.iPhone7 {
+  position: relative;
+  width: 375px;
+  height: 667px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone7:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone7:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone7 .contentiPhone7 {
+  width: 375px;
+  height: 667px;
+  background: white;
+}
+
+
+/* iPhone6Plus */
+.iPhone6Plus {
+  position: relative;
+  width: 414px;
+  height: 736px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone6Plus:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone6Plus:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone6Plus .contentiPhone6Plus {
+  width: 414px;
+  height: 736px;
+  background: white;
+}
+
+
+/* iPhone6 */
+.iPhone6 {
+  position: relative;
+  width: 375px;
+  height: 667px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone6:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone6:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone6 .contentiPhone6 {
+  width: 375px;
+  height: 667px;
+  background: white;
+}
+
+
+/* iPhone5*/
+.iPhone5 {
+  position: relative;
+  width: 320px;
+  height: 568px;
+  margin: auto;
+  border: 16px #595959 solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.iPhone5:before {
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.iPhone5:after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.iPhone5 .contentiPhone5 {
+  width: 320px;
+  height: 568px;
+  background: white;
+}
+
+/* General button style */
+.btn {
+	border: none;
+	font-family: 'Lato';
+	font-size: 12px;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 5px 5px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+	font-family: 'FontAwesome';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* Icon separator */
+.btn-sep {
+	padding:10px 24px 10px 48px;
+}
+
+.btn-sep:before {
+	background: rgba(0,0,0,0.15);
+}
+
+/* Button 1 */
+.btn-1 {
+	background: #3498db;
+	color: #fff;
+}
+
+.btn-1:hover {
+	background: #2980b9;
+}
+
+.btn-1:active {
+	background: #2980b9;
+	top: 2px;
+}
+
+.btn-1:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 100%;
+	width: 40px;
+}
+
+/* Button 2 */
+.btn-2 {
+	background: #2ecc71;
+	color: #fff;
+}
+
+.btn-2:hover {
+	background: #27ae60;
+}
+
+.btn-2:active {
+	background: #27ae60;
+	top: 2px;
+}
+
+.btn-2:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 100%;
+	width: 40px;
+}
+
+/* Button 3 */
+.btn-3 {
+	background: #e74c3c;
+	color: #fff;
+}
+
+.btn-3:hover {
+	background: #c0392b;
+}
+
+.btn-3:active {
+	background: #c0392b;
+	top: 2px;
+}
+
+.btn-3:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 100%;
+	width: 40px;
+}
+
+/* Button 3 */
+.btn-4 {
+	background: #34495e;
+	color: #fff;
+}
+
+.btn-4:hover {
+	background: #2c3e50;
+}
+
+.btn-4:active {
+	background: #2c3e50;
+	top: 2px;
+}
+
+.btn-4:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 100%;
+	width: 40px;
+}
+
+/* Icons */
+
+.icon-cart:before {
+	content: "\f07a";
+}
+
+.icon-heart:before {
+	content: "\f55a";
+}
+
+.icon-info:before {
+	content: "\f05a";
+}
+
+.icon-send:before {
+	content: "\f1d8";
+}
+.icon-mobile:before{
+content:"\f10b";
+}
+.fa-tablet:before{
+content:"\f10a";
+}
+.fa-laptop:before
+{
+content:"\f109";
+}
+
+</style>
+</head>
+<body>
+
+
+<div align="center">
+<p><span style="font-family:Trebuchet MS;font-size:50px;letter-spacing:-2px;text-transform:uppercase;color:white;">Acid</span> <span style="font-family:Trebuchet MS;font-size:25px;letter-spacing:-2px;text-transform:lowercase;color:white;"> on </span>
+ <span style="font-family:Trebuchet MS;font-size:50px;letter-spacing:-2px;text-transform:uppercase;color:white;">Litmus</span></p>
+<p style="font-family:Trebuchet MS;font-size:20px;color:white;padding-bottom:30px;">A very Simple way to Test your Emails</p>
+
+<textarea  id="writtenHTML" autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" placeholder="Please enter your HTML here..." style="font-family:Courier New;color:#A82FBE;font-size:17px;border-color:#A82FBE;"></textarea></td>
+<div id = "mobiles">
+<p style="font-family:Trebuchet MS;font-size:20px;color:white;padding-bottom:5px;">iPhones</p>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone12ProMax()" type="button">iPhone 12 Pro Max</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone12Pro()" type="button">iPhone 12 Pro</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone12()" type="button">iPhone 12</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone11()" type="button">iPhone 11</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhoneXR()" type="button">iPhone XR</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhoneXS()" type="button">iPhone XS</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhoneXSMax()" type="button">iPhone XS Max</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhoneX()" type="button">iPhone X</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone8Plus()" type="button">iPhone 8 Plus</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone8()" type="button">iPhone 8</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone7Plus()" type="button">iPhone 7 Plus</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone7()" type="button">iPhone 7</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone6Plus()" type="button">iPhone 6 Plus/6S Plus</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone6()" type="button">iPhone 6/6S</button>
+<button  class="btn btn-1 btn-sep icon-mobile" onclick="iPhone5()" type="button">iPhone 5</button>
+
+<br/>
+</div>
+<div id="tablets">
+<p style="font-family:Trebuchet MS;font-size:20px;color:white;padding-bottom:5px;">Tablets/iPads</p>
+<button class="btn btn-2 btn-sep fa-tablet" onclick="iPadPro()" type="button">iPad Pro</button>
+<button class="btn btn-2 btn-sep fa-tablet" onclick="iPadThirdAndFourthGeneration()" type="button">iPad Third & Fourth Generation</button>
+<button class="btn btn-2 btn-sep fa-tablet" onclick="iPadAir1And2()" type="button">iPad Air 1 & 2</button>
+<button class="btn btn-2 btn-sep fa-tablet" onclick="iPadMini2And3()" type="button">iPad Mini 2 & 3</button>
+<button class="btn btn-2 btn-sep fa-tablet" onclick="iPadMini()" type="button">iPad Mini</button>
+<button class="btn btn-2 btn-sep fa-tablet" onclick="nexus9()" type="button">Nexus9</button>
+<button class="btn btn-2 btn-sep fa-tablet" onclick="nexus7()" type="button">Nexus 7 (2013)</button>
+<button class="btn btn-2 btn-sep fa-tablet" onclick="samsungGalaxyTab10()" type="button">Samsung Galaxy Tab 10</button>
+<button class="btn btn-2 btn-sep fa-tablet" onclick="chromebookPixel()" type="button">Chromebook Pixel</button>
+</br>
+</div>
+
+<div id="laptops">
+  <p style="font-family:Trebuchet MS;font-size:20px;color:white;padding-bottom:5px;">Laptops/PCs</p>
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="appleThunderboltDisplay27()" type="button">Apple Thunderbolt Display 27</button>
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="appleCinemaDisplay30()" type="button">Apple Cinema Display 30</button>
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="googleChromebookPixel()" type="button">Google Chromebook Pixel</button>
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="appleiMac21()" type="button">Apple iMac 21.5-inch</button>
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="appleiMac27()" type="button">Apple iMac 27-inch</button>
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="appleMacBookAir11()" type="button">Apple MacBook Air 11-inch</button>
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="appleMacBookAir13()" type="button">Apple MacBook Air 13-inch</button>
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="appleMacBookPro13()" type="button">Apple MacBook Pro 13-inch</button>
+  
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="appleMacBookPro15()" type="button">Apple MacBook Pro 15-inch</button>
+  <button  class="btn btn-3 btn-sep fa-laptop" onclick="appleMacBookPro17()" type="button">Apple MacBook Pro 17-inch</button>
+</br>
+</div>
+
+
+
+</div>
+<br/>
+<br/>
+<br/>
+<!-- iPhones  - START -->
+<!-- Demo Start -->
+<div class="smartphone" id="idSmartPhone" style="display:none;">
+  <div class="contentSmartPhone">
+    <iframe id="preview" style="width:100%;border:none;height:100%"></iframe>
+  </div>
+</div>
+<!-- Demo End -->
+<!-- iPhone12ProMax -->
+<div class="iPhone12ProMax" id="iPhone12ProMax" style="display:none;">
+  <div class="contentiPhone12ProMax">
+    <iframe id="previewiPhone12ProMax" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone12ProMax</p>
+  </div>
+</div>
+<!-- iPhone12Pro -->
+<div class="iPhone12Pro" id="iPhone12Pro" style="display:none;">
+  <div class="contentiPhone12Pro">
+    <iframe id="previewiPhone12Pro" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone12Pro</p>
+  </div>
+</div>
+<!-- iPhone12 -->
+<div class="iPhone12" id="iPhone12" style="display:none;">
+  <div class="contentiPhone12">
+    <iframe id="previewiPhone12" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone12</p>
+  </div>
+</div>
+<!-- iPhone11 -->
+<div class="iPhone11" id="iPhone11" style="display:none;">
+  <div class="contentiPhone11">
+    <iframe id="previewiPhone11" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone11</p>
+  </div>
+</div>
+<!-- iPhoneXR -->
+<div class="iPhoneXR" id="iPhoneXR" style="display:none;">
+  <div class="contentiPhoneXR">
+    <iframe id="previewiPhoneXR" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhoneXR</p>
+  </div>
+</div>
+<!-- iPhoneXS -->
+<div class="iPhoneXS" id="iPhoneXS" style="display:none;">
+  <div class="contentiPhoneXS">
+    <iframe id="previewiPhoneXS" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhoneXS</p>
+  </div>
+</div>
+<!-- iPhoneXSMax -->
+<div class="iPhoneXSMax" id="iPhoneXSMax" style="display:none;">
+  <div class="contentiPhoneXSMax">
+    <iframe id="previewiPhoneXSMax" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhoneXSMax</p>
+  </div>
+</div>
+<!-- iPhoneX -->
+<div class="iPhoneX" id="iPhoneX" style="display:none;">
+  <div class="contentiPhoneX">
+    <iframe id="previewiPhoneX" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhoneX</p>
+  </div>
+</div>
+<!-- iPhone8Plus -->
+<div class="iPhone8Plus" id="iPhone8Plus" style="display:none;">
+  <div class="contentiPhone8Plus">
+    <iframe id="previewiPhone8Plus" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone8Plus</p>
+  </div>
+</div>
+<!-- iPhone8 -->
+<div class="iPhone8" id="iPhone8" style="display:none;">
+  <div class="contentiPhone8">
+    <iframe id="previewiPhone8" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone8</p>
+  </div>
+</div>
+<!-- iPhone7Plus -->
+<div class="iPhone7Plus" id="iPhone7Plus" style="display:none;">
+  <div class="contentiPhone7Plus">
+    <iframe id="previewiPhone7Plus" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone7Plus</p>
+  </div>
+</div>
+<!-- iPhone7 -->
+<div class="iPhone7" id="iPhone7" style="display:none;">
+  <div class="contentiPhone7">
+    <iframe id="previewiPhone7" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone7</p>
+  </div>
+</div>
+<!-- iPhone6Plus -->
+<div class="iPhone6Plus" id="iPhone6Plus" style="display:none;">
+  <div class="contentiPhone6Plus">
+    <iframe id="previewiPhone6Plus" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone6Plus</p>
+  </div>
+</div>
+<!-- iPhone6 -->
+<div class="iPhone6" id="iPhone6" style="display:none;">
+  <div class="contentiPhone6">
+    <iframe id="previewiPhone6" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone6</p>
+  </div>
+</div>
+<!-- iPhone5 -->
+<div class="iPhone5" id="iPhone5" style="display:none;">
+  <div class="contentiPhone5">
+    <iframe id="previewiPhone5" style="width:100%;border:none;height:100%"></iframe>
+    <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">iPhone5</p>
+  </div>
+</div>
+
+<!-- iPhones  - END -->
+
+<!--Demo Tablet - Start -->
+<div class="tablet" id="idTablet" style="display:none;">
+  <div class="content">
+    <iframe id="previewTablet" style="width:100%;border:none;height:100%" ></iframe>
+  </div>
+</div>
+<!--Demo Tablet - End -->
+
+
+<!-- iPadPro -->
+<div class="iPadPro" id="iPadPro" style="display:none;">
+  <div class="contentiPadPro">
+    
+    <iframe id="previewiPadPro" style="width:100%;border:none;height:100%" ></iframe>
+    <p style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">iPad Pro</p>
+  </div>
+</div>
+
+
+<!-- iPadThirdAndFourthGeneration -->
+<div class="iPadThirdAndFourthGeneration" id="iPadThirdAndFourthGeneration" style="display:none;">
+  <div class="contentiPadThirdAndFourthGeneration">
+    <iframe id="previewiPadThirdAndFourthGeneration" style="width:100%;border:none;height:100%" ></iframe>
+    <p style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">iPad Third And Fourth Generation</p>
+  </div>
+</div>
+
+
+<!-- iPadAir1And2 -->
+<div class="iPadAir1And2" id="iPadAir1And2" style="display:none;">
+  <div class="contentiPadAir1And2">
+    <iframe id="previewiPadAir1And2" style="width:100%;border:none;height:100%" ></iframe>
+    <p style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">iPad Air 1 And 2</p>
+  </div>
+</div>
+
+
+<!-- iPadMini2And3 -->
+<div class="iPadMini2And3" id="iPadMini2And3" style="display:none;">
+  <div class="contentiPadMini2And3">
+    <iframe id="previewiPadMini2And3" style="width:100%;border:none;height:100%" ></iframe>
+    <p style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">iPadMini 2 And 3</p>
+  </div>
+</div>
+
+
+<!-- iPadMini -->
+<div class="iPadMini" id="iPadMini" style="display:none;">
+  <div class="contentiPadMini">
+    <iframe id="previewiPadMini" style="width:100%;border:none;height:100%" ></iframe>
+    <p style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">iPad Mini</p>
+  </div>
+</div>
+
+
+<!-- nexus9 -->
+<div class="nexus9" id="nexus9" style="display:none;">
+  <div class="contentnexus9">
+    <iframe id="previewnexus9" style="width:100%;border:none;height:100%" ></iframe>
+    <p style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Nexus 9</p>
+  </div>
+</div>
+<!-- nexus7 -->
+<div class="nexus7" id="nexus7" style="display:none;">
+  <div class="contentnexus7">
+    <iframe id="previewnexus7" style="width:100%;border:none;height:100%" ></iframe>
+    <p style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Nexus 7</p>
+  </div>
+</div>
+
+
+<!-- samsungGalaxyTab10 -->
+<div class="samsungGalaxyTab10" id="samsungGalaxyTab10" style="display:none;">
+  <div class="contentsamsungGalaxyTab10">
+    <iframe id="previewsamsungGalaxyTab10" style="width:100%;border:none;height:100%" ></iframe>
+    <p style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Samsung Galaxy Tab 10</p>
+  </div>
+</div>
+
+
+<!-- chromebookPixel -->
+<div class="chromebookPixel" id="chromebookPixel" style="display:none;">
+  <div class="contentchromebookPixel">
+    <iframe id="previewchromebookPixel" style="width:100%;border:none;height:100%" ></iframe>
+    <p style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Chromebook Pixel</p>
+  </div>
+</div>
+
+<!-- Laptop Demo - Start -->
+<div class="laptop" id="idPC" style="display:none;">
+  <div class="contentPC">
+    <iframe id="previewPC" style="width:100%;border:none;height:100%" ></iframe>
+  </div>
+</div>
+<!-- Laptop Demo - End -->
+
+
+<!-- appleThunderboltDisplay27 -->
+<div class="appleThunderboltDisplay27" id="appleThunderboltDisplay27" style="display:none;">
+  <div class="contentappleThunderboltDisplay27">
+    <iframe id="previewappleThunderboltDisplay27" style="width:100%;border:none;height:100%" ></iframe>
+	 <p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Apple Thunderbolt 30'</p>
+  </div>
+</div>
+
+
+
+<!-- appleCinemaDisplay30 -->
+<div class="appleCinemaDisplay30" id="appleCinemaDisplay30" style="display:none;">
+  <div class="contentappleCinemaDisplay30">
+    <iframe id="previewappleCinemaDisplay30" style="width:100%;border:none;height:100%" ></iframe>
+	<p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Apple Cinema Display 30'</p>
+  </div>
+</div>
+
+
+
+<!-- googleChromebookPixel -->
+<div class="googleChromebookPixel" id="googleChromebookPixel" style="display:none;">
+  <div class="contentgoogleChromebookPixel">
+    <iframe id="previewgoogleChromebookPixel" style="width:100%;border:none;height:100%" ></iframe>
+	<p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Google Chromebook Pixel</p>
+  </div>
+</div>
+
+
+
+<!-- appleiMac21 -->
+<div class="appleiMac21" id="appleiMac21" style="display:none;">
+  <div class="contentappleiMac21">
+    <iframe id="previewappleiMac21" style="width:100%;border:none;height:100%" ></iframe>
+	<p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Apple iMac 21'</p>
+  </div>
+</div>
+
+
+<!-- appleiMac27 -->
+<div class="appleiMac27" id="appleiMac27" style="display:none;">
+  <div class="contentappleiMac27">
+    <iframe id="previewappleiMac27" style="width:100%;border:none;height:100%" ></iframe>
+	<p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Apple iMac 27'</p>
+  </div>
+</div>
+
+
+<!-- appleMacBookAir11 -->
+<div class="appleMacBookAir11" id="appleMacBookAir11" style="display:none;">
+  <div class="contentappleMacBookAir11">
+    <iframe id="previewappleMacBookAir11" style="width:100%;border:none;height:100%" ></iframe>
+	<p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Apple MacBook Air 11'</p>
+  </div>
+</div>
+
+
+<!-- appleMacBookAir13 -->
+<div class="appleMacBookAir13" id="appleMacBookAir13" style="display:none;">
+  <div class="contentappleMacBookAir13">
+    <iframe id="previewappleMacBookAir13" style="width:100%;border:none;height:100%" ></iframe>
+	<p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Apple MacBook Air 13'</p>
+  </div>
+</div>
+
+
+<!-- appleMacBookPro13 -->
+<div class="appleMacBookPro13" id="appleMacBookPro13" style="display:none;">
+  <div class="contentappleMacBookPro13">
+    <iframe id="previewappleMacBookPro13" style="width:100%;border:none;height:100%" ></iframe>
+	<p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Apple MacBook Pro 13'</p>
+  </div>
+</div>
+
+
+<!-- appleMacBookPro15 -->
+<div class="appleMacBookPro15" id="appleMacBookPro15" style="display:none;">
+  <div class="contentappleMacBookPro15">
+    <iframe id="previewappleMacBookPro15" style="width:100%;border:none;height:100%" ></iframe>
+	<p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Apple MacBook Pro 15'</p>
+  </div>
+</div>
+
+
+<!-- appleMacBookPro17 -->
+<div class="appleMacBookPro17" id="appleMacBookPro17" style="display:none;">
+  <div class="contentappleMacBookPro17">
+    <iframe id="previewappleMacBookPro17" style="width:100%;border:none;height:100%" ></iframe>
+	<p style="text-align:center;font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;padding-left:10px;">Apple MacBook Pro 17'</p>
+  </div>
+</div>
+<div id="footer" align="center">
+<p  style="font-family:Trebuchet MS;font-size:15px;color:white;padding-bottom:30px;">&#169; An ACS GMO team Initiative</p>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

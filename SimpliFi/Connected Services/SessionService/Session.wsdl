@@ -1,0 +1,1353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:xtk:session" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:xtk:session" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:xtk:session">
+      <s:complexType name="Element">
+        <s:sequence>
+          <s:any processContents="lax" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewInstance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewInstanceResponse" type="tns:Element" />
+      <s:element name="Duplicate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="tns:Element" />
+            <s:element minOccurs="1" maxOccurs="1" name="pkPk" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicateResponse" type="tns:Element" />
+      <s:element name="DuplicateWithMappingId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="tns:Element" />
+            <s:element minOccurs="1" maxOccurs="1" name="pkPk" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicateWithMappingIdResponse" type="tns:Element" />
+      <s:element name="DuplicateTo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="tns:Element" />
+            <s:element minOccurs="1" maxOccurs="1" name="pkPk" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pkFolder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicateToResponse" type="tns:Element" />
+      <s:element name="ApplyDuplicateRules">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplyDuplicateRulesResponse" type="tns:Element" />
+      <s:element name="SetDefaults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDefaultsResponse" type="tns:Element" />
+      <s:element name="SetDefaultValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="tns:Element" />
+            <s:element minOccurs="1" maxOccurs="1" name="strXpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDefaultValuesResponse" type="tns:Element" />
+      <s:element name="Load">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="tns:Element" />
+            <s:element minOccurs="1" maxOccurs="1" name="pkPk" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadResponse" type="tns:Element" />
+      <s:element name="LoadIfExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="tns:Element" />
+            <s:element minOccurs="1" maxOccurs="1" name="pkPk" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadIfExistsResponse" type="tns:Element" />
+      <s:element name="LoadAsText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pkPk" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAsTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrContent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Remove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveResponse" type="tns:Element" />
+      <s:element name="GetPkList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="entity" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPkListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ppklPkList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Write">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="domDoc" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteResponse">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteCollection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="domDoc" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteCollectionResponse">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCollection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strSchema" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="elemWhere" type="tns:Element" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIgnoreDeleteStatus" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCollectionResponse">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportCollection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="domDoc" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportCollectionResponse">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strPkList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pdomDoc" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityIfMoreRecent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strPk" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strMd5" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bMustExist" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityIfMoreRecentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pdomDoc" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDirtyCacheEntities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="domCacheEntities" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDirtyCacheEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pdomDirtyEntities" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveApplicationMenus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveApplicationMenusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pdomDoc" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strSchema" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pdomDoc" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strLogin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="elemParameters" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrSessionToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pSessionInfo" type="tns:Element" />
+            <s:element minOccurs="1" maxOccurs="1" name="pstrSecurityToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BearerTokenLogon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strBearerToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BearerTokenLogonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrSessionToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pSessionInfo" type="tns:Element" />
+            <s:element minOccurs="1" maxOccurs="1" name="pstrSecurityToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pUserInfo" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logoff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoffResponse">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="KillSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KillSessionResponse">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCnx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestCnxResponse">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strOldPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strNewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ptmServerTime" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServerShutdown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServerShutdownResponse">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pbtType" type="s:byte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrIdList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewIdsEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="strSequence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewIdsExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrIdList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCnxInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCnxInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pdomCnxInfo" type="tns:Element" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FormatDataPolicy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strDataPolicy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FormatDataPolicyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Encrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strDecrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrEncrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReEncryptPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strOldPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReEncryptPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrNewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strDecrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrEncrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptServerPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strDecrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptServerPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrEncrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HashPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strDecrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HashPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrEncrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Diff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sessiontoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pkPk" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DiffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pstrOriginal" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pstrCurrent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NewInstanceIn">
+    <wsdl:part name="parameters" element="tns:NewInstance" />
+  </wsdl:message>
+  <wsdl:message name="NewInstanceOut">
+    <wsdl:part name="parameters" element="tns:NewInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuplicateIn">
+    <wsdl:part name="parameters" element="tns:Duplicate" />
+  </wsdl:message>
+  <wsdl:message name="DuplicateOut">
+    <wsdl:part name="parameters" element="tns:DuplicateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuplicateWithMappingIdIn">
+    <wsdl:part name="parameters" element="tns:DuplicateWithMappingId" />
+  </wsdl:message>
+  <wsdl:message name="DuplicateWithMappingIdOut">
+    <wsdl:part name="parameters" element="tns:DuplicateWithMappingIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuplicateToIn">
+    <wsdl:part name="parameters" element="tns:DuplicateTo" />
+  </wsdl:message>
+  <wsdl:message name="DuplicateToOut">
+    <wsdl:part name="parameters" element="tns:DuplicateToResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplyDuplicateRulesIn">
+    <wsdl:part name="parameters" element="tns:ApplyDuplicateRules" />
+  </wsdl:message>
+  <wsdl:message name="ApplyDuplicateRulesOut">
+    <wsdl:part name="parameters" element="tns:ApplyDuplicateRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDefaultsIn">
+    <wsdl:part name="parameters" element="tns:SetDefaults" />
+  </wsdl:message>
+  <wsdl:message name="SetDefaultsOut">
+    <wsdl:part name="parameters" element="tns:SetDefaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDefaultValuesIn">
+    <wsdl:part name="parameters" element="tns:SetDefaultValues" />
+  </wsdl:message>
+  <wsdl:message name="SetDefaultValuesOut">
+    <wsdl:part name="parameters" element="tns:SetDefaultValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadIn">
+    <wsdl:part name="parameters" element="tns:Load" />
+  </wsdl:message>
+  <wsdl:message name="LoadOut">
+    <wsdl:part name="parameters" element="tns:LoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadIfExistsIn">
+    <wsdl:part name="parameters" element="tns:LoadIfExists" />
+  </wsdl:message>
+  <wsdl:message name="LoadIfExistsOut">
+    <wsdl:part name="parameters" element="tns:LoadIfExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAsTextIn">
+    <wsdl:part name="parameters" element="tns:LoadAsText" />
+  </wsdl:message>
+  <wsdl:message name="LoadAsTextOut">
+    <wsdl:part name="parameters" element="tns:LoadAsTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveIn">
+    <wsdl:part name="parameters" element="tns:Remove" />
+  </wsdl:message>
+  <wsdl:message name="RemoveOut">
+    <wsdl:part name="parameters" element="tns:RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPkListIn">
+    <wsdl:part name="parameters" element="tns:GetPkList" />
+  </wsdl:message>
+  <wsdl:message name="GetPkListOut">
+    <wsdl:part name="parameters" element="tns:GetPkListResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteIn">
+    <wsdl:part name="parameters" element="tns:Write" />
+  </wsdl:message>
+  <wsdl:message name="WriteOut">
+    <wsdl:part name="parameters" element="tns:WriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteCollectionIn">
+    <wsdl:part name="parameters" element="tns:WriteCollection" />
+  </wsdl:message>
+  <wsdl:message name="WriteCollectionOut">
+    <wsdl:part name="parameters" element="tns:WriteCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCollectionIn">
+    <wsdl:part name="parameters" element="tns:DeleteCollection" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCollectionOut">
+    <wsdl:part name="parameters" element="tns:DeleteCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportCollectionIn">
+    <wsdl:part name="parameters" element="tns:ImportCollection" />
+  </wsdl:message>
+  <wsdl:message name="ImportCollectionOut">
+    <wsdl:part name="parameters" element="tns:ImportCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImagesIn">
+    <wsdl:part name="parameters" element="tns:GetImages" />
+  </wsdl:message>
+  <wsdl:message name="GetImagesOut">
+    <wsdl:part name="parameters" element="tns:GetImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityIfMoreRecentIn">
+    <wsdl:part name="parameters" element="tns:GetEntityIfMoreRecent" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityIfMoreRecentOut">
+    <wsdl:part name="parameters" element="tns:GetEntityIfMoreRecentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDirtyCacheEntitiesIn">
+    <wsdl:part name="parameters" element="tns:GetDirtyCacheEntities" />
+  </wsdl:message>
+  <wsdl:message name="GetDirtyCacheEntitiesOut">
+    <wsdl:part name="parameters" element="tns:GetDirtyCacheEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveApplicationMenusIn">
+    <wsdl:part name="parameters" element="tns:GetActiveApplicationMenus" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveApplicationMenusOut">
+    <wsdl:part name="parameters" element="tns:GetActiveApplicationMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultEntityIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultEntityOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogonIn">
+    <wsdl:part name="parameters" element="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="LogonOut">
+    <wsdl:part name="parameters" element="tns:LogonResponse" />
+  </wsdl:message>
+  <wsdl:message name="BearerTokenLogonIn">
+    <wsdl:part name="parameters" element="tns:BearerTokenLogon" />
+  </wsdl:message>
+  <wsdl:message name="BearerTokenLogonOut">
+    <wsdl:part name="parameters" element="tns:BearerTokenLogonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoffIn">
+    <wsdl:part name="parameters" element="tns:Logoff" />
+  </wsdl:message>
+  <wsdl:message name="LogoffOut">
+    <wsdl:part name="parameters" element="tns:LogoffResponse" />
+  </wsdl:message>
+  <wsdl:message name="KillSessionIn">
+    <wsdl:part name="parameters" element="tns:KillSession" />
+  </wsdl:message>
+  <wsdl:message name="KillSessionOut">
+    <wsdl:part name="parameters" element="tns:KillSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestCnxIn">
+    <wsdl:part name="parameters" element="tns:TestCnx" />
+  </wsdl:message>
+  <wsdl:message name="TestCnxOut">
+    <wsdl:part name="parameters" element="tns:TestCnxResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerTimeIn">
+    <wsdl:part name="parameters" element="tns:GetServerTime" />
+  </wsdl:message>
+  <wsdl:message name="GetServerTimeOut">
+    <wsdl:part name="parameters" element="tns:GetServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServerShutdownIn">
+    <wsdl:part name="parameters" element="tns:ServerShutdown" />
+  </wsdl:message>
+  <wsdl:message name="ServerShutdownOut">
+    <wsdl:part name="parameters" element="tns:ServerShutdownResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionIn">
+    <wsdl:part name="parameters" element="tns:GetOption" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionOut">
+    <wsdl:part name="parameters" element="tns:GetOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewIdsIn">
+    <wsdl:part name="parameters" element="tns:GetNewIds" />
+  </wsdl:message>
+  <wsdl:message name="GetNewIdsOut">
+    <wsdl:part name="parameters" element="tns:GetNewIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewIdsExIn">
+    <wsdl:part name="parameters" element="tns:GetNewIdsEx" />
+  </wsdl:message>
+  <wsdl:message name="GetNewIdsExOut">
+    <wsdl:part name="parameters" element="tns:GetNewIdsExResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCnxInfoIn">
+    <wsdl:part name="parameters" element="tns:GetCnxInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCnxInfoOut">
+    <wsdl:part name="parameters" element="tns:GetCnxInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="FormatDataPolicyIn">
+    <wsdl:part name="parameters" element="tns:FormatDataPolicy" />
+  </wsdl:message>
+  <wsdl:message name="FormatDataPolicyOut">
+    <wsdl:part name="parameters" element="tns:FormatDataPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncryptIn">
+    <wsdl:part name="parameters" element="tns:Encrypt" />
+  </wsdl:message>
+  <wsdl:message name="EncryptOut">
+    <wsdl:part name="parameters" element="tns:EncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReEncryptPasswordIn">
+    <wsdl:part name="parameters" element="tns:ReEncryptPassword" />
+  </wsdl:message>
+  <wsdl:message name="ReEncryptPasswordOut">
+    <wsdl:part name="parameters" element="tns:ReEncryptPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncryptPasswordIn">
+    <wsdl:part name="parameters" element="tns:EncryptPassword" />
+  </wsdl:message>
+  <wsdl:message name="EncryptPasswordOut">
+    <wsdl:part name="parameters" element="tns:EncryptPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncryptServerPasswordIn">
+    <wsdl:part name="parameters" element="tns:EncryptServerPassword" />
+  </wsdl:message>
+  <wsdl:message name="EncryptServerPasswordOut">
+    <wsdl:part name="parameters" element="tns:EncryptServerPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="HashPasswordIn">
+    <wsdl:part name="parameters" element="tns:HashPassword" />
+  </wsdl:message>
+  <wsdl:message name="HashPasswordOut">
+    <wsdl:part name="parameters" element="tns:HashPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DiffIn">
+    <wsdl:part name="parameters" element="tns:Diff" />
+  </wsdl:message>
+  <wsdl:message name="DiffOut">
+    <wsdl:part name="parameters" element="tns:DiffResponse" />
+  </wsdl:message>
+  <wsdl:portType name="sessionMethodsSoap">
+    <wsdl:operation name="NewInstance">
+      <wsdl:input message="tns:NewInstanceIn" />
+      <wsdl:output message="tns:NewInstanceOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Duplicate">
+      <wsdl:input message="tns:DuplicateIn" />
+      <wsdl:output message="tns:DuplicateOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuplicateWithMappingId">
+      <wsdl:input message="tns:DuplicateWithMappingIdIn" />
+      <wsdl:output message="tns:DuplicateWithMappingIdOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuplicateTo">
+      <wsdl:input message="tns:DuplicateToIn" />
+      <wsdl:output message="tns:DuplicateToOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyDuplicateRules">
+      <wsdl:input message="tns:ApplyDuplicateRulesIn" />
+      <wsdl:output message="tns:ApplyDuplicateRulesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDefaults">
+      <wsdl:input message="tns:SetDefaultsIn" />
+      <wsdl:output message="tns:SetDefaultsOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDefaultValues">
+      <wsdl:input message="tns:SetDefaultValuesIn" />
+      <wsdl:output message="tns:SetDefaultValuesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Load">
+      <wsdl:input message="tns:LoadIn" />
+      <wsdl:output message="tns:LoadOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadIfExists">
+      <wsdl:input message="tns:LoadIfExistsIn" />
+      <wsdl:output message="tns:LoadIfExistsOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAsText">
+      <wsdl:input message="tns:LoadAsTextIn" />
+      <wsdl:output message="tns:LoadAsTextOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <wsdl:input message="tns:RemoveIn" />
+      <wsdl:output message="tns:RemoveOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPkList">
+      <wsdl:input message="tns:GetPkListIn" />
+      <wsdl:output message="tns:GetPkListOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Write">
+      <wsdl:input message="tns:WriteIn" />
+      <wsdl:output message="tns:WriteOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteCollection">
+      <wsdl:input message="tns:WriteCollectionIn" />
+      <wsdl:output message="tns:WriteCollectionOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCollection">
+      <wsdl:input message="tns:DeleteCollectionIn" />
+      <wsdl:output message="tns:DeleteCollectionOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportCollection">
+      <wsdl:input message="tns:ImportCollectionIn" />
+      <wsdl:output message="tns:ImportCollectionOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImages">
+      <wsdl:input message="tns:GetImagesIn" />
+      <wsdl:output message="tns:GetImagesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityIfMoreRecent">
+      <wsdl:input message="tns:GetEntityIfMoreRecentIn" />
+      <wsdl:output message="tns:GetEntityIfMoreRecentOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirtyCacheEntities">
+      <wsdl:input message="tns:GetDirtyCacheEntitiesIn" />
+      <wsdl:output message="tns:GetDirtyCacheEntitiesOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveApplicationMenus">
+      <wsdl:input message="tns:GetActiveApplicationMenusIn" />
+      <wsdl:output message="tns:GetActiveApplicationMenusOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultEntity">
+      <wsdl:input message="tns:GetDefaultEntityIn" />
+      <wsdl:output message="tns:GetDefaultEntityOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logon">
+      <wsdl:input message="tns:LogonIn" />
+      <wsdl:output message="tns:LogonOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BearerTokenLogon">
+      <wsdl:input message="tns:BearerTokenLogonIn" />
+      <wsdl:output message="tns:BearerTokenLogonOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoIn" />
+      <wsdl:output message="tns:GetUserInfoOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logoff">
+      <wsdl:input message="tns:LogoffIn" />
+      <wsdl:output message="tns:LogoffOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KillSession">
+      <wsdl:input message="tns:KillSessionIn" />
+      <wsdl:output message="tns:KillSessionOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCnx">
+      <wsdl:input message="tns:TestCnxIn" />
+      <wsdl:output message="tns:TestCnxOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordIn" />
+      <wsdl:output message="tns:ChangePasswordOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerTime">
+      <wsdl:input message="tns:GetServerTimeIn" />
+      <wsdl:output message="tns:GetServerTimeOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServerShutdown">
+      <wsdl:input message="tns:ServerShutdownIn" />
+      <wsdl:output message="tns:ServerShutdownOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOption">
+      <wsdl:input message="tns:GetOptionIn" />
+      <wsdl:output message="tns:GetOptionOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewIds">
+      <wsdl:input message="tns:GetNewIdsIn" />
+      <wsdl:output message="tns:GetNewIdsOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewIdsEx">
+      <wsdl:input message="tns:GetNewIdsExIn" />
+      <wsdl:output message="tns:GetNewIdsExOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCnxInfo">
+      <wsdl:input message="tns:GetCnxInfoIn" />
+      <wsdl:output message="tns:GetCnxInfoOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FormatDataPolicy">
+      <wsdl:input message="tns:FormatDataPolicyIn" />
+      <wsdl:output message="tns:FormatDataPolicyOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <wsdl:input message="tns:EncryptIn" />
+      <wsdl:output message="tns:EncryptOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReEncryptPassword">
+      <wsdl:input message="tns:ReEncryptPasswordIn" />
+      <wsdl:output message="tns:ReEncryptPasswordOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptPassword">
+      <wsdl:input message="tns:EncryptPasswordIn" />
+      <wsdl:output message="tns:EncryptPasswordOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptServerPassword">
+      <wsdl:input message="tns:EncryptServerPasswordIn" />
+      <wsdl:output message="tns:EncryptServerPasswordOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HashPassword">
+      <wsdl:input message="tns:HashPasswordIn" />
+      <wsdl:output message="tns:HashPasswordOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Diff">
+      <wsdl:input message="tns:DiffIn" />
+      <wsdl:output message="tns:DiffOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="sessionMethodsSoap" type="tns:sessionMethodsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NewInstance">
+      <soap:operation soapAction="xtk:persist#NewInstance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Duplicate">
+      <soap:operation soapAction="xtk:persist#Duplicate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicateWithMappingId">
+      <soap:operation soapAction="xtk:persist#DuplicateWithMappingId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicateTo">
+      <soap:operation soapAction="xtk:persist#DuplicateTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyDuplicateRules">
+      <soap:operation soapAction="xtk:persist#ApplyDuplicateRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDefaults">
+      <soap:operation soapAction="xtk:persist#SetDefaults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDefaultValues">
+      <soap:operation soapAction="xtk:persist#SetDefaultValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Load">
+      <soap:operation soapAction="xtk:persist#Load" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadIfExists">
+      <soap:operation soapAction="xtk:persist#LoadIfExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAsText">
+      <soap:operation soapAction="xtk:persist#LoadAsText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <soap:operation soapAction="xtk:persist#Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPkList">
+      <soap:operation soapAction="xtk:persist#GetPkList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Write">
+      <soap:operation soapAction="xtk:persist#Write" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteCollection">
+      <soap:operation soapAction="xtk:persist#WriteCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCollection">
+      <soap:operation soapAction="xtk:persist#DeleteCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportCollection">
+      <soap:operation soapAction="xtk:persist#ImportCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImages">
+      <soap:operation soapAction="xtk:persist#GetImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityIfMoreRecent">
+      <soap:operation soapAction="xtk:persist#GetEntityIfMoreRecent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirtyCacheEntities">
+      <soap:operation soapAction="xtk:persist#GetDirtyCacheEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveApplicationMenus">
+      <soap:operation soapAction="xtk:persist#GetActiveApplicationMenus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultEntity">
+      <soap:operation soapAction="xtk:persist#GetDefaultEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logon">
+      <soap:operation soapAction="xtk:session#Logon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BearerTokenLogon">
+      <soap:operation soapAction="xtk:session#BearerTokenLogon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="xtk:session#GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logoff">
+      <soap:operation soapAction="xtk:session#Logoff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KillSession">
+      <soap:operation soapAction="xtk:session#KillSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCnx">
+      <soap:operation soapAction="xtk:session#TestCnx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="xtk:session#ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerTime">
+      <soap:operation soapAction="xtk:session#GetServerTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerShutdown">
+      <soap:operation soapAction="xtk:session#ServerShutdown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOption">
+      <soap:operation soapAction="xtk:session#GetOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewIds">
+      <soap:operation soapAction="xtk:session#GetNewIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewIdsEx">
+      <soap:operation soapAction="xtk:session#GetNewIdsEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnxInfo">
+      <soap:operation soapAction="xtk:session#GetCnxInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormatDataPolicy">
+      <soap:operation soapAction="xtk:session#FormatDataPolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <soap:operation soapAction="xtk:session#Encrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReEncryptPassword">
+      <soap:operation soapAction="xtk:session#ReEncryptPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptPassword">
+      <soap:operation soapAction="xtk:session#EncryptPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptServerPassword">
+      <soap:operation soapAction="xtk:session#EncryptServerPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HashPassword">
+      <soap:operation soapAction="xtk:session#HashPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Diff">
+      <soap:operation soapAction="xtk:session#Diff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XtkSession">
+    <wsdl:port name="sessionMethodsSoap" binding="tns:sessionMethodsSoap">
+      <soap:address location="https://triggercampaign-stage.corp.adobe.com/nl/jsp/soaprouter.jsp" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

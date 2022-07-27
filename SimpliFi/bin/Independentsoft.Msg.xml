@@ -1,0 +1,4501 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Independentsoft.Msg</name>
+    </assembly>
+    <members>
+        <member name="T:Independentsoft.IO.StructuredStorage.CompoundFile">
+            <summary>
+            Represents a file used to store data as virtual streams. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.#ctor">
+            <summary>
+            Initializes a new instance of the CompoundFile class.  
+            </summary>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the CompoundFile class based on the supplied file. 
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the CompoundFile class based on the supplied stream. 
+            </summary>
+            <param name="stream">A stream.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.Open(System.String)">
+            <summary>
+            Opens compound file from the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.Open(System.IO.Stream)">
+            <summary>
+            Opens compound file from the specified stream.
+            </summary>
+            <param name="stream">A stream.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.GetStream">
+            <summary>
+            Gets stream to read from this compound file.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.GetBytes">
+            <summary>
+            Gets buffer to read from this compound file.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.Save(System.String)">
+            <summary>
+            Saves this compound file to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.Save(System.String,System.Boolean)">
+            <summary>
+            Saves this compound file to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+            <param name="overwrite">True to overwrite existing file, otherwise false.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.CompoundFile.Save(System.IO.Stream)">
+            <summary>
+            Saves this compound file to the specified stream.
+            </summary>
+            <param name="stream">A stream.</param>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.CompoundFile.Root">
+            <summary>
+            Gets the root node.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.CompoundFile.MajorVersion">
+            <summary>
+            Gets or sets major version. Allowed values are 3 (512 bytes sector size) or 4 (4096 bytes sector size).
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.CompoundFile.SectorSize">
+            <summary>
+            Gets FAT sector size.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.CompoundFile.MiniSectorSize">
+            <summary>
+            Gets size of mini sectors.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.CompoundFile.FatSectorCount">
+            <summary>
+            Gets FAT sector count.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.CompoundFile.MiniStreamMaxSize">
+            <summary>
+            Gets maximum size of mini streams.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.CompoundFile.MiniFatSectorCount">
+            <summary>
+            Gets count of mini FAT sectors.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.CompoundFile.ClassId">
+            <summary>
+            Gets or sets compound file class ID.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.IO.StructuredStorage.DirectoryEntry">
+            <summary>
+            Represents a directory entry. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.DirectoryEntry.CompareTo(System.Object)">
+            <summary>
+            Compares this instance with the specified <see cref="T:Independentsoft.IO.StructuredStorage.DirectoryEntry" /> object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified DirectoryEntry.
+            </summary>
+            <param name="obj">A DirectoryEntry</param>
+            <returns>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter.</returns>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.DirectoryEntry.Name">
+            <summary>
+            Gets or sets name.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.DirectoryEntry.CreatedTime">
+            <summary>
+            Gets creation time.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.DirectoryEntry.LastModifiedTime">
+            <summary>
+            Gets last modified time.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.DirectoryEntry.Size">
+            <summary>
+            Gets size.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.DirectoryEntry.ClassId">
+            <summary>
+            Gets or sets class ID.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.IO.StructuredStorage.DirectoryEntryList">
+            <summary>
+            Description of DirectoryEntryList.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.DirectoryEntryList.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:Independentsoft.IO.StructuredStorage.DirectoryEntry" /> with the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>DirectoryEntry.</returns>
+        </member>
+        <member name="T:Independentsoft.IO.StructuredStorage.InvalidFileFormatException">
+            <summary>
+            The exception that is thrown when an input file or a data stream that is supposed to conform to a certain file format specification is malformed.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.InvalidFileFormatException.#ctor">
+            <summary>
+            Creates a new instance of the InvalidFileFormatException class. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.InvalidFileFormatException.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the InvalidFileFormatException class with the specified error message.  
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.InvalidFileFormatException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a new instance of the InvalidFileFormatException class with the specified error message and inner exception. 
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference (Nothing in Visual Basic), the current exception is raised in a catch block that handles the inner exception.</param>
+        </member>
+        <member name="T:Independentsoft.IO.StructuredStorage.RootDirectoryEntry">
+            <summary>
+            Represents a root node.
+            </summary>
+            <remarks>
+            RootDirectoryEntry object in a compound file that must be accessed before any other <see cref="T:Independentsoft.IO.StructuredStorage.Storage" /> objects and <see cref="T:Independentsoft.IO.StructuredStorage.Stream" /> objects are referenced. It is the uppermost parent object in the storage object and stream object hierarchy.
+            </remarks>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.RootDirectoryEntry.Name">
+            <summary>
+            Gets root's name.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.RootDirectoryEntry.DirectoryEntries">
+            <summary>
+            Gets collection of <see cref="T:Independentsoft.IO.StructuredStorage.DirectoryEntry" />.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.IO.StructuredStorage.Storage">
+            <summary>
+            Contains collection of <see cref="T:Independentsoft.IO.StructuredStorage.DirectoryEntry" />.
+            </summary>
+            <remarks>
+            Storage is analogous to a file system directory. The parent object of a storage object must be another storage object or the <see cref="T:Independentsoft.IO.StructuredStorage.RootDirectoryEntry" />.
+            </remarks>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Storage.#ctor">
+            <summary>
+             Initializes a new instance of the Storage class.  
+            </summary>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Storage.#ctor(System.String)">
+            <summary>
+             Initializes a new instance of the Storage class.  
+            </summary>
+            <param name="name">Storage name.</param>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.Storage.DirectoryEntries">
+            <summary>
+            Gets collection of <see cref="T:Independentsoft.IO.StructuredStorage.DirectoryEntry" />.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.IO.StructuredStorage.Stream">
+            <summary>
+            Represents a virtual stream to store data.
+            </summary>
+            <remarks>
+            Stream is analogous to a file system file. The parent object of a stream object must be a <see cref="T:Independentsoft.IO.StructuredStorage.Storage" /> object or the <see cref="T:Independentsoft.IO.StructuredStorage.RootDirectoryEntry" />.
+            </remarks>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.#ctor">
+            <summary>
+            Initializes a new instance of the Stream class.  
+            </summary>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the Stream class and load data from the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.#ctor(System.String,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the Stream class and load data from the specified <see cref="T:System.IO.Stream" />.
+            </summary>
+            <param name="name">Stream name.</param>
+            <param name="stream">A stream.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.#ctor(System.String,System.Byte[])">
+            <summary>
+            Initializes a new instance of the Stream class and load data from the specified buffer.
+            </summary>
+            <param name="name">Stream name.</param>
+            <param name="buffer">Data buffer.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.Load(System.String)">
+            <summary>
+            Loads data to this stream from the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.Load(System.String,System.IO.Stream)">
+            <summary>
+            Loads data to this stream from the specified <see cref="T:System.IO.Stream" />.
+            </summary>
+            <param name="name">Stream name.</param>
+            <param name="stream">A stream.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.Load(System.String,System.Byte[])">
+            <summary>
+            Loads data to this stream from the specified buffer.
+            </summary>
+            <param name="name">Stream name.</param>
+            <param name="buffer">Data buffer.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.Save(System.String)">
+            <summary>
+            Saves data from this stream to to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.Save(System.IO.Stream)">
+            <summary>
+            Saves data from this stream to the specified <see cref="T:System.IO.Stream" />.
+            </summary>
+            <param name="stream">A stream.</param>
+        </member>
+        <member name="M:Independentsoft.IO.StructuredStorage.Stream.GetStream">
+            <summary>
+            Gets <see cref="T:System.IO.Stream" /> to read data from this stream. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Independentsoft.IO.StructuredStorage.Stream.Buffer">
+            <summary>
+            Gets or sets streams data.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.Attachment">
+            <summary>
+            Class Attachment.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Attachment" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Attachment" /> class.
+            </summary>
+            <param name="filePath">The file path.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Attachment" /> class.
+            </summary>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Attachment" /> class.
+            </summary>
+            <param name="buffer">The buffer.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Attachment" /> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.#ctor(System.Byte[],System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Attachment" /> class.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.Save(System.IO.Stream)">
+            <summary>
+            Saves the specified stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <exception cref="T:System.ArgumentNullException">stream</exception>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.Save(System.String)">
+            <summary>
+            Saves this message to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.Save(System.String,System.Boolean)">
+            <summary>
+            Saves this message to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+            <param name="overwrite">True to overwrite existing file, otherwise false.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.GetStream">
+            <summary>
+            Gets the stream.
+            </summary>
+            <returns>Stream.</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.GetBytes">
+            <summary>
+            Gets the bytes.
+            </summary>
+            <returns>System.Byte[][].</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.GetFileName">
+            <summary>
+            Gets the name of the file.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Attachment.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Attachment.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Attachment.ContentType">
+            <summary>
+            Gets or sets the type of the content.
+            </summary>
+            <value>The type of the content.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Attachment.ContentID">
+            <summary>
+            Gets or sets the content identifier.
+            </summary>
+            <value>The content identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Attachment.ContentLocation">
+            <summary>
+            Gets or sets the content location.
+            </summary>
+            <value>The content location.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Attachment.ContentDescription">
+            <summary>
+            Gets or sets the content description.
+            </summary>
+            <value>The content description.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Attachment.ContentDisposition">
+            <summary>
+            Gets or sets the content disposition.
+            </summary>
+            <value>The content disposition.</value>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.BodyPart">
+            <summary>
+            Class BodyPart.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.BodyPart.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.BodyPart" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.BodyPart.#ctor(Independentsoft.Email.Mime.Attachment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.BodyPart" /> class.
+            </summary>
+            <param name="attachment">The attachment.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.BodyPart.Save(System.String)">
+            <summary>
+            Saves the specified file path.
+            </summary>
+            <param name="filePath">The file path.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.BodyPart.Save(System.String,System.Boolean)">
+            <summary>
+            Saves the specified file path.
+            </summary>
+            <param name="filePath">The file path.</param>
+            <param name="overwrite">if set to <c>true</c> [overwrite].</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.BodyPart.Save(System.IO.Stream)">
+            <summary>
+            Saves the specified stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <exception cref="T:System.ArgumentNullException">stream</exception>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.BodyPart.GetBytes">
+            <summary>
+            Gets the bytes.
+            </summary>
+            <returns>System.Byte[][].</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.BodyPart.GetStream">
+            <summary>
+            Gets the stream.
+            </summary>
+            <returns>Stream.</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.BodyPart.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.Headers">
+            <summary>
+            Gets the headers.
+            </summary>
+            <value>The headers.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.BodyParts">
+            <summary>
+            Gets the body parts.
+            </summary>
+            <value>The body parts.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.Body">
+            <summary>
+            Gets or sets the body.
+            </summary>
+            <value>The body.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.EmbeddedMessage">
+            <summary>
+            Gets or sets the embedded message.
+            </summary>
+            <value>The embedded message.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.HeaderEncoding">
+            <summary>
+            Gets or sets the header encoding.
+            </summary>
+            <value>The header encoding.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.HeaderCharSet">
+            <summary>
+            Gets or sets the header character set.
+            </summary>
+            <value>The header character set.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.ContentType">
+            <summary>
+            Gets or sets the type of the content.
+            </summary>
+            <value>The type of the content.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.ContentTransferEncoding">
+            <summary>
+            Gets or sets the content transfer encoding.
+            </summary>
+            <value>The content transfer encoding.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.ContentDisposition">
+            <summary>
+            Gets or sets the content disposition.
+            </summary>
+            <value>The content disposition.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.ContentDescription">
+            <summary>
+            Gets or sets the content description.
+            </summary>
+            <value>The content description.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.ContentID">
+            <summary>
+            Gets or sets the content identifier.
+            </summary>
+            <value>The content identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.BodyPart.ContentLocation">
+            <summary>
+            Gets or sets the content location.
+            </summary>
+            <value>The content location.</value>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.BodyPartList">
+            <summary>
+            Class BodyPartList.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.BodyPartList.Add(Independentsoft.Email.Mime.Attachment)">
+            <summary>
+            Adds the specified attachment.
+            </summary>
+            <param name="attachment">The attachment.</param>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.ContentDisposition">
+            <summary>
+            Class ContentDisposition.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ContentDisposition.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.ContentDisposition" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ContentDisposition.#ctor(Independentsoft.Email.Mime.ContentDispositionType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.ContentDisposition" /> class.
+            </summary>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ContentDisposition.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.ContentDisposition" /> class.
+            </summary>
+            <param name="contentDisposition">The content disposition.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ContentDisposition.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.ContentDisposition.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.ContentDisposition.Parameters">
+            <summary>
+            Gets the parameters.
+            </summary>
+            <value>The parameters.</value>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.ContentDispositionType">
+            <summary>
+            Summary description for ContentDispositionType.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.ContentDispositionType.Attachment">
+            <summary>
+            Specifies that the attachment is to be displayed as a file attached to the e-mail message.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.ContentDispositionType.Inline">
+            <summary>
+            The attachment is to be displayed as part of the e-mail message body.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.ContentTransferEncoding">
+            <summary>
+            Specifies the Content-Transfer-Encoding header information for an e-mail message attachment.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.ContentTransferEncoding.SevenBit">
+            <summary></summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.ContentTransferEncoding.EightBit">
+            <summary></summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.ContentTransferEncoding.Base64">
+            <summary></summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.ContentTransferEncoding.Binary">
+            <summary></summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.ContentTransferEncoding.QuotedPrintable">
+            <summary></summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.ContentTransferEncoding.IetfToken">
+            <summary></summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.ContentTransferEncoding.XToken">
+            <summary></summary>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.ContentType">
+            <summary>
+            Class ContentType.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ContentType.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.ContentType" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ContentType.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.ContentType" /> class.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="subtype">The subtype.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ContentType.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.ContentType" /> class.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="subtype">The subtype.</param>
+            <param name="charset">The charset.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ContentType.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.ContentType" /> class.
+            </summary>
+            <param name="contentType">Type of the content.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ContentType.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.ContentType.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.ContentType.SubType">
+            <summary>
+            Gets or sets the type of the sub.
+            </summary>
+            <value>The type of the sub.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.ContentType.CharSet">
+            <summary>
+            Gets or sets the character set.
+            </summary>
+            <value>The character set.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.ContentType.Parameters">
+            <summary>
+            Gets the parameters.
+            </summary>
+            <value>The parameters.</value>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.Header">
+            <summary>
+            Class Header.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Header.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Header" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Header.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Header" /> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Header.#ctor(Independentsoft.Email.Mime.StandardHeader,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Header" /> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Header.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Header.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Header.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.HeaderEncoding">
+            <summary>
+            Contains types of header encoding.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.HeaderEncoding.QuotedPrintable">
+            <summary>
+            Quoted-Printable encoding.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.HeaderEncoding.Binary">
+            <summary>
+            Binary encoding.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.HeaderList">
+            <summary>
+            Class HeaderList.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.HeaderList.Remove(Independentsoft.Email.Mime.StandardHeader)">
+            <summary>
+            Removes the specified standard header.
+            </summary>
+            <param name="standardHeader">The standard header.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.HeaderList.Remove(System.String)">
+            <summary>
+            Removes the specified name.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.HeaderList.Item(Independentsoft.Email.Mime.StandardHeader)">
+            <summary>
+            Gets the <see cref="T:Independentsoft.Email.Mime.Header" /> with the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>Header.</returns>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.HeaderList.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:Independentsoft.Email.Mime.Header" /> with the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>Header.</returns>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.Mailbox">
+            <summary>
+            Represents a mailbox.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Mailbox.#ctor">
+            <summary>
+            Initializes a new instance of the Mailbox.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Mailbox.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the Mailbox.
+            </summary>
+            <param name="emailAddress">Email address of mailbox owner.</param>
+            <param name="name">Name of mailbox owner.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Mailbox.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the Mailbox.
+            </summary>
+            <param name="mailbox">Email address and name of mailbox owner.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Mailbox.ToString">
+            <summary>
+            Returns a String that represents the current Mailbox.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Mailbox.Name">
+            <summary>
+            Gets or sets display name.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Mailbox.EmailAddress">
+            <summary>
+            Gets or sets email address.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.Message">
+            <summary>
+            Class Message.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Message" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Message" /> class.
+            </summary>
+            <param name="filePath">The file path.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Message" /> class.
+            </summary>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Message" /> class.
+            </summary>
+            <param name="buffer">The buffer.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.Open(System.String)">
+            <summary>
+            Opens the specified file path.
+            </summary>
+            <param name="filePath">The file path.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.Open(System.IO.Stream)">
+            <summary>
+            Opens the specified stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <exception cref="T:System.ArgumentNullException">stream</exception>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.Open(System.Byte[])">
+            <summary>
+            Opens the specified buffer.
+            </summary>
+            <param name="buffer">The buffer.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.GetAttachments">
+            <summary>
+            Gets the attachments.
+            </summary>
+            <returns>Attachment[][].</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.GetAttachments(System.Boolean)">
+            <summary>
+            Gets the attachments.
+            </summary>
+            <param name="includeEmbedded">if set to <c>true</c> [include embedded].</param>
+            <returns>Attachment[][].</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.GetFileName">
+            <summary>
+            Gets the name of the file.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.Save(System.IO.Stream)">
+            <summary>
+            Saves the specified stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <exception cref="T:System.ArgumentNullException">stream</exception>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.Save(System.String)">
+            <summary>
+            Saves this message to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.Save(System.String,System.Boolean)">
+            <summary>
+            Saves this message to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+            <param name="overwrite">True to overwrite existing file, otherwise false.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.GetBytes">
+            <summary>
+            Gets the bytes.
+            </summary>
+            <returns>System.Byte[][].</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.GetStream">
+            <summary>
+            Gets the stream.
+            </summary>
+            <returns>Stream.</returns>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Message.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.Headers">
+            <summary>
+            Gets the headers.
+            </summary>
+            <value>The headers.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.BodyParts">
+            <summary>
+            Gets the body parts.
+            </summary>
+            <value>The body parts.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.Body">
+            <summary>
+            Gets or sets the body.
+            </summary>
+            <value>The body.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.EmbeddedMessage">
+            <summary>
+            Gets or sets the embedded message.
+            </summary>
+            <value>The embedded message.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.HeaderEncoding">
+            <summary>
+            Gets or sets the header encoding.
+            </summary>
+            <value>The header encoding.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.HeaderCharSet">
+            <summary>
+            Gets or sets the header character set.
+            </summary>
+            <value>The header character set.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ContentType">
+            <summary>
+            Gets or sets the type of the content.
+            </summary>
+            <value>The type of the content.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ContentTransferEncoding">
+            <summary>
+            Gets or sets the content transfer encoding.
+            </summary>
+            <value>The content transfer encoding.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ContentDisposition">
+            <summary>
+            Gets or sets the content disposition.
+            </summary>
+            <value>The content disposition.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ContentDescription">
+            <summary>
+            Gets or sets the content description.
+            </summary>
+            <value>The content description.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ContentID">
+            <summary>
+            Gets or sets the content identifier.
+            </summary>
+            <value>The content identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ContentLocation">
+            <summary>
+            Gets or sets the content location.
+            </summary>
+            <value>The content location.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.Subject">
+            <summary>
+            Gets or sets the subject.
+            </summary>
+            <value>The subject.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.MimeVersion">
+            <summary>
+            Gets or sets the MIME version.
+            </summary>
+            <value>The MIME version.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.Comments">
+            <summary>
+            Gets or sets the comments.
+            </summary>
+            <value>The comments.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.Keywords">
+            <summary>
+            Gets or sets the keywords.
+            </summary>
+            <value>The keywords.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.MessageID">
+            <summary>
+            Gets or sets the message identifier.
+            </summary>
+            <value>The message identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ResentMessageID">
+            <summary>
+            Gets or sets the resent message identifier.
+            </summary>
+            <value>The resent message identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.Date">
+            <summary>
+            Gets or sets the date.
+            </summary>
+            <value>The date.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ResentDate">
+            <summary>
+            Gets or sets the resent date.
+            </summary>
+            <value>The resent date.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.References">
+            <summary>
+            Gets or sets the references.
+            </summary>
+            <value>The references.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.To">
+            <summary>
+            Gets to.
+            </summary>
+            <value>To.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.Cc">
+            <summary>
+            Gets the cc.
+            </summary>
+            <value>The cc.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.Bcc">
+            <summary>
+            Gets the BCC.
+            </summary>
+            <value>The BCC.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ReplyTo">
+            <summary>
+            Gets the reply to.
+            </summary>
+            <value>The reply to.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.From">
+            <summary>
+            Gets or sets from.
+            </summary>
+            <value>From.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.Sender">
+            <summary>
+            Gets or sets the sender.
+            </summary>
+            <value>The sender.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ResentFrom">
+            <summary>
+            Gets or sets the resent from.
+            </summary>
+            <value>The resent from.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ResentSender">
+            <summary>
+            Gets or sets the resent sender.
+            </summary>
+            <value>The resent sender.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.InReplyTo">
+            <summary>
+            Gets or sets the in reply to.
+            </summary>
+            <value>The in reply to.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Message.ReturnPath">
+            <summary>
+            Gets or sets the return path.
+            </summary>
+            <value>The return path.</value>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.MessageFormatException">
+            <summary>
+            The exception that is thrown when load or parse message with wrong format.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.MessageFormatException.#ctor">
+            <summary>
+            Initializes a new instance of the MessageFormatException class. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.MessageFormatException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MessageFormatException class with the specified error message.
+            </summary>
+            <param name="message">Error description.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.MessageFormatException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the MessageFormatException class with the specified error message and inner exception. 
+            </summary>
+            <param name="message">The message that describes the error</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference (Nothing in Visual Basic), the current exception is raised in a catch block that handles the inner exception.</param>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.Parameter">
+            <summary>
+            Class Parameter.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Parameter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Parameter" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Parameter.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Parameter" /> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Parameter.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Email.Mime.Parameter" /> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.Parameter.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Parameter.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.Parameter.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.ParameterList">
+            <summary>
+            Class ParameterList.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Email.Mime.ParameterList.Remove(System.String)">
+            <summary>
+            Removes the specified name.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="P:Independentsoft.Email.Mime.ParameterList.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:Independentsoft.Email.Mime.Parameter" /> with the specified name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>Parameter.</returns>
+        </member>
+        <member name="T:Independentsoft.Email.Mime.StandardHeader">
+            <summary>
+            Contains the standard message headers defined in RFC 2822.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ResentDate">
+            <summary>
+            Resent-Date header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ResentFrom">
+            <summary>
+            Resent-From header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ResentSender">
+            <summary>
+            Resent-Sender header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ResentTo">
+            <summary>
+            Resent-To header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ResentCc">
+            <summary>
+            Resent-Cc header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ResentBcc">
+            <summary>
+            Resent-Bcc header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ResentMessageID">
+            <summary>
+            Resent-Msg-ID header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.From">
+            <summary>
+            From header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.Sender">
+            <summary>
+            Sender header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ReplyTo">
+            <summary>
+            Reply-To header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.To">
+            <summary>
+            To header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.Cc">
+            <summary>
+            Cc header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.Bcc">
+            <summary>
+            Bcc header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.MessageID">
+            <summary>
+            Message-ID header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.InReplyTo">
+            <summary>
+            In-Reply-To header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.References">
+            <summary>
+            References header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.Subject">
+            <summary>
+            Subject header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.Comments">
+            <summary>
+            Comments header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.Keywords">
+            <summary>
+            Keywords header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.Date">
+            <summary>
+            Date header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ReturnPath">
+            <summary>
+            Return-Path header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.Received">
+            <summary>
+            Received header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.MimeVersion">
+            <summary>
+            MIME-Version header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ContentType">
+            <summary>
+            Content-Type header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ContentID">
+            <summary>
+            Content-ID header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ContentTransferEncoding">
+            <summary>
+            Content-Transfer-Encoding header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ContentDescription">
+            <summary>
+            Content-Description header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ContentDisposition">
+            <summary>
+            Content-Disposition header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ContentLocation">
+            <summary>
+            Content-Location header field.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Email.Mime.StandardHeader.ContentLength">
+            <summary>
+            Content-Length header field.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.Attachment">
+            <summary>
+            Represents an attachment to a message.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.#ctor">
+            <summary>
+            Initializes a new instance of the Attachment class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the Attachment class based on the supplied file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.#ctor(System.String,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the Attachment class based on the supplied stream.
+            </summary>
+            <param name="fileName">Attachment file name.</param>
+            <param name="stream">A stream.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.#ctor(System.String,System.Byte[])">
+            <summary>
+            Initializes a new instance of the Attachment class based on the supplied byte array.
+            </summary>
+            <param name="fileName">Attachment file name.</param>
+            <param name="buffer">A byte array.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.Save(System.String)">
+            <summary>
+            Saves this attachment to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.Save(System.String,System.Boolean)">
+            <summary>
+            Saves this attachment to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+            <param name="overwrite">True to overwrite existing file, otherwise false.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.Save(System.IO.Stream)">
+            <summary>
+            Saves this attachment to the specified stream.
+            </summary>
+            <param name="stream">A stream.</param>
+            <exception cref="T:System.ArgumentNullException">stream</exception>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.GetBytes">
+            <summary>
+            Gets bytes to read from this attachment.
+            </summary>
+            <returns>Attachment as a byte array.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.GetBuffer">
+            <summary>
+            Gets bytes to read from this attachment.
+            </summary>
+            <returns>Attachment as a byte array.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.Attachment.GetStream">
+            <summary>
+            Gets stream to read from this attachment.
+            </summary>
+            <returns>A stream.</returns>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.AdditionalInfo">
+            <summary>
+            Provides file type information for a non-Windows attachment.
+            </summary>
+            <value>The additional information.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.ContentBase">
+            <summary>
+            Contains the content base header of a MIME message attachment.
+            </summary>
+            <value>The content base.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.ContentId">
+            <summary>
+            Contains the content identification header of a MIME message attachment.
+            </summary>
+            <value>The content identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.ContentLocation">
+            <summary>
+            Contains the content location header of a MIME message attachment.
+            </summary>
+            <value>The content location.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.ContentDisposition">
+            <summary>
+            Contains the content disposition header of a MIME message attachment.
+            </summary>
+            <value>The content disposition.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.Data">
+            <summary>
+            Contains binary attachment data.
+            </summary>
+            <value>The data.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.DataObject">
+            <summary>
+            Contains attachment's data as embedded object.
+            </summary>
+            <value>The data object.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.Encoding">
+            <summary>
+            Contains the encoding for an attachment.
+            </summary>
+            <value>The encoding.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.RecordKey">
+            <summary>
+            Contains the record key for an attachment.
+            </summary>
+            <value>The record key.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.Extension">
+            <summary>
+            Contains a file name extension that indicates the document type of an attachment.
+            </summary>
+            <value>The extension.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.FileName">
+            <summary>
+            Contains an attachment's base file name and extension, excluding path.
+            </summary>
+            <value>The name of the file.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.Flags">
+            <summary>
+            Contains flags for an attachment.
+            </summary>
+            <value>The flags.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.LongFileName">
+            <summary>
+            Contains an attachment's long filename and extension, excluding path.
+            </summary>
+            <value>The long name of the file.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.LongPathName">
+            <summary>
+            Contains an attachment's fully-qualified long path and filename.
+            </summary>
+            <value>The long name of the path.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.Method">
+            <summary>
+            Contains a MAPI-defined constant representing the way the contents of an attachment can be accessed.
+            </summary>
+            <value>The method.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.MimeSequence">
+            <summary>
+            Contains the MIME sequence number of a MIME message attachment.
+            </summary>
+            <value>The MIME sequence.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.MimeTag">
+            <summary>
+            Contains formatting information about a MIME attachment.
+            </summary>
+            <value>The MIME tag.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.PathName">
+            <summary>
+            Contains an attachment's fully-qualified path and filename.
+            </summary>
+            <value>The name of the path.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.Rendering">
+            <summary>
+            Contains a Microsoft Windows metafile with rendering information for an attachment.
+            </summary>
+            <value>The rendering.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.RenderingPosition">
+            <summary>
+            Contains rendering position index.
+            </summary>
+            <value>The rendering position.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.Size">
+            <summary>
+            Contains attachment's size in bytes.
+            </summary>
+            <value>The size.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.Tag">
+            <summary>
+            Contains an object identifier specifying the application that supplied an attachment.
+            </summary>
+            <value>The tag.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.TransportName">
+            <summary>
+            Contains the name of an attachment file modified so that it can be associated with TNEF messages.
+            </summary>
+            <value>The name of the transport.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.DisplayName">
+            <summary>
+            Contains the display name of the attachment.
+            </summary>
+            <value>The display name.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.EmbeddedMessage">
+            <summary>
+            Contains <see cref="T:Independentsoft.Msg.Message" /> object if the attachment is an embedded Message.
+            </summary>
+            <value>The embedded message.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.ObjectType">
+            <summary>
+            Contains the type of the attachment.
+            </summary>
+            <value>The type of the object.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.IsHidden">
+            <summary>
+            Indicates whether an attachment is hidden from the end user.
+            </summary>
+            <value>
+                <c>true</c> if this instance is hidden; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.CreationTime">
+            <summary>
+            Contains the creation date and time of the attachment.
+            </summary>
+            <value>The creation time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.LastModificationTime">
+            <summary>
+            Contains the date and time when the attachment was last modified.
+            </summary>
+            <value>The last modification time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.IsContactPhoto">
+            <summary>
+            Indicates whether this attachment is a contact photo.
+            </summary>
+            <value>
+                <c>true</c> if this instance is contact photo; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Attachment.DataObjectStorage">
+            <summary>
+            Gets or sets the data object storage.
+            </summary>
+            <value>The data object storage.</value>
+        </member>
+        <member name="T:Independentsoft.Msg.AttachmentFlags">
+            <summary>
+            Represents attachment's flags.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentFlags.InvisibleInHtml">
+            <summary>
+            Indicates that this attachment is not available to HTML rendering applications and should be ignored in MIME processing.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentFlags.InvisibleInRtf">
+            <summary>
+            Indicates that this attachment is not available to applications rendering in Rich Text Format (RTF) and should be ignored by MAPI.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentFlags.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.AttachmentMethod">
+            <summary>
+            Represents the way the contents of an attachment can be accessed.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentMethod.NoAttachment">
+            <summary>
+            The attachment has just been created.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentMethod.AttachByValue">
+            <summary>
+            The <see cref="P:Independentsoft.Msg.Attachment.DataObject" /> property contains the attachment data.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentMethod.AttachByReference">
+            <summary>
+            The <see cref="P:Independentsoft.Msg.Attachment.PathName" /> or the <see cref="P:Independentsoft.Msg.Attachment.LongPathName" /> property contains a fully-qualified path identifying the attachment to recipients with access to a common file server.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentMethod.AttachByReferenceResolve">
+            <summary>
+            The <see cref="P:Independentsoft.Msg.Attachment.PathName" /> or the <see cref="P:Independentsoft.Msg.Attachment.LongPathName" /> property contains a fully-qualified path identifying the attachment.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentMethod.AttachByReferenceOnly">
+            <summary>
+            The <see cref="P:Independentsoft.Msg.Attachment.PathName" /> or the <see cref="P:Independentsoft.Msg.Attachment.LongPathName" /> property contains a fully-qualified path identifying the attachment.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentMethod.EmbeddedMessage">
+            <summary>
+            The <see cref="P:Independentsoft.Msg.Attachment.DataObject" /> property contains an embedded <see cref="T:Independentsoft.Msg.Message" /> object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentMethod.Ole">
+            <summary>
+            The attachment is an embedded OLE object
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.AttachmentMethod.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.BusyStatus">
+            <summary>
+            Specifies whether the attendee is busy at the time of an appointment on their calendar. The specified status appears in the free/busy view of the calendar.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.BusyStatus.Free">
+            <summary>
+            Free status
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.BusyStatus.Tentative">
+            <summary>
+            Tentative status
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.BusyStatus.Busy">
+            <summary>
+            Busy status
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.BusyStatus.OutOfOffice">
+            <summary>
+            Out of the office status
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.BusyStatus.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.CalendarType">
+            <summary>
+            Enum CalendarType
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.DayOfWeekIndex">
+            <summary>
+            Describes which week in a month is used in a relative recurrence pattern.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DayOfWeekIndex.First">
+            <summary>
+            First.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DayOfWeekIndex.Second">
+            <summary>
+            Second.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DayOfWeekIndex.Third">
+            <summary>
+            Third.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DayOfWeekIndex.Fourth">
+            <summary>
+            Fourth.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DayOfWeekIndex.Last">
+            <summary>
+            Last.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DayOfWeekIndex.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.DisplayType">
+            <summary>
+            Contains a value used to associate an icon with a particular row of a table.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.Agent">
+            <summary>
+            An automated agent, such as Quote-Of-The-Day or a weather chart display.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.DistributionList">
+            <summary>
+            A distribution list.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.Folder">
+            <summary>
+            Display default folder icon adjacent to folder.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.FolderLink">
+            <summary>
+            Display default folder link icon adjacent to folder rather than the default folder icon.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.FolderSpecial">
+            <summary>
+            Display icon for a folder with an application-specific distinction, such as a special type of public folder.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.Forum">
+            <summary>
+            A forum, such as a bulletin board service or a public or shared folder.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.GlobalAddressBook">
+            <summary>
+            A global address book.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.LocalAddressBook">
+            <summary>
+            A local address book that you share with a small workgroup.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.MailUser">
+            <summary>
+            A typical messaging user.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.Modifiable">
+            <summary>
+            Modifiable; the container should be denoted as modifiable in the user interface.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.Organization">
+            <summary>
+            A special alias defined for a large group, such as helpdesk, accounting, or blood-drive coordinator.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.PrivateDistributionList">
+            <summary>
+            A private, personally administered distribution list.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.RemoteMailUser">
+            <summary>
+            A recipient known to be from a foreign or remote messaging system.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.WideAreaNetworkAddressBook">
+            <summary>
+            A wide area network address book.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.NotSpecific">
+            <summary>
+            Does not match any of the other settings.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.DisplayType.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.ExtendedProperty">
+            <summary>
+            Class ExtendedProperty.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="value">The value.</param>
+            <exception cref="T:System.ArgumentNullException">
+            tag
+            or
+            value
+            </exception>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag,System.Int16)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="value">if set to <c>true</c> [value].</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag,System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="value">The value.</param>
+            <exception cref="T:System.ArgumentNullException">
+            tag
+            or
+            value
+            </exception>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.#ctor(Independentsoft.Msg.ExtendedPropertyTag,System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> class.
+            </summary>
+            <param name="tag">The tag.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.GetStringValue">
+            <summary>
+            Gets the string value.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.GetStringArrayValue">
+            <summary>
+            Gets the string array value.
+            </summary>
+            <returns>System.String[][].</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.GetBooleanValue">
+            <summary>
+            Gets the boolean value.
+            </summary>
+            <returns>
+                <c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.GetShortValue">
+            <summary>
+            Gets the short value.
+            </summary>
+            <returns>System.Int16.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.GetIntegerValue">
+            <summary>
+            Gets the integer value.
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.GetLongValue">
+            <summary>
+            Gets the long value.
+            </summary>
+            <returns>System.Int64.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.GetFloatValue">
+            <summary>
+            Gets the float value.
+            </summary>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.GetDoubleValue">
+            <summary>
+            Gets the double value.
+            </summary>
+            <returns>System.Double.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedProperty.GetDateTimeValue">
+            <summary>
+            Gets the date time value.
+            </summary>
+            <returns>DateTime.</returns>
+        </member>
+        <member name="P:Independentsoft.Msg.ExtendedProperty.Tag">
+            <summary>
+            Gets or sets the tag.
+            </summary>
+            <value>The tag.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.ExtendedProperty.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:Independentsoft.Msg.ExtendedPropertyId">
+            <summary>
+            Class ExtendedPropertyId.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedPropertyId.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedPropertyId" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedPropertyId.#ctor(System.Int32,System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedPropertyId" /> class.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="guid">The unique identifier.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedPropertyId.#ctor(System.Int32,System.Byte[],Independentsoft.Msg.PropertyType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedPropertyId" /> class.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="guid">The unique identifier.</param>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedPropertyId.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="P:Independentsoft.Msg.ExtendedPropertyId.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="T:Independentsoft.Msg.ExtendedPropertyList">
+            <summary>
+            Class ExtendedPropertyList.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.ExtendedPropertyList.Item(Independentsoft.Msg.ExtendedPropertyTag)">
+            <summary>
+            Gets the <see cref="T:Independentsoft.Msg.ExtendedProperty" /> with the specified tag.
+            </summary>
+            <param name="tag">The tag.</param>
+            <returns>ExtendedProperty.</returns>
+        </member>
+        <member name="T:Independentsoft.Msg.ExtendedPropertyName">
+            <summary>
+            Class ExtendedPropertyName.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedPropertyName.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedPropertyName" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedPropertyName.#ctor(System.String,System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedPropertyName" /> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="guid">The unique identifier.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedPropertyName.#ctor(System.String,System.Byte[],Independentsoft.Msg.PropertyType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.ExtendedPropertyName" /> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="guid">The unique identifier.</param>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.ExtendedPropertyName.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="P:Independentsoft.Msg.ExtendedPropertyName.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="T:Independentsoft.Msg.ExtendedPropertyTag">
+            <summary>
+            Class ExtendedPropertyTag.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.ExtendedPropertyTag.Guid">
+            <summary>
+            Gets or sets the unique identifier.
+            </summary>
+            <value>The unique identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.ExtendedPropertyTag.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="T:Independentsoft.Msg.FlagIcon">
+            <summary>
+            Represents flag color.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagIcon.Purple">
+            <summary>
+            Purple color. Value is 1.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagIcon.Orange">
+            <summary>
+            Orange color. Value is 2.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagIcon.Green">
+            <summary>
+            Green color. Value is 3.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagIcon.Yellow">
+            <summary>
+            Yellow color. Value is 4.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagIcon.Blue">
+            <summary>
+            Blue color. Value is 5.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagIcon.Red">
+            <summary>
+            Red color. Value is 6.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagIcon.None">
+            <summary>
+            None. Value is 0.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.FlagStatus">
+            <summary>
+            Contains the Microsoft Office Outlook follow-up flags for the message.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagStatus.Complete">
+            <summary>
+            Complete.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagStatus.Marked">
+            <summary>
+            Follow-up is required.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.FlagStatus.None">
+            <summary>
+            No follow-up has been specified.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.Gender">
+            <summary>
+            Enum Gender
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.Importance">
+            <summary>
+            Indicates the message sender's opinion of the importance of a message.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Importance.Low">
+            <summary>
+            The message has low importance.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Importance.Normal">
+            <summary>
+            The message has normal importance.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Importance.High">
+            <summary>
+            The message has high importance.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Importance.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.LastVerbExecuted">
+            <summary>
+            Represents last action on the message.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.LastVerbExecuted.ReplyToSender">
+            <summary>
+            Reply has been sent to sender. Value is 102.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.LastVerbExecuted.ReplyToAll">
+            <summary>
+            Reply has been sent to all. Value is 103.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.LastVerbExecuted.Forward">
+            <summary>
+            The message has been forwarded. Value is 104.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.LastVerbExecuted.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.MeetingStatus">
+            <summary>
+            The MeetingStatus enum specifies the status of an appointment or meeting.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MeetingStatus.NonMeeting">
+            <summary>
+            An Appointment item without attendees has been scheduled. This status can be used to set up holidays on a calendar.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MeetingStatus.Meeting">
+            <summary>
+            The meeting has been scheduled.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MeetingStatus.Received">
+            <summary>
+            The meeting request has been received.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MeetingStatus.CanceledOrganizer">
+            <summary>
+            The scheduled meeting has been cancelled but still appears on the user's calendar.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MeetingStatus.Canceled">
+            <summary>
+            The scheduled meeting has been cancelled.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MeetingStatus.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.Message">
+            <summary>
+            Represents Outlook message file.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.#ctor">
+            <summary>
+            Initializes a new instance of the Message class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the Message class based on the supplied file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the Message class based on the supplied stream.
+            </summary>
+            <param name="stream">A stream.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.#ctor(Independentsoft.Email.Mime.Message)">
+            <summary>
+            Initializes a new instance of the Message class from the specified MIME message.
+            </summary>
+            <param name="mimeMessage">The MIME message.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.Open(System.String)">
+            <summary>
+            Loads message from the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.Open(System.IO.Stream)">
+            <summary>
+            Loads message from the specified stream.
+            </summary>
+            <param name="stream">An input stream.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.GetStream">
+            <summary>
+            Gets stream to read from this message.
+            </summary>
+            <returns>A stream.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.GetBytes">
+            <summary>
+            Gets bytes to read from this message.
+            </summary>
+            <returns>Attachment as a byte array.</returns>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.Save(System.String)">
+            <summary>
+            Saves this message to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.Save(System.String,System.Boolean)">
+            <summary>
+            Saves this message to the specified file.
+            </summary>
+            <param name="filePath">File path.</param>
+            <param name="overwrite">True to overwrite existing file, otherwise false.</param>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.Save(System.IO.Stream)">
+            <summary>
+            Saves this message to the specified stream.
+            </summary>
+            <param name="stream">A stream.</param>
+            <exception cref="T:System.ArgumentNullException">stream</exception>
+        </member>
+        <member name="M:Independentsoft.Msg.Message.ConvertToMimeMessage">
+            <summary>
+            Converts to MIME message.
+            </summary>
+            <returns>Independentsoft.Email.Mime.Message.</returns>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Encoding">
+            <summary>
+            Gets or sets message encoding. Default is UTF8 encoding.
+            </summary>
+            <value>The encoding.</value>
+            <example>
+            In order to save message as Unicode use:
+              <code>
+            message.Encoding = System.Text.Encoding.Unicode;
+              </code></example>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.MessageClass">
+            <summary>
+            Contains a text string that identifies the sender-defined message class, such as IPM.Note.
+            </summary>
+            <value>The message class.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Subject">
+            <summary>
+            Contains the full subject of a message.
+            </summary>
+            <value>The subject.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SubjectPrefix">
+            <summary>
+            Contains a subject prefix that typically indicates some action on a message, such as "FW: " for forwarding.
+            </summary>
+            <value>The subject prefix.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ConversationTopic">
+            <summary>
+            Contains the topic of the first message in a conversation thread.
+            </summary>
+            <value>The conversation topic.</value>
+            <remarks>A conversation thread represents a series of messages and replies. These properties are set for the first message in a thread, usually to the <see cref="P:Independentsoft.Msg.Message.NormalizedSubject" /> property. Subsequent messages in the thread should use the same topic without modification.</remarks>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DisplayBcc">
+            <summary>
+            Contains an ASCII list of the display names of any blind carbon copy (BCC) message recipients, separated by semicolons (;).
+            </summary>
+            <value>The display BCC.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DisplayCc">
+            <summary>
+            Contains an ASCII list of the display names of any carbon copy (CC) message recipients, separated by semicolons (;).
+            </summary>
+            <value>The display cc.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DisplayTo">
+            <summary>
+            Contains a list of the display names of the primary (To) message recipients, separated by semicolons (;).
+            </summary>
+            <value>The display to.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OriginalDisplayTo">
+            <summary>
+            Contains a list of the display names of the primary (To) message recipients, separated by semicolons (;).
+            </summary>
+            <value>The original display to.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReplyTo">
+            <summary>
+            Contains reply to email address.
+            </summary>
+            <value>The reply to.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.NormalizedSubject">
+            <summary>
+            Contains the message subject with any prefix removed.
+            </summary>
+            <value>The normalized subject.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Body">
+            <summary>
+            Contains the message text.
+            </summary>
+            <value>The body.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BodyRtf">
+            <summary>
+            Contains the Rich Text Format (RTF) version of the message text.
+            </summary>
+            <value>The body RTF.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.RtfCompressed">
+            <summary>
+            Contains the Rich Text Format (RTF) version of the message text, usually in compressed form.
+            </summary>
+            <value>The RTF compressed.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SearchKey">
+            <summary>
+            Contains a binary-comparable key that identifies correlated objects for a search.
+            </summary>
+            <value>The search key.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ChangeKey">
+            <summary>
+            Contains a change key of a message.
+            </summary>
+            <value>The change key.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.EntryId">
+            <summary>
+            Contains a MAPI entry identifier used to open and edit properties of a particular MAPI object.
+            </summary>
+            <value>The entry identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReadReceiptEntryId">
+            <summary>
+            Gets or sets the read receipt entry identifier.
+            </summary>
+            <value>The read receipt entry identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReadReceiptSearchKey">
+            <summary>
+            Gets or sets the read receipt search key.
+            </summary>
+            <value>The read receipt search key.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CreationTime">
+            <summary>
+            Contains the creation date and time of the message.
+            </summary>
+            <value>The creation time.</value>
+            <remarks>A message store sets this property for each message that it creates.</remarks>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.LastModificationTime">
+            <summary>
+            Contains the date and time when the message was last modified.
+            </summary>
+            <value>The last modification time.</value>
+            <remarks>This property is initially set to the same value as the <see cref="P:Independentsoft.Msg.Message.CreationTime" /> property.</remarks>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.MessageDeliveryTime">
+            <summary>
+            Contains the date and time when a message was delivered.
+            </summary>
+            <value>The message delivery time.</value>
+            <remarks>This property describes the time the message was stored at the server, rather than the download time when the transport provider copied the message from the server to the local store.</remarks>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ClientSubmitTime">
+            <summary>
+            Contains the date and time the message sender submitted a message.
+            </summary>
+            <value>The client submit time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DeferredDeliveryTime">
+            <summary>
+            Contains the date and time when a message sender wants a message delivered.
+            </summary>
+            <value>The deferred delivery time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ProviderSubmitTime">
+            <summary>
+            Contains the date and time the mail provider submitted a message.
+            </summary>
+            <value>The provider submit time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReportTime">
+            <summary>
+            Contains the report date and time.
+            </summary>
+            <value>The report time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.LastVerbExecutionTime">
+            <summary>
+            Contains the time when the last verb was executed.
+            </summary>
+            <value>The last verb execution time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReportText">
+            <summary>
+            Contains report text.
+            </summary>
+            <value>The report text.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CreatorName">
+            <summary>
+            Contains name of the person who created message.
+            </summary>
+            <value>The name of the creator.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.LastModifierName">
+            <summary>
+            Contains name of the person who modified message.
+            </summary>
+            <value>The last name of the modifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.InternetMessageId">
+            <summary>
+            Contains unique ID for the message.
+            </summary>
+            <value>The internet message identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.InReplyTo">
+            <summary>
+            Contains the identifier of the message to which this message is a reply.
+            </summary>
+            <value>The in reply to.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.InternetReferences">
+            <summary>
+            Contains Internet reference ID for the message.
+            </summary>
+            <value>The internet references.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.MessageCodePage">
+            <summary>
+            Contains the code page that is used for the message.
+            </summary>
+            <value>The message code page.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IconIndex">
+            <summary>
+            Contains a number that indicates which icon to use when you display a group of e-mail objects.
+            </summary>
+            <value>The index of the icon.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Size">
+            <summary>
+            Contains the size of the body, subject, sender, and attachments.
+            </summary>
+            <value>The size.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.InternetCodePage">
+            <summary>
+            Indicates the code page used for the <see cref="P:Independentsoft.Msg.Message.Body" /> or the <see cref="P:Independentsoft.Msg.Message.BodyHtml" /> properties.
+            </summary>
+            <value>The internet code page.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ConversationIndex">
+            <summary>
+            Contains a binary value that indicates the relative position of this message within a conversation thread.
+            </summary>
+            <value>The index of the conversation.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsHidden">
+            <summary>
+            Contains true if message is invisible.
+            </summary>
+            <value>
+                <c>true</c> if this instance is hidden; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsReadOnly">
+            <summary>
+            Contains true if message is read only.
+            </summary>
+            <value>
+                <c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsSystem">
+            <summary>
+            Contains true if message is system message.
+            </summary>
+            <value>
+                <c>true</c> if this instance is system; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DisableFullFidelity">
+            <summary>
+            Gets or sets a value indicating whether [disable full fidelity].
+            </summary>
+            <value>
+                <c>true</c> if [disable full fidelity]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HasAttachment">
+            <summary>
+            Contains true if a message contains at least one attachment.
+            </summary>
+            <value>
+                <c>true</c> if this instance has attachment; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.RtfInSync">
+            <summary>
+            Contains true if the <see cref="P:Independentsoft.Msg.Message.RtfCompressed" /> property has the same text content as the <see cref="P:Independentsoft.Msg.Message.Body" /> property for this message.
+            </summary>
+            <value>
+                <c>true</c> if [RTF in synchronize]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReadReceiptRequested">
+            <summary>
+            Gets or sets a value indicating whether [read receipt requested].
+            </summary>
+            <value>
+                <c>true</c> if [read receipt requested]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DeliveryReportRequested">
+            <summary>
+            Gets or sets a value indicating whether [delivery report requested].
+            </summary>
+            <value>
+                <c>true</c> if [delivery report requested]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BodyHtml">
+            <summary>
+            Contains the Hypertext Markup Language (HTML) version of the message text.
+            </summary>
+            <value>The body HTML.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BodyHtmlText">
+            <summary>
+            Contains the Hypertext Markup Language (HTML) version of the message text.
+            </summary>
+            <value>The body HTML text.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Sensitivity">
+            <summary>
+            Contains a value that indicates the message sender's opinion of the sensitivity of a message.
+            </summary>
+            <value>The sensitivity.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.LastVerbExecuted">
+            <summary>
+            Contains the last verb executed.
+            </summary>
+            <value>The last verb executed.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Importance">
+            <summary>
+            Contains a value that indicates the message sender's opinion of the importance of a message.
+            </summary>
+            <value>The importance.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Priority">
+            <summary>
+            Contains the relative priority of a message.
+            </summary>
+            <value>The priority.</value>
+            <remarks>This property and the <see cref="P:Independentsoft.Msg.Message.Importance" /> property should not be confused. Importance indicates a value to users, while priority indicates the order or speed at which the message should be sent by the messaging system software. Higher priority usually indicates a higher cost. Higher importance usually is associated with a different display by the user interface.</remarks>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.FlagIcon">
+            <summary>
+            Specifies the flag icon of the message object.
+            </summary>
+            <value>The flag icon.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.FlagStatus">
+            <summary>
+            Specifies the flag state of the message object.
+            </summary>
+            <value>The flag status.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ObjectType">
+            <summary>
+            Contains the type of an object.
+            </summary>
+            <value>The type of the object.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedRepresentingAddressType">
+            <summary>
+            Contains the address type for the messaging user who is represented by the user actually receiving the message.
+            </summary>
+            <value>The type of the received representing address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedRepresentingEmailAddress">
+            <summary>
+            Contains the e-mail address for the messaging user who is represented by the receiving user.
+            </summary>
+            <value>The received representing email address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedRepresentingEntryId">
+            <summary>
+            Contains the entry identifier for the messaging user who is represented by the receiving user.
+            </summary>
+            <value>The received representing entry identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedRepresentingName">
+            <summary>
+            Contains the display name for the messaging user who is represented by the receiving user.
+            </summary>
+            <value>The name of the received representing.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedRepresentingSearchKey">
+            <summary>
+            Contains the search key for the messaging user represented by the receiving user.
+            </summary>
+            <value>The received representing search key.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedByAddressType">
+            <summary>
+            Contains the e-mail address type, such as SMTP, for the messaging user who actually receives the message.
+            </summary>
+            <value>The type of the received by address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedByEmailAddress">
+            <summary>
+            Contains the e-mail address for the messaging user who receives the message.
+            </summary>
+            <value>The received by email address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedByEntryId">
+            <summary>
+            Contains the entry identifier of the messaging user who actually receives the message.
+            </summary>
+            <value>The received by entry identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedByName">
+            <summary>
+            Contains the display name of the messaging user who receives the message.
+            </summary>
+            <value>The name of the received by.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReceivedBySearchKey">
+            <summary>
+            Contains the search key of the messaging user who receives the message.
+            </summary>
+            <value>The received by search key.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SenderAddressType">
+            <summary>
+            Contains the message sender's e-mail address type.
+            </summary>
+            <value>The type of the sender address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SenderEmailAddress">
+            <summary>
+            Contains the message sender's e-mail address.
+            </summary>
+            <value>The sender email address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SenderSmtpAddress">
+            <summary>
+            Contains the message sender's e-mail address.
+            </summary>
+            <value>The sender email address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SenderEntryId">
+            <summary>
+            Contains the message sender's entry identifier.
+            </summary>
+            <value>The sender entry identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SenderName">
+            <summary>
+            Contains the message sender's display name.
+            </summary>
+            <value>The name of the sender.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SenderSearchKey">
+            <summary>
+            Contains the message sender's search key.
+            </summary>
+            <value>The sender search key.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SentRepresentingAddressType">
+            <summary>
+            Contains the address type for the messaging user who is represented by the sender.
+            </summary>
+            <value>The type of the sent representing address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SentRepresentingEmailAddress">
+            <summary>
+            Contains the e-mail address for the messaging user who is represented by the sender.
+            </summary>
+            <value>The sent representing email address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SentRepresentingSmtpAddress">
+            <summary>
+            Contains the e-mail address for the messaging user who is represented by the sender.
+            </summary>
+            <value>The sent representing email address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SentRepresentingEntryId">
+            <summary>
+            Contains the entry identifier for the messaging user represented by the sender.
+            </summary>
+            <value>The sent representing entry identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SentRepresentingName">
+            <summary>
+            Contains the display name for the messaging user represented by the sender.
+            </summary>
+            <value>The name of the sent representing.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SentRepresentingSearchKey">
+            <summary>
+            Contains the search key for the messaging user represented by the sender.
+            </summary>
+            <value>The sent representing search key.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.TransportMessageHeaders">
+            <summary>
+            Contains transport-specific message envelope information.
+            </summary>
+            <value>The transport message headers.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.MessageFlags">
+            <summary>
+            Contains a bitmask of flags that indicate the origin and current state of a message.
+            </summary>
+            <value>The message flags.</value>
+            <remarks>This property is a nontransmittable message property exposed at both the sending and receiving ends of a transmission, with different values depending upon the client application or store provider involved. This property is initialized by the client or message store provider when a message is created and saved for the first time and then updated periodically by the message store provider, a transport provider, and the MAPI spooler as the message is processed and its state changes. This property exists on a message both before and after submission, and on all copies of the received message. Although it is not a recipient property, it is exposed differently to each recipient according to whether it has been read or modified by that recipient.</remarks>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.StoreSupportMasks">
+            <summary>
+            Contains values that client applications should query to determine the characteristics of a message store.
+            </summary>
+            <value>The store support masks.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OutlookVersion">
+            <summary>
+            Contains version number of Microsoft Office Outlook client.
+            </summary>
+            <value>The outlook version.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OutlookInternalVersion">
+            <summary>
+            Contains internal version number of Microsoft Office Outlook client.
+            </summary>
+            <value>The outlook internal version.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CommonStartTime">
+            <summary>
+            Contains the start date and time of a message.
+            </summary>
+            <value>The common start time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CommonEndTime">
+            <summary>
+            Contains the end date and time of a message.
+            </summary>
+            <value>The common end time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.FlagDueBy">
+            <summary>
+            Contains the date and time specifying the date by which an e-mail message is due.
+            </summary>
+            <value>The flag due by.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Companies">
+            <summary>
+            Contains the names of the companies associated with the contact item.
+            </summary>
+            <value>The companies.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ContactNames">
+            <summary>
+            Contains the names of the contacts associated with the item.
+            </summary>
+            <value>The contact names.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Keywords">
+            <summary>
+            Contains the categories associated with a message.
+            </summary>
+            <value>The keywords.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Categories">
+            <summary>
+            Contains the categories associated with a message.
+            </summary>
+            <value>The categories.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BillingInformation">
+            <summary>
+            Contains the billing information associated with a message.
+            </summary>
+            <value>The billing information.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Mileage">
+            <summary>
+            Contains free-form string value and can be used to store mileage information associated with the message.
+            </summary>
+            <value>The mileage.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.InternetAccountName">
+            <summary>
+            Contains account name or email address.
+            </summary>
+            <value>The name of the internet account.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReminderSoundFile">
+            <summary>
+            Contains the path and file name of the sound file to play when the reminder occurs for the appointment, mail message, or task.
+            </summary>
+            <value>The reminder sound file.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsPrivate">
+            <summary>
+            Contains true if message is marked as private.
+            </summary>
+            <value>
+                <c>true</c> if this instance is private; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReminderOverrideDefault">
+            <summary>
+            Contains true if the reminder overrides the default reminder behavior for the appointment, mail item, or task.
+            </summary>
+            <value>
+                <c>true</c> if [reminder override default]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReminderPlaySound">
+            <summary>
+            Contains true if the reminder should play a sound when it occurs for this appointment or task.
+            </summary>
+            <value>
+                <c>true</c> if [reminder play sound]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.AppointmentStartTime">
+            <summary>
+            Contains appointment's the start date and time.
+            </summary>
+            <value>The appointment start time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.AppointmentEndTime">
+            <summary>
+            Contains appointment's the end date and time.
+            </summary>
+            <value>The appointment end time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Location">
+            <summary>
+            Contains appointment's location.
+            </summary>
+            <value>The location.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.AppointmentMessageClass">
+            <summary>
+            Contains appointment's message class.
+            </summary>
+            <value>The appointment message class.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.TimeZone">
+            <summary>
+            Contains appointment's time zone.
+            </summary>
+            <value>The time zone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.RecurrencePatternDescription">
+            <summary>
+            Contains recurring pattern description.
+            </summary>
+            <value>The recurrence pattern description.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.RecurrencePattern">
+            <summary>
+            Contains appoinmtment or task recurring pattern.
+            </summary>
+            <value>The recurrence pattern.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Guid">
+            <summary>
+            Contains message's global unique id.
+            </summary>
+            <value>The unique identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Label">
+            <summary>
+            Contains appointment's label color.
+            </summary>
+            <value>The label.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Duration">
+            <summary>
+            Contains appointment's duration in minutes.
+            </summary>
+            <value>The duration.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusyStatus">
+            <summary>
+            Contains appointment's busy status.
+            </summary>
+            <value>The busy status.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.MeetingStatus">
+            <summary>
+            Contains the status of the meeting.
+            </summary>
+            <value>The meeting status.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ResponseStatus">
+            <summary>
+            Contains the response to a meeting request.
+            </summary>
+            <value>The response status.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.RecurrenceType">
+            <summary>
+            Contains the recurrence pattern type.
+            </summary>
+            <value>The type of the recurrence.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Owner">
+            <summary>
+            Contains task's owner name.
+            </summary>
+            <value>The owner.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Delegator">
+            <summary>
+            Contains task's delegator name.
+            </summary>
+            <value>The delegator.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.PercentComplete">
+            <summary>
+            Contains the percentage of the task completed at the current date and time.
+            </summary>
+            <value>The percent complete.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ActualWork">
+            <summary>
+            Contains the actual effort (in minutes) spent on the task.
+            </summary>
+            <value>The actual work.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.TotalWork">
+            <summary>
+            Contains the total work for the task.
+            </summary>
+            <value>The total work.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsTeamTask">
+            <summary>
+            Contains true if the task is a team task.
+            </summary>
+            <value>
+                <c>true</c> if this instance is team task; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsComplete">
+            <summary>
+            Contains true if the task is complete.
+            </summary>
+            <value>
+                <c>true</c> if this instance is complete; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsRecurring">
+            <summary>
+            Contains true if the task or appointment is recurring.
+            </summary>
+            <value>
+                <c>true</c> if this instance is recurring; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsAllDayEvent">
+            <summary>
+            Contains true if the appointment is all day event.
+            </summary>
+            <value>
+                <c>true</c> if this instance is all day event; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsReminderSet">
+            <summary>
+            Contains true if a reminder has been set for this appointment, e-mail item, or task.
+            </summary>
+            <value>
+                <c>true</c> if this instance is reminder set; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReminderTime">
+            <summary>
+            Contains the date and time at which the reminder should occur for the specified item.
+            </summary>
+            <value>The reminder time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ReminderMinutesBeforeStart">
+            <summary>
+            Contains the number of minutes the reminder should occur prior to the start of the appointment.
+            </summary>
+            <value>The reminder minutes before start.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.TaskStartDate">
+            <summary>
+            Contains task's the start date and time.
+            </summary>
+            <value>The task start date.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.TaskDueDate">
+            <summary>
+            Contains task's the due date and time.
+            </summary>
+            <value>The task due date.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DateCompleted">
+            <summary>
+            Contains the completion date of the task.
+            </summary>
+            <value>The date completed.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.TaskStatus">
+            <summary>
+            Contains the status of the task.
+            </summary>
+            <value>The task status.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.TaskOwnership">
+            <summary>
+            Contains the ownership state of the task.
+            </summary>
+            <value>The task ownership.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.TaskDelegationState">
+            <summary>
+            Contains the delegation state of a task.
+            </summary>
+            <value>The state of the task delegation.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.NoteHeight">
+            <summary>
+            Contains height of the note item.
+            </summary>
+            <value>The height of the note.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.NoteWidth">
+            <summary>
+            Contains width of the note item.
+            </summary>
+            <value>The width of the note.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.NoteTop">
+            <summary>
+            Contains top position of the note item.
+            </summary>
+            <value>The note top.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.NoteLeft">
+            <summary>
+            Contains left position of the note item.
+            </summary>
+            <value>The note left.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.NoteColor">
+            <summary>
+            Contains background color of the note item.
+            </summary>
+            <value>The color of the note.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.JournalStartTime">
+            <summary>
+            Contains journal's the start date and time.
+            </summary>
+            <value>The journal start time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.JournalEndTime">
+            <summary>
+            Contains journal's the end date and time.
+            </summary>
+            <value>The journal end time.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.JournalType">
+            <summary>
+            Contains the type of the journal item.
+            </summary>
+            <value>The type of the journal.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.JournalTypeDescription">
+            <summary>
+            Contains the type description of the journal item.
+            </summary>
+            <value>The journal type description.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.JournalDuration">
+            <summary>
+            Contains journal's the duration in minutes.
+            </summary>
+            <value>The duration of the journal.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Birthday">
+            <summary>
+            Contains the birthday date for the contact.
+            </summary>
+            <value>The birthday.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ChildrenNames">
+            <summary>
+            Contains the names of the children of the contact.
+            </summary>
+            <value>The children names.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.AssistentName">
+            <summary>
+            Contains the name of assistent of the contact.
+            </summary>
+            <value>The name of the assistent.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.AssistentPhone">
+            <summary>
+            Contains assistent's phone number of the contact.
+            </summary>
+            <value>The assistent phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessPhone">
+            <summary>
+            Contains the first business telephone number for the contact.
+            </summary>
+            <value>The business phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessFax">
+            <summary>
+            Contains the business fax number for the contact.
+            </summary>
+            <value>The business fax.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessHomePage">
+            <summary>
+            Contains the url of the business Web page for the contact.
+            </summary>
+            <value>The business home page.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CallbackPhone">
+            <summary>
+            Contains the callback telephone number for the contact.
+            </summary>
+            <value>The callback phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CarPhone">
+            <summary>
+            Contains the car telephone number for the contact.
+            </summary>
+            <value>The car phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CellularPhone">
+            <summary>
+            Contains the mobile telephone number for the contact.
+            </summary>
+            <value>The cellular phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CompanyMainPhone">
+            <summary>
+            Contains the company main telephone number for the contact.
+            </summary>
+            <value>The company main phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CompanyName">
+            <summary>
+            Contains the company name for the contact.
+            </summary>
+            <value>The name of the company.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ComputerNetworkName">
+            <summary>
+            Contains the name of the computer network for the contact.
+            </summary>
+            <value>The name of the computer network.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessAddressCountry">
+            <summary>
+            Contains the country/region code portion of the business address for the contact.
+            </summary>
+            <value>The business address country.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.CustomerId">
+            <summary>
+            Contains the customer ID for the contact.
+            </summary>
+            <value>The customer identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DepartmentName">
+            <summary>
+            Contains the department name for the contact.
+            </summary>
+            <value>The name of the department.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DisplayName">
+            <summary>
+            Contains display name.
+            </summary>
+            <value>The display name.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.DisplayNamePrefix">
+            <summary>
+            Contains display name prefix.
+            </summary>
+            <value>The display name prefix.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.FtpSite">
+            <summary>
+            Contains the FTP site entry for the contact.
+            </summary>
+            <value>The FTP site.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Generation">
+            <summary>
+            Contains the generation for the contact.
+            </summary>
+            <value>The generation.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.GivenName">
+            <summary>
+            Contains the given name for the contact.
+            </summary>
+            <value>The name of the given.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.GovernmentId">
+            <summary>
+            Contains the government ID number for the contact.
+            </summary>
+            <value>The government identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Hobbies">
+            <summary>
+            Contains the hobby names for the contact.
+            </summary>
+            <value>The hobbies.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomePhone2">
+            <summary>
+            Contains the second home telephone number for the contact.
+            </summary>
+            <value>The home phone2.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomeAddressCity">
+            <summary>
+            Contains the city portion of the home address for the contact.
+            </summary>
+            <value>The home address city.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomeAddressCountry">
+            <summary>
+            Contains the country/region portion of the home address for the contact.
+            </summary>
+            <value>The home address country.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomeAddressPostalCode">
+            <summary>
+            Contains the postal code portion of the home address for the contact.
+            </summary>
+            <value>The home address postal code.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomeAddressPostOfficeBox">
+            <summary>
+            Contains the post office box number portion of the home address for the contact.
+            </summary>
+            <value>The home address post office box.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomeAddressState">
+            <summary>
+            Contains the state portion of the home address for the contact.
+            </summary>
+            <value>The state of the home address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomeAddressStreet">
+            <summary>
+            Contains the street portion of the home address for the contact.
+            </summary>
+            <value>The home address street.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomeFax">
+            <summary>
+            Contains the home fax number for the contact.
+            </summary>
+            <value>The home fax.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomePhone">
+            <summary>
+            Contains the first home telephone number for the contact.
+            </summary>
+            <value>The home phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Initials">
+            <summary>
+            Contains the initials for the contact.
+            </summary>
+            <value>The initials.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Isdn">
+            <summary>
+            Contains the ISDN number for the contact.
+            </summary>
+            <value>The isdn.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessAddressCity">
+            <summary>
+            Contains the city name portion of the business address for the contact.
+            </summary>
+            <value>The business address city.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ManagerName">
+            <summary>
+            Contains the manager name for the contact.
+            </summary>
+            <value>The name of the manager.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.MiddleName">
+            <summary>
+            Contains the middle name for the contact.
+            </summary>
+            <value>The name of the middle.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Nickname">
+            <summary>
+            Contains the nickname for the contact.
+            </summary>
+            <value>The nickname.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OfficeLocation">
+            <summary>
+            Contains the specific office location for the contact.
+            </summary>
+            <value>The office location.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessPhone2">
+            <summary>
+            Contains the second business telephone number for the contact.
+            </summary>
+            <value>The business phone2.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OtherAddressCity">
+            <summary>
+            Contains the city portion of the other address for the contact.
+            </summary>
+            <value>The other address city.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OtherAddressCountry">
+            <summary>
+            Contains the country/region portion of the other address for the contact.
+            </summary>
+            <value>The other address country.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OtherAddressPostalCode">
+            <summary>
+            Contains the postal code portion of the other address for the contact.
+            </summary>
+            <value>The other address postal code.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OtherAddressState">
+            <summary>
+            Contains the state portion of the other address for the contact.
+            </summary>
+            <value>The state of the other address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OtherAddressStreet">
+            <summary>
+            Contains the street portion of the other address for the contact.
+            </summary>
+            <value>The other address street.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OtherPhone">
+            <summary>
+            Contains the other telephone number for the contact.
+            </summary>
+            <value>The other phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Pager">
+            <summary>
+            Contains the pager number for the contact.
+            </summary>
+            <value>The pager.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.PersonalHomePage">
+            <summary>
+            Contains the url of the personal Web page for the contact.
+            </summary>
+            <value>The personal home page.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.PostalAddress">
+            <summary>
+            Contains the postal address for the contact.
+            </summary>
+            <value>The postal address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessAddressPostalCode">
+            <summary>
+            Contains the postal code (zip code) portion of the business address for the contact.
+            </summary>
+            <value>The business address postal code.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessAddressPostOfficeBox">
+            <summary>
+            Contains the post office box number portion of the business address for the contact.
+            </summary>
+            <value>The business address post office box.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessAddressState">
+            <summary>
+            Contains the state code portion of the business address for the contact.
+            </summary>
+            <value>The state of the business address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessAddressStreet">
+            <summary>
+            Contains the street address portion of the business address for the contact.
+            </summary>
+            <value>The business address street.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.PrimaryFax">
+            <summary>
+            Contains the primary fax number for the contact.
+            </summary>
+            <value>The primary fax.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.PrimaryPhone">
+            <summary>
+            Contains the primary telephone number for the contact.
+            </summary>
+            <value>The primary phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Profession">
+            <summary>
+            Contains the profession for the contact.
+            </summary>
+            <value>The profession.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.RadioPhone">
+            <summary>
+            Contains the radio telephone number for the contact.
+            </summary>
+            <value>The radio phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SpouseName">
+            <summary>
+            Contains the spouse name for the contact.
+            </summary>
+            <value>The name of the spouse.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Surname">
+            <summary>
+            Contains the last name for the contact.
+            </summary>
+            <value>The surname.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Telex">
+            <summary>
+            Contains the telex number for the contact.
+            </summary>
+            <value>The telex.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Title">
+            <summary>
+            Contains the title for the contact.
+            </summary>
+            <value>The title.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.TtyTddPhone">
+            <summary>
+            Contains the TTY/TDD telephone number for the contact.
+            </summary>
+            <value>The tty TDD phone.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.WeddingAnniversary">
+            <summary>
+            Contains the wedding anniversary date for the contact.
+            </summary>
+            <value>The wedding anniversary.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Gender">
+            <summary>
+            Contains the gender of the contact.
+            </summary>
+            <value>The gender.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.SelectedMailingAddress">
+            <summary>
+            Contains the type of the mailing address for the contact.
+            </summary>
+            <value>The selected mailing address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ContactHasPicture">
+            <summary>
+            Contains true if the contact has picture.
+            </summary>
+            <value>
+                <c>true</c> if [contact has picture]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.FileAs">
+            <summary>
+            Contains the default keyword string assigned to the contact when it is filed.
+            </summary>
+            <value>The file as.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.InstantMessengerAddress">
+            <summary>
+            Contains the instant messenger address for the contact.
+            </summary>
+            <value>The instant messenger address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.InternetFreeBusyAddress">
+            <summary>
+            Contains the url location of the user's free-busy information in vCard Free-Busy standard format.
+            </summary>
+            <value>The internet free busy address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.BusinessAddress">
+            <summary>
+            Contains the whole, unparsed business address for the contact.
+            </summary>
+            <value>The business address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.HomeAddress">
+            <summary>
+            Contains the whole, unparsed home address for the contact.
+            </summary>
+            <value>The home address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.OtherAddress">
+            <summary>
+            Contains the whole, unparsed other address for the contact.
+            </summary>
+            <value>The other address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email1Address">
+            <summary>
+            Contains the e-mail address of the first e-mail entry for the contact.
+            </summary>
+            <value>The email1 address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email2Address">
+            <summary>
+            Contains the e-mail address of the second e-mail entry for the contact.
+            </summary>
+            <value>The email2 address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email3Address">
+            <summary>
+            Contains the e-mail address of the third e-mail entry for the contact.
+            </summary>
+            <value>The email3 address.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email1DisplayName">
+            <summary>
+            Contains the display name of the first e-mail address for the contact.
+            </summary>
+            <value>The display name of the email1.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email2DisplayName">
+            <summary>
+            Contains the display name of the second e-mail address for the contact.
+            </summary>
+            <value>The display name of the email2.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email3DisplayName">
+            <summary>
+            Contains the display name of the third e-mail address for the contact.
+            </summary>
+            <value>The display name of the email3.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email1DisplayAs">
+            <summary>
+            Contains the display as name of the first e-mail address for the contact.
+            </summary>
+            <value>The email1 display as.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email2DisplayAs">
+            <summary>
+            Contains the display as name of the second e-mail address for the contact.
+            </summary>
+            <value>The email2 display as.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email3DisplayAs">
+            <summary>
+            Contains the display as name of the third e-mail address for the contact.
+            </summary>
+            <value>The email3 display as.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email1Type">
+            <summary>
+            Contains the type of the first e-mail address for the contact.
+            </summary>
+            <value>The type of the email1.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email2Type">
+            <summary>
+            Contains the type of the second e-mail address for the contact.
+            </summary>
+            <value>The type of the email2.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email3Type">
+            <summary>
+            Contains the type of the third e-mail address for the contact.
+            </summary>
+            <value>The type of the email3.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email1EntryId">
+            <summary>
+            Contains the entry ID of the first e-mail address for the contact.
+            </summary>
+            <value>The email1 entry identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email2EntryId">
+            <summary>
+            Contains the entry ID of the second e-mail address for the contact.
+            </summary>
+            <value>The email2 entry identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Email3EntryId">
+            <summary>
+            Contains the entry ID of the third e-mail address for the contact.
+            </summary>
+            <value>The email3 entry identifier.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Recipients">
+            <summary>
+            Contains collection of recipients.
+            </summary>
+            <value>The recipients.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.Attachments">
+            <summary>
+            Contains collection of attachments.
+            </summary>
+            <value>The attachments.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.ExtendedProperties">
+            <summary>
+            Contains collection of extended (custom) properties.
+            </summary>
+            <value>The extended properties.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.Message.IsEmbedded">
+            <summary>
+            Contains true if Message is embedded into another message object.
+            </summary>
+            <value>
+                <c>true</c> if this instance is embedded; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Independentsoft.Msg.MessageFlag">
+            <summary>
+            Contains a value that indicates the origin and current state of a message. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.Associated">
+            <summary>
+            The message is an associated message of a folder. The client or provider has read-only access to this flag. The Read flag is ignored for associated messages, which do not retain a read/unread state. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.FromMe">
+            <summary>
+            The messaging user sending was the messaging user receiving the message. This flag is meant to be set by the transport provider. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.HasAttachment">
+            <summary>
+            The message has at least one attachment. The client has read-only access to this flag. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.NonReadReportPending">
+            <summary>
+            A nonread report needs to be sent for the message. The client or provider has read-only access to this flag. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.OriginInternet">
+            <summary>
+            The incoming message arrived over the Internet. It originated either outside the organization or from a source the gateway cannot consider trusted. The client should display an appropriate message to the user. Transport providers set this flag; the client has read-only access. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.OriginMiscExternal">
+            <summary>
+            The incoming message arrived over an external link other than X.400 or the Internet. It originated either outside the organization or from a source the gateway cannot consider trusted. The client should display an appropriate message to the user. Transport providers set this flag; the client has read-only access. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.OriginX400">
+            <summary>
+            The incoming message arrived over an X.400 link. It originated either outside the organization or from a source the gateway cannot consider trusted. The client should display an appropriate message to the user. Transport providers set this flag; the client has read-only access. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.Read">
+            <summary>
+            The message is marked as having been read. This flag is ignored if the Associated flag is set. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.Resend">
+            <summary>
+            The message includes a request for a resend operation with a non-delivery report.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.ReadReportPending">
+            <summary>
+            A read report needs to be sent for the message. The client or provider has read-only access to this flag. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.Submit">
+            <summary>
+            The message is marked for sending. Message store providers set this flag; the client has read-only access. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.Unmodified">
+            <summary>
+            The outgoing message has not been modified since the first time that it was saved; the incoming message has not been modified since it was delivered. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.MessageFlag.Unsent">
+            <summary>
+            The message is still being composed. It is saved, but has not been sent. Typically, this flag is cleared after the message is sent.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.NoteColor">
+            <summary>
+            Represents Note item background color.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.NoteColor.Blue">
+            <summary>
+            Blue color.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.NoteColor.Green">
+            <summary>
+            Green color.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.NoteColor.Pink">
+            <summary>
+            Pink color.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.NoteColor.Yellow">
+            <summary>
+            Yellow color.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.NoteColor.White">
+            <summary>
+            White color.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.NoteColor.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.ObjectType">
+            <summary>
+            Represents type of an object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.AddressBookContainer">
+            <summary>
+            Address book container object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.AddressBook">
+            <summary>
+            Address book object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.Attachment">
+            <summary>
+            Message attachment object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.DistributionList">
+            <summary>
+            Distribution list object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.Folder">
+            <summary>
+            Folder object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.Form">
+            <summary>
+            Form object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.MailUser">
+            <summary>
+            Messaging user object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.Message">
+            <summary>
+            Message object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.ProfileSelection">
+            <summary>
+            Profile section object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.Session">
+            <summary>
+            Session object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.Status">
+            <summary>
+            Status object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.MessageStore">
+            <summary>
+            Message store object.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ObjectType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.Priority">
+            <summary>
+            Represents the relative priority of a message.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Priority.Low">
+            <summary>
+            The message is not urgent.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Priority.Normal">
+            <summary>
+            The message has normal priority.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Priority.High">
+            <summary>
+            The message is urgent.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Priority.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.PropertyType">
+            <summary>
+            Enum PropertyType
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.Recipient">
+            <summary>
+            Represents a user or resource, generally a mail message addressee.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.Recipient.#ctor">
+            <summary>
+            Initializes a new instance of the Recipient class. 
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.DisplayName">
+            <summary>
+            Contains the display name of the recipient.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.EmailAddress">
+            <summary>
+            Contains the recipient's e-mail address.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.AddressType">
+            <summary>
+            Contains the recipient's e-mail address type, such as Simple Mail Transfer Protocol (SMTP).
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.ObjectType">
+            <summary>
+            Contains the type of the recipient.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.RecipientType">
+            <summary>
+            Contains the recipient type for a message recipient.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.DisplayType">
+            <summary>
+            Contains a value used to associate an icon with a particular row of a table.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.EntryId">
+            <summary>
+            Contains the EntryID of the recipient.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.InstanceKey">
+            <summary>
+            Contains a value that uniquely identifies a row in a table.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.SearchKey">
+            <summary>
+            Contains a binary-comparable key that identifies correlated objects for a search.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.Responsibility">
+            <summary>
+            Contains true if some transport provider has already accepted responsibility for delivering the message to this recipient, and false if the MAPI spooler considers that this transport provider should accept responsibility.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.SmtpAddress">
+            <summary>
+            Contains SMTP email address.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.DisplayName7Bit">
+            <summary>
+            Contains a 7-bit ASCII representation of the recipient's display name.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.TransmitableDisplayName">
+            <summary>
+            Contains a recipient's display name in a secure form that cannot be changed.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.SendRichInfo">
+            <summary>
+            Contains true if the recipient can receive all message content, including Rich Text Format (RTF) and Object Linking and Embedding (OLE) objects.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.SendInternetEncoding">
+            <summary>
+            Contains a bitmask of encoding preferences.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.OriginatingAddressType">
+            <summary></summary>
+        </member>
+        <member name="P:Independentsoft.Msg.Recipient.OriginatingEmailAddress">
+            <summary></summary>
+        </member>
+        <member name="T:Independentsoft.Msg.RecipientType">
+            <summary>
+            Represents the recipient type for a message recipient.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecipientType.To">
+            <summary>
+            The recipient is a primary (To) recipient.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecipientType.Cc">
+            <summary>
+            The recipient is a carbon copy (Cc) recipient.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecipientType.Bcc">
+            <summary>
+            The recipient is a blind carbon copy (Bcc) recipient.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecipientType.P1">
+            <summary>
+            The recipient did not successfully receive the message on the previous attempt. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecipientType.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.RecurrencePattern">
+            <summary>
+            Class RecurrencePattern.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.RecurrencePattern.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.RecurrencePattern" /> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Msg.RecurrencePattern.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Msg.RecurrencePattern" /> class.
+            </summary>
+            <param name="buffer">The buffer.</param>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.Frequency">
+            <summary>
+            Gets the frequency.
+            </summary>
+            <value>The frequency.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.CalendarType">
+            <summary>
+            Gets the type of the calendar.
+            </summary>
+            <value>The type of the calendar.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.Period">
+            <summary>
+            Gets the period.
+            </summary>
+            <value>The period.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.DayOfWeek">
+            <summary>
+            Gets the day of week.
+            </summary>
+            <value>The day of week.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.DayOfWeekIndex">
+            <summary>
+            Gets the index of the day of week.
+            </summary>
+            <value>The index of the day of week.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.DayOfMonth">
+            <summary>
+            Gets the day of month.
+            </summary>
+            <value>The day of month.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.EndType">
+            <summary>
+            Gets the end type.
+            </summary>
+            <value>The end type.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.OccurenceCount">
+            <summary>
+            Gets the occurence count.
+            </summary>
+            <value>The occurence count.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.FirstDayOfWeek">
+            <summary>
+            Gets the first day of week.
+            </summary>
+            <value>The first day of week.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.DeletedInstanceCount">
+            <summary>
+            Gets the deleted instance count.
+            </summary>
+            <value>The deleted instance count.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.DeletedInstanceDates">
+            <summary>
+            Gets the deleted instance dates.
+            </summary>
+            <value>The deleted instance dates.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.ModifiedInstanceCount">
+            <summary>
+            Gets the modified instance count.
+            </summary>
+            <value>The modified instance count.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.ModifiedInstanceDates">
+            <summary>
+            Gets the modified instance dates.
+            </summary>
+            <value>The modified instance dates.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.StartDate">
+            <summary>
+            Gets the start date.
+            </summary>
+            <value>The start date.</value>
+        </member>
+        <member name="P:Independentsoft.Msg.RecurrencePattern.EndDate">
+            <summary>
+            Gets the end date.
+            </summary>
+            <value>The end date.</value>
+        </member>
+        <member name="T:Independentsoft.Msg.RecurrencePatternType">
+            <summary>
+            Enum RecurrencePatternType
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.RecurrenceType">
+            <summary>
+            Specifies the recurrence pattern type.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecurrenceType.Daily">
+            <summary>
+            Represents a daily recurrence pattern. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecurrenceType.Weekly">
+            <summary>
+            Represents a weekly recurrence pattern.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecurrenceType.Monthly">
+            <summary>
+            Represents a monthly recurrence pattern. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecurrenceType.MonthNth">
+            <summary>
+            Represents a MonthNth recurrence pattern.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecurrenceType.Yearly">
+            <summary>
+            Represents a yearly recurrence pattern. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecurrenceType.YearNth">
+            <summary>
+            Represents a YearNth recurrence pattern.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.RecurrenceType.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.ResponseStatus">
+            <summary>
+            Indicates the response to a meeting request.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ResponseStatus.Organized">
+            <summary>
+            The appointment is on the Organizer's calendar or the recipient is the Organizer of the meeting. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ResponseStatus.Tentative">
+            <summary>
+            Meeting tentatively accepted. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ResponseStatus.Accepted">
+            <summary>
+            Meeting accepted. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ResponseStatus.Declined">
+            <summary>
+            Meeting declined. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ResponseStatus.NotResponded">
+            <summary>
+            Recipient has not responded. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.ResponseStatus.None">
+            <summary>
+            The appointment is a simple appointment and does not require a response. 
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.SelectedMailingAddress">
+            <summary>
+            Indicating the type of the mailing address for the contact.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.SelectedMailingAddress.Business">
+            <summary></summary>
+        </member>
+        <member name="F:Independentsoft.Msg.SelectedMailingAddress.Home">
+            <summary></summary>
+        </member>
+        <member name="F:Independentsoft.Msg.SelectedMailingAddress.Other">
+            <summary></summary>
+        </member>
+        <member name="F:Independentsoft.Msg.SelectedMailingAddress.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.Sensitivity">
+            <summary>
+            Identifies the sensitivity level assigned to a message item. These levels are arbitrarily set and filtered for, by the user.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Sensitivity.Personal">
+            <summary>
+            The message has the Personal sensitivity setting.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Sensitivity.Private">
+            <summary>
+            The message has the Private sensitivity setting.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Sensitivity.Confidential">
+            <summary>
+            The message has the Confidential sensitivity setting
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.Sensitivity.None">
+            <summary>
+            The message has the Normal sensitivity setting. 
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.StandardPropertySet">
+            <summary>
+            Class StandardPropertySet.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.StoreSupportMask">
+            <summary>
+            Contains a value that client applications should query to determine the characteristics of a message store.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Ansi">
+            <summary>
+            The message store supports properties containing ANSI (8-bit) characters.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Attachments">
+            <summary>
+            The message store supports attachments (OLE or non-OLE) to messages.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Categorize">
+            <summary>
+            The message store supports categorized views of tables.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Create">
+            <summary>
+            The message store supports creation of new messages.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.EntryIdUnique">
+            <summary>
+            Entry identifiers for the objects in the message store are unique, that is, never reused during the life of the store.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Html">
+            <summary>
+            The message store supports HTML messages, stored in the <see cref="P:Independentsoft.Msg.Message.BodyHtml" /> property.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.ItemProc">
+            <summary>
+            In a wrapped PST store, indicates that when a new message arrives at the store, the store does rules and spam filter processing on the message separately.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.LocalStore">
+            <summary>
+            This flag is reserved and should not be used.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Modify">
+            <summary>
+            The message store supports modification of its existing messages.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.MultiValueProperties">
+            <summary>
+            The message store supports multivalued properties, guarantees the stability of value order in a multivalued property throughout a save operation, and supports instantiation of multivalued properties in tables.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Notify">
+            <summary>
+            The message store supports notifications.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Ole">
+            <summary>
+            The message store supports OLE attachments. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.PublicFolders">
+            <summary>
+            The folders in this store are public (multi-user), not private (possibly multi-instance but not multi-user).
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Pusher">
+            <summary>
+            The MAPI Protocol Handler will not crawl the store, and the store is responsible to push any changes through notifications to the indexer to have messages indexed.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.ReadOnly">
+            <summary>
+            All interfaces for the message store have a read-only access level.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Restrictions">
+            <summary>
+            The message store supports restrictions.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Rtf">
+            <summary>
+            The message store supports Rich Text Format (RTF) messages, usually compressed.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Search">
+            <summary>
+            The message store supports search-results folders.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Sort">
+            <summary>
+            The message store supports sorting views of tables.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Submit">
+            <summary>
+            The message store supports marking a message for submission.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.UncompressedRtf">
+            <summary>
+            The message store supports storage of RTF messages in uncompressed form.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.StoreSupportMask.Unicode">
+            <summary>
+            The message store supports properties containing Unicode characters.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.TaskDelegationState">
+            <summary>
+            Represents the status types of a delegated task.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskDelegationState.NoMatch">
+            <summary>
+            Specifies that this is not a delegated task or that the task request has been created but not sent. This is also used for a task request message, whether in the owner’s Sent Items folder or the delegate’s Inbox.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskDelegationState.OwnNew">
+            <summary>
+            Specifies that this is a new task request that has been sent, but the delegate has not yet responded to the task.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskDelegationState.Owned">
+            <summary>
+            Specifies that a task has been accepted. This value should not be in the enumeration.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskDelegationState.Accepted">
+            <summary>
+            Specifies that the task has been accepted.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskDelegationState.Declined">
+            <summary>
+            Specifies that the task has been declined.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskDelegationState.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.TaskOwnership">
+            <summary>
+            Indicates the ownership state of the task.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskOwnership.New">
+            <summary>
+            Specifies that task has not yet been assigned to a user.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskOwnership.Delegated">
+            <summary>
+            Specifies that task has been delegated to another user.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskOwnership.Own">
+            <summary>
+            Specifies that task is assigned to the current user.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskOwnership.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Msg.TaskStatus">
+            <summary>
+            Identifies the status types of a task item. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskStatus.NotStarted">
+            <summary>
+            Specifies that the task is not started.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskStatus.InProgress">
+            <summary>
+            Specifies that the task is in progress.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskStatus.Completed">
+            <summary>
+            Specifies that the task is completed.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskStatus.WaitingOnOthers">
+            <summary>
+            Specifies that the task is waiting on others.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskStatus.Deferred">
+            <summary>
+            Specifies that the task is deferred.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Msg.TaskStatus.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+    </members>
+</doc>

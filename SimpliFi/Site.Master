@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SimpliFi.Site" ClientIDMode="Static" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>SimpliFi - Adobe Systems | ACS GMO Initiative</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="css/style.css?v=<%= ConfigurationManager.AppSettings["Version"] %>" rel='stylesheet' type='text/css' />
+    <%--<link rel="stylesheet" href="css/morris.css" type="text/css" />--%>
+    <!-- Graph CSS -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <!-- //jQuery -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+    <link href="css/linkvalidation.css?v=<%= ConfigurationManager.AppSettings["Version"] %>" rel="stylesheet" />
+    <!-- //lined-icons -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="page-container sidebar-collapsed">
+            <!--/content-inner-->
+            <div class="left-content">
+                <div class="mother-grid-inner">
+                    <!--header start here-->
+                    <div class="header-main">
+                        <div class="logo-w3-agile">
+                            <h1><a href="index">SimpliFi</a> <small><i class="fa fa-angle-right"></i>&nbsp;ACS GMO Initiative</small></h1>
+                        </div>
+                        <div class="profile_details w3l">
+
+                            <div class="profile_img">
+                                <span class="prfil-img">
+                                    <img src="images/profile.png" alt="">
+                                </span>
+                                <div class="user-name">                                    
+                                    <p runat="server" id="pUserName"></p>
+                                </div>
+                                <asp:LinkButton runat="server" ID="lnkSignout" OnClick="lnkSignout_Click"><i class="fa fa-sign-out"></i></asp:LinkButton>
+                                <div class="clearfix"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--heder end here-->
+
+                    <asp:ContentPlaceHolder ID="contentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                    <div class="clearfix"></div>
+
+                    <!-- script-for sticky-nav -->
+                    <script>
+                        $(document).ready(function () {
+                            var navoffeset = $(".header-main").offset().top;
+                            $(window).scroll(function () {
+                                var scrollpos = $(window).scrollTop();
+                                if (scrollpos >= navoffeset) {
+                                    $(".header-main").addClass("fixed");
+                                } else {
+                                    $(".header-main").removeClass("fixed");
+                                }
+                            });
+
+                        });
+                    </script>
+                    <!-- /script-for sticky-nav -->
+                    <!--inner block start here-->
+                    <div class="inner-block">
+                    </div>
+                    <!--inner block end here-->
+                    <!--copy rights start here-->
+                    <div class="copyrights">
+                        <p>
+                            &copy;
+                            <asp:Label runat="server" ID="lblYear"></asp:Label>
+                            SimpliFi, Adobe Inc. | ACS GMO Initiative
+                        </p>
+                    </div>
+                    <!--COPY rights end here-->
+                </div>
+            </div>
+            <!--//content-inner-->
+            <!--/sidebar-menu-->
+            <div class="sidebar-menu">
+                <header class="logo1">
+                    <a href="#" class="sidebar-icon"><span class="fa fa-bars"></span></a>
+                </header>
+                <div style="border-top: 1px ridge rgba(255, 255, 255, 0.15)"></div>
+                <div class="menu">
+                    <ul id="menu">
+                        <li><a href="index"><i class="fa fa-tachometer"></i><span>Proof Validation</span><div class="clearfix"></div>
+                        </a></li>
+                        <li><a href="validation-list"><i class="fa fa-list-alt"></i><span>My Validations</span><div class="clearfix"></div>
+                        </a></li>
+                       <%-- <li runat="server" id="liBatchImportFiles" visible="false"><a href="import-files"><i class="fa fa-file-excel-o"></i><span>Generate Import Files</span><div class="clearfix"></div>
+                        </a></li>--%>
+                         <li><a href="p-block-validation"><i class="fa fa-file-code-o"></i><span>P Block(HTML) Validations</span><div class="clearfix"></div>
+                        </a></li>
+                         <%--<li ><a href="thor-banner"><i class="fa fa-tasks"></i><span>Thor Banner Validations</span><div class="clearfix"></div>
+                        </a></li>--%>
+                        <li runat="server" id="liBrandLogo"><a href="brand-logo-update"><i class="fa fa-bell-o"></i><span>Brand Logo Update</span><div class="clearfix"></div>
+                        </a></li>
+                        <li ><a href="proof-check"><i class="fa fa-inbox"></i><span>Proof Check</span><div class="clearfix"></div>
+                        </a></li>
+                        <li runat="server" id="liUsageReport"><a href="usage-report"><i class="fa fa-bar-chart"></i><span>Usage Report</span><div class="clearfix"></div>
+                        </a></li>
+                          <li runat="server" id="liUsers"><a href="user-list"><i class="fa fa-users"></i><span>Users</span><div class="clearfix"></div>
+                        </a></li>
+                         <li runat="server" id="liJSON"><a href="json-extractor"><i class="fa fa-file-excel-o"></i><span>JSON Extractor</span><div class="clearfix"></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <script>
+            var toggle = true;
+
+            $(".sidebar-icon").click(function () {
+                if (toggle) {
+                    $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                    $("#menu span").css({ "position": "absolute" });
+                }
+                else {
+                    $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                    setTimeout(function () {
+                        $("#menu span").css({ "position": "relative" });
+                    }, 400);
+                }
+
+                toggle = !toggle;
+            });
+        </script>
+        <!--js -->
+        <%--<script src="js/jquery.nicescroll.js"></script>--%>
+        <%--<script src="js/scripts.js"></script>--%>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+    </form>
+</body>
+</html>

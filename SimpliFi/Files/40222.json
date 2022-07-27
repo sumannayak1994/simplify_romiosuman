@@ -1,0 +1,4561 @@
+{
+  "id": 40222,
+  "name": "Acrobat Tool Recommender KO June 1st Send",
+  "description": "Twice monthly tool recommendation send, content driven through AEM",
+  "schedule": {
+    "start": 1655078400000,
+    "end": 1655218739000,
+    "duration": 140339000,
+    "timezone": "Asia/Tokyo"
+  },
+  "audience": [
+    {
+      "id": 112572,
+      "criteria": {
+        "and": [
+          {
+            "and": [
+              {
+                "not": {
+                  "operator": "EQ",
+                  "attr": "SEGMENT_ID",
+                  "val": 2464,
+                  "ruleId": 1,
+                  "category": "segment",
+                  "params": {
+                    "contextId": 165
+                  }
+                }
+              },
+              {
+                "not": {
+                  "operator": "EQ",
+                  "attr": "SEGMENT_ID",
+                  "val": 2465,
+                  "ruleId": 2,
+                  "category": "segment",
+                  "params": {
+                    "contextId": 166
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "and": [
+              {
+                "and": [
+                  {
+                    "and": [
+                      {
+                        "not": {
+                          "operator": "EQ",
+                          "attr": "BLACKLIST",
+                          "val": "Y",
+                          "ruleId": 1,
+                          "category": "default",
+                          "params": {
+                            "contextId": 46
+                          }
+                        }
+                      },
+                      {
+                        "not": {
+                          "operator": "EQ",
+                          "attr": "GOLDILOCKSPAID_DEC7",
+                          "val": 1,
+                          "ruleId": 2,
+                          "category": "default",
+                          "params": {
+                            "contextId": 125
+                          }
+                        }
+                      },
+                      {
+                        "operator": "EQ",
+                        "attr": "EMAILOPTIN",
+                        "val": "Y",
+                        "ruleId": 3,
+                        "category": "default",
+                        "params": {
+                          "contextId": 47
+                        }
+                      },
+                      {
+                        "operator": "EQ",
+                        "attr": "ENTERPRISECUSTOMER",
+                        "val": "N",
+                        "ruleId": 4,
+                        "category": "default",
+                        "params": {
+                          "contextId": 55
+                        }
+                      },
+                      {
+                        "operator": "EQ",
+                        "attr": "LOCALE",
+                        "val": "KO",
+                        "ruleId": 5,
+                        "category": "default",
+                        "params": {
+                          "contextId": 59
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "or": [
+                      {
+                        "or": [
+                          {
+                            "operator": "CT",
+                            "attr": "SUBSCRIPTION",
+                            "val": {
+                              "and": [
+                                {
+                                  "val": [
+                                    "APAP",
+                                    "APCC",
+                                    "APRO"
+                                  ],
+                                  "attr": "RAWPRODUCTNAME",
+                                  "ruleId": 1,
+                                  "category": "default",
+                                  "operator": "IN"
+                                },
+                                {
+                                  "val": "today-90d",
+                                  "attr": "ENTITLEMENTDATE",
+                                  "params": {
+                                    "contextId": 139,
+                                    "expression": true
+                                  },
+                                  "ruleId": 2,
+                                  "category": "default",
+                                  "operator": "LT"
+                                },
+                                {
+                                  "val": "FALSE",
+                                  "attr": "CANCELDATE",
+                                  "params": {
+                                    "contextId": 140
+                                  },
+                                  "ruleId": 3,
+                                  "category": "default",
+                                  "operator": "EX"
+                                },
+                                {
+                                  "val": "APPLE APP STORE",
+                                  "attr": "APPSTORE",
+                                  "params": {
+                                    "contextId": 155
+                                  },
+                                  "ruleId": 4,
+                                  "category": "default",
+                                  "operator": "NE"
+                                },
+                                {
+                                  "val": "GOOGLE PLAY",
+                                  "attr": "APPSTORE",
+                                  "params": {
+                                    "contextId": 156
+                                  },
+                                  "ruleId": 5,
+                                  "category": "default",
+                                  "operator": "NE"
+                                },
+                                {
+                                  "val": "SAMSUNG APP STORE",
+                                  "attr": "APPSTORE",
+                                  "params": {
+                                    "contextId": 157
+                                  },
+                                  "ruleId": 6,
+                                  "category": "default",
+                                  "operator": "NE"
+                                }
+                              ]
+                            },
+                            "ruleId": 6,
+                            "category": "default",
+                            "params": {
+                              "contextId": 132
+                            }
+                          },
+                          {
+                            "operator": "CT",
+                            "attr": "SUBSCRIPTION",
+                            "val": {
+                              "and": [
+                                {
+                                  "val": [
+                                    "APSF",
+                                    "ASIG",
+                                    "APAS",
+                                    "CPDF",
+                                    "PDFF"
+                                  ],
+                                  "attr": "PRODUCTNAME",
+                                  "ruleId": 1,
+                                  "category": "default",
+                                  "operator": "IN"
+                                },
+                                {
+                                  "val": "today-90d",
+                                  "attr": "ENTITLEMENTDATE",
+                                  "params": {
+                                    "contextId": 141,
+                                    "expression": true
+                                  },
+                                  "ruleId": 2,
+                                  "category": "default",
+                                  "operator": "LT"
+                                },
+                                {
+                                  "val": "FALSE",
+                                  "attr": "CANCELDATE",
+                                  "params": {
+                                    "contextId": 142
+                                  },
+                                  "ruleId": 3,
+                                  "category": "default",
+                                  "operator": "EX"
+                                },
+                                {
+                                  "val": "APPLE APP STORE",
+                                  "attr": "APPSTORE",
+                                  "params": {
+                                    "contextId": 152
+                                  },
+                                  "ruleId": 4,
+                                  "category": "default",
+                                  "operator": "NE"
+                                },
+                                {
+                                  "val": "GOOGLE PLAY",
+                                  "attr": "APPSTORE",
+                                  "params": {
+                                    "contextId": 153
+                                  },
+                                  "ruleId": 5,
+                                  "category": "default",
+                                  "operator": "NE"
+                                },
+                                {
+                                  "val": "SAMSUNG APP STORE",
+                                  "attr": "APPSTORE",
+                                  "params": {
+                                    "contextId": 154
+                                  },
+                                  "ruleId": 6,
+                                  "category": "default",
+                                  "operator": "NE"
+                                }
+                              ]
+                            },
+                            "ruleId": 7,
+                            "category": "default",
+                            "params": {
+                              "contextId": 133
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "and": [
+                          {
+                            "operator": "CT",
+                            "attr": "CCTCONTRACT",
+                            "val": {
+                              "and": [
+                                {
+                                  "val": "ACTIVE",
+                                  "attr": "SEATDELEGATIONSTATUS",
+                                  "ruleId": 1,
+                                  "category": "default",
+                                  "operator": "EQ"
+                                },
+                                {
+                                  "val": "ASSIGNED",
+                                  "attr": "SEATSTATUS",
+                                  "params": {
+                                    "contextId": 73
+                                  },
+                                  "ruleId": 2,
+                                  "category": "default",
+                                  "operator": "EQ"
+                                },
+                                {
+                                  "or": [
+                                    {
+                                      "val": "N",
+                                      "attr": "CCTENROLLEE",
+                                      "params": {
+                                        "contextId": 74
+                                      },
+                                      "ruleId": 3,
+                                      "category": "default",
+                                      "operator": "EQ"
+                                    },
+                                    {
+                                      "val": "Y",
+                                      "attr": "CCTENROLLEE",
+                                      "params": {
+                                        "contextId": 74
+                                      },
+                                      "ruleId": 3,
+                                      "category": "default",
+                                      "operator": "EQ"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "val": "today-90d",
+                                  "attr": "SEATDELEGATIONSTARTDATE",
+                                  "params": {
+                                    "contextId": 75,
+                                    "expression": true
+                                  },
+                                  "ruleId": 4,
+                                  "category": "default",
+                                  "operator": "LT"
+                                }
+                              ]
+                            },
+                            "ruleId": 8,
+                            "category": "default",
+                            "params": {
+                              "contextId": 72
+                            }
+                          },
+                          {
+                            "operator": "CT",
+                            "attr": "CCTCONTRACT",
+                            "val": {
+                              "or": [
+                                {
+                                  "val": "APAP",
+                                  "attr": "DELEGATEDPRODUCTS",
+                                  "ruleId": 1,
+                                  "category": "default",
+                                  "operator": "EQ"
+                                },
+                                {
+                                  "val": "APAS",
+                                  "attr": "DELEGATEDPRODUCTS",
+                                  "ruleId": 1,
+                                  "category": "default",
+                                  "operator": "EQ"
+                                },
+                                {
+                                  "val": "APCC",
+                                  "attr": "DELEGATEDPRODUCTS",
+                                  "ruleId": 1,
+                                  "category": "default",
+                                  "operator": "EQ"
+                                },
+                                {
+                                  "val": "APAS",
+                                  "attr": "DELEGATEDPRODUCTS",
+                                  "ruleId": 1,
+                                  "category": "default",
+                                  "operator": "EQ"
+                                }
+                              ]
+                            },
+                            "ruleId": 9,
+                            "category": "default",
+                            "params": {
+                              "contextId": 120
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "or": [
+                  {
+                    "or": [
+                      {
+                        "and": [
+                          {
+                            "not": {
+                              "operator": "EX",
+                              "attr": "EDUTAGBATU",
+                              "val": "TRUE",
+                              "ruleId": 14,
+                              "category": "default",
+                              "params": {
+                                "contextId": 141
+                              }
+                            }
+                          },
+                          {
+                            "operator": "NE",
+                            "attr": "EDUTAGBATU",
+                            "val": "EDU_STUDENT",
+                            "ruleId": 10,
+                            "category": "default",
+                            "params": {
+                              "contextId": 137
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "and": [
+                          {
+                            "not": {
+                              "operator": "EX",
+                              "attr": "EDUTAGBATU",
+                              "val": "TRUE",
+                              "ruleId": 14,
+                              "category": "default",
+                              "params": {
+                                "contextId": 141
+                              }
+                            }
+                          },
+                          {
+                            "or": [
+                              {
+                                "or": [
+                                  {
+                                    "operator": "NE",
+                                    "attr": "EDUTAGBATU",
+                                    "val": "EDU",
+                                    "ruleId": 11,
+                                    "category": "default",
+                                    "params": {
+                                      "contextId": 138
+                                    }
+                                  },
+                                  {
+                                    "operator": "NE",
+                                    "attr": "EDUTAGBATU",
+                                    "val": "EDU_K12",
+                                    "ruleId": 12,
+                                    "category": "default",
+                                    "params": {
+                                      "contextId": 139
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "and": [
+                                  {
+                                    "operator": "NE",
+                                    "attr": "EDUTAGBATU",
+                                    "val": "EDU_K12",
+                                    "ruleId": 12,
+                                    "category": "default",
+                                    "params": {
+                                      "contextId": 139
+                                    }
+                                  },
+                                  {
+                                    "operator": "NE",
+                                    "attr": "EDUTAGBATU",
+                                    "val": "EDU_HED",
+                                    "ruleId": 13,
+                                    "category": "default",
+                                    "params": {
+                                      "contextId": 140
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "and": [
+                      {
+                        "operator": "NE",
+                        "attr": "EDUTAGBATU",
+                        "val": "EDU_STUDENT",
+                        "ruleId": 10,
+                        "category": "default",
+                        "params": {
+                          "contextId": 137
+                        }
+                      },
+                      {
+                        "or": [
+                          {
+                            "or": [
+                              {
+                                "operator": "NE",
+                                "attr": "EDUTAGBATU",
+                                "val": "EDU",
+                                "ruleId": 11,
+                                "category": "default",
+                                "params": {
+                                  "contextId": 138
+                                }
+                              },
+                              {
+                                "operator": "NE",
+                                "attr": "EDUTAGBATU",
+                                "val": "EDU_K12",
+                                "ruleId": 12,
+                                "category": "default",
+                                "params": {
+                                  "contextId": 139
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "and": [
+                              {
+                                "operator": "NE",
+                                "attr": "EDUTAGBATU",
+                                "val": "EDU_K12",
+                                "ruleId": 12,
+                                "category": "default",
+                                "params": {
+                                  "contextId": 139
+                                }
+                              },
+                              {
+                                "operator": "NE",
+                                "attr": "EDUTAGBATU",
+                                "val": "EDU_HED",
+                                "ruleId": 13,
+                                "category": "default",
+                                "params": {
+                                  "contextId": 140
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "operator": "EQ",
+                "attr": "COUNTRY",
+                "val": "KR",
+                "ruleId": 15,
+                "category": "default",
+                "params": {
+                  "contextId": 153
+                }
+              }
+            ],
+            "expression": "1 and 2 and 3 and 4 and 5 and ((6 or 7) or (8 and 9)) and ((14 and 10) or (14 and (11 or 12 or (12 and 13))) or (10 and (11 or 12 or (12 and 13)))) and 15"
+          }
+        ]
+      },
+      "experimentId": 40222
+    }
+  ],
+  "variations": [
+    {
+      "id": 112571,
+      "variantName": "Variant 1",
+      "actions": [
+        {
+          "blockId": 0,
+          "ifThenId": 0,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "CommentApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 5035339,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "16"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_COMMENT_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Comment App - A476236"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 1,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "CreatePDFApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 228900,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "17"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_CREATE_PDF_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Create PDF App - A476237"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 2,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "FillSignApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 67662524,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "18"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_FILL_SIGN_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Fill Sign App - A476238"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 3,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "UnifiedShareApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 41835014,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "19"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_UNIFIED_SHARE_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Unified Share App - A476239"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 4,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "CollectSignaturesApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 61754922,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "20"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_COLLECT_SIGN_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Collect Signatures App - A476240"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 5,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "PagesApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 73795725,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "21"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_PAGES_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Pages App - A476241"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 6,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "ExportPDFApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 75894932,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "22"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_EXPORT_PDF_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Export PDF App - A476242"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 7,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "ReviewApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 87479201,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "23"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_REVIEW_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Review App - A476243"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 8,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "EditPDFApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 15457708,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "24"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_EDIT_PDF_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Edit PDF App - A476244"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 9,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "CombineApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 58640292,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "25"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_COMBINE_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Combine App - A476245"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 10,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "Helpx",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 29000502,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "26"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_TUTORIALS_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Tutorials App - A476246"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 11,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "FormsApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 54033132,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "27"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_FORMS_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Forms App - A476247"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 12,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "OptimizePDFApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 70835082,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "28"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_OPTIMIZE_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Optimize PDF App - A476248"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 13,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "ProtectApp",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 55903125,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "29"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_PROTECT_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Protect App - A476249"
+        },
+        {
+          "blockId": 0,
+          "ifThenId": 14,
+          "type": "SendEmail",
+          "criteria": {
+            "and": [
+              {
+                "and": [
+                  {
+                    "operator": "EQ",
+                    "attr": "PLATFORMMODELIDENTIFIERRAZP",
+                    "val": "90plusdaysdesktop",
+                    "ruleId": 1,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "EVARXOEG",
+                    "val": "PapertoPDF",
+                    "ruleId": 2,
+                    "category": "default"
+                  },
+                  {
+                    "operator": "EQ",
+                    "attr": "CALCULATIONTIMEKFBJ",
+                    "val": "2022-06-02",
+                    "ruleId": 3,
+                    "category": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 48587062,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Results",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "30"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_SCAN_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Scan App - A476250"
+        },
+        {
+          "blockId": 0,
+          "type": "SendEmail",
+          "order": 37550223,
+          "surfaceActionName": "EMAIL",
+          "params": {
+            "data": [
+              {
+                "pup": {
+                  "criteria": {
+                    "val": {},
+                    "attr": "-2",
+                    "params": {
+                      "context": "results",
+                      "contextResultId": -1
+                    },
+                    "ruleId": 1
+                  }
+                },
+                "custom": {
+                  "name": "Result",
+                  "type": "",
+                  "items": "",
+                  "label": "Custom Parameter 1",
+                  "value": ""
+                }
+              }
+            ],
+            "verified": true,
+            "actionName": "Email",
+            "isNonBlocking": false,
+            "providerParams": {
+              "params": {
+                "data": [
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Product",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Product Code",
+                      "value": "ACRO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Series",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Series Name",
+                      "value": "DCFY22AcrobatToolRecommendationFY22AcrobatToolRecommendationJPKO"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Ordinal",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Order",
+                      "value": "17"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "locale",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "locale",
+                      "value": "ko-KR"
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "_id",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "userguid",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "userguid",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "attr": "IMSAUTHSOURCE",
+                        "ruleId": 1,
+                        "category": "default"
+                      }
+                    },
+                    "custom": {
+                      "name": "authsource",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "authsource",
+                      "value": ""
+                    }
+                  },
+                  {
+                    "pup": {
+                      "criteria": {
+                        "val": {},
+                        "ruleId": 1
+                      }
+                    },
+                    "custom": {
+                      "name": "Surface",
+                      "type": "string",
+                      "items": [
+                        {
+                          "label": "",
+                          "value": ""
+                        }
+                      ],
+                      "label": "Surface",
+                      "value": "email"
+                    }
+                  }
+                ]
+              },
+              "verified": true,
+              "providerId": 4092
+            },
+            "templateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ],
+            "selectedTemplate": "TOOL_REC_DEFAULT_PDF_APP_AEM_1POD_KO",
+            "filteredTemplateContent": [
+              {
+                "locale": "ko",
+                "country": "AD",
+                "segment": "",
+                "localisation": "ko_AD"
+              }
+            ]
+          },
+          "name": "EM1",
+          "treatmentName": "Default Create - A485004",
+          "default": true
+        },
+        {
+          "blockId": 1,
+          "type": "exit",
+          "order": 13316789,
+          "params": {
+            "verified": true,
+            "isNonBlocking": false
+          },
+          "name": "Exit",
+          "treatmentName": "exit",
+          "default": true
+        }
+      ],
+      "variantPercentage": 100,
+      "experimentId": 40222
+    }
+  ],
+  "params": {
+    "mode": "PRODUCTION",
+    "tags": [
+      "Anchor",
+      "AEM",
+      "P31460"
+    ],
+    "type": "CONTENT",
+    "level": 1,
+    "priority": "LOW",
+    "surfaces": [
+      {
+        "channel": "EMAIL",
+        "surfaces": [
+          {
+            "id": 11,
+            "name": "Adobe Campaign",
+            "owner": {
+              "id": 1,
+              "name": "FloodgateOrg",
+              "type": null,
+              "users": null,
+              "clients": null,
+              "default": false,
+              "category": null,
+              "releases": null,
+              "createdTime": null,
+              "description": "Default org for existing entities",
+              "permissions": null,
+              "modifiedTime": null,
+              "createdUserId": null,
+              "modifiedUserId": null
+            },
+            "params": {
+              "batchSize": 24000,
+              "isBurstMode": true,
+              "surfaceRulesGroupId": "DEFAULT",
+              "enableDynamicContentProvider": "true",
+              "supportTargetUserTypeCampaigns": "LOGGEDIN"
+            },
+            "status": "APPROVED",
+            "actions": [
+              {
+                "id": 218,
+                "type": "SendEmail",
+                "label": "Send Marketing Email",
+                "value": "SendEmail",
+                "params": null
+              },
+              {
+                "id": 219,
+                "type": "SendNPSEmail",
+                "label": "Send NPS Email",
+                "value": "SendNPSEmail",
+                "params": {
+                  "programs": [
+                    {
+                      "label": "--Select Program--",
+                      "value": ""
+                    },
+                    {
+                      "label": "Adobe Substance 3D Designer",
+                      "value": "SBSTD"
+                    },
+                    {
+                      "label": "Adobe Substance 3D Painter",
+                      "value": "SBSTP"
+                    },
+                    {
+                      "label": "Adobe Substance 3D Sampler",
+                      "value": "SBSTA"
+                    },
+                    {
+                      "label": "Adobe Substance 3D Stager",
+                      "value": "STGR"
+                    },
+                    {
+                      "label": "Dreamweaver",
+                      "value": "DRWV"
+                    },
+                    {
+                      "label": "Experience Design",
+                      "value": "XD"
+                    },
+                    {
+                      "label": "Illustrator",
+                      "value": "ILST"
+                    },
+                    {
+                      "label": "InDesign",
+                      "value": "IDSN"
+                    },
+                    {
+                      "label": "Photoshop",
+                      "value": "PHSP"
+                    },
+                    {
+                      "label": "Aero",
+                      "value": "AERO"
+                    },
+                    {
+                      "label": "Dimension",
+                      "value": "ESHR"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": 1445,
+                "type": "SendEmailNoOptOut",
+                "label": "Send Operational Email",
+                "value": "SendEmailNoOptOut",
+                "params": null
+              },
+              {
+                "id": 1753,
+                "type": "SendEmail.Instructional",
+                "label": "Send Instructional Email",
+                "value": "SendEmail.Instructional",
+                "params": null
+              }
+            ],
+            "channel": "EMAIL",
+            "surfaceId": "EMAIL",
+            "createdTime": 1487760463000,
+            "modifiedTime": 1644298726000,
+            "createdUserId": "CAEDC8A15489F5A40A4C98BC@adobe.com",
+            "modifiedUserId": "BE1514C856D84A567F000101@adobe.com",
+            "createdUserName": "Komal Agrawal Jain",
+            "successMetricIds": [
+              {
+                "name": "Deliveries",
+                "metricId": "1"
+              },
+              {
+                "name": "Bounces",
+                "metricId": "2"
+              },
+              {
+                "name": "Bounce Rate",
+                "metricId": "3"
+              },
+              {
+                "name": "Opens",
+                "metricId": "4"
+              },
+              {
+                "name": "Open Rate",
+                "metricId": "5"
+              },
+              {
+                "name": "Click-through Rate",
+                "metricId": "7"
+              },
+              {
+                "name": "Clicks",
+                "metricId": "6"
+              },
+              {
+                "name": "Opt-Out",
+                "metricId": "8"
+              },
+              {
+                "name": "Opt-Out Rate",
+                "metricId": "9"
+              }
+            ],
+            "surfaceStatusData": {
+              "DRAFT": {
+                "time": 1616952208891,
+                "status": "DRAFT",
+                "userId": "265F0C1D5D7104380A495CF3@adobe.com",
+                "comment": null,
+                "lastName": null,
+                "firstName": null
+              },
+              "APPROVED": {
+                "time": 1644298726642,
+                "status": "APPROVED",
+                "userId": "BE1514C856D84A567F000101@adobe.com",
+                "comment": null,
+                "lastName": null,
+                "firstName": null
+              },
+              "SUBMITTED": {
+                "time": 1644298659499,
+                "status": "SUBMITTED",
+                "userId": "BE1514C856D84A567F000101@adobe.com",
+                "comment": null,
+                "lastName": null,
+                "firstName": null
+              }
+            },
+            "onSurfaceDuplicate": false,
+            "analyticsIntegration": "LOGGEDIN"
+          }
+        ],
+        "isFrequencyLimitEnabled": false
+      }
+    ],
+    "objective": "CONVERSION",
+    "createdData": [
+      {
+        "userId": "3F411DD161155BF00A495EFB@adobe.com",
+        "userName": "Romio Ghosh",
+        "createdTime": 1654628415000
+      },
+      {
+        "userId": "3F411DD161155BF00A495EFB@adobe.com",
+        "userName": "Romio Ghosh",
+        "createdTime": 1654629280688
+      },
+      {
+        "userId": "3F411DD161155BF00A495EFB@adobe.com",
+        "userName": "Romio Ghosh",
+        "createdTime": 1654631632391
+      },
+      {
+        "userId": "01EC141E611013C30A495EFD@adobe.com",
+        "userName": "Suman Nayak",
+        "createdTime": 1654775985592
+      },
+      {
+        "userId": "3F411DD161155BF00A495EFB@adobe.com",
+        "userName": "Romio Ghosh",
+        "createdTime": 1654802730830
+      }
+    ],
+    "genuineness": "genuine",
+    "controlGroup": 0,
+    "creationMode": "UI",
+    "cohortingType": "guid",
+    "editedVersion": false,
+    "previousState": "DRAFT",
+    "duplicatedFrom": 38833,
+    "lastEditedFrom": "2.0",
+    "noOfVariations": 1,
+    "sophiaUserType": "TYPE_1_2E",
+    "successMetrics": [
+      {
+        "metricId": 167,
+        "priority": "primary"
+      }
+    ],
+    "createdUserName": "Romio Ghosh",
+    "editedVersionExists": false,
+    "excludedExperiments": [
+      "12827"
+    ],
+    "userCampaignReEnroll": {
+      "enabled": true
+    },
+    "isDifferentVariationsAllowed": false
+  },
+  "createdTime": 1654628415000,
+  "modifiedTime": 1654803026000,
+  "createdUserId": "3F411DD161155BF00A495EFB@adobe.com",
+  "modifiedUserId": "3F411DD161155BF00A495EFB@adobe.com",
+  "version": 4,
+  "status": "DRAFT"
+}
