@@ -10,6 +10,7 @@ namespace SimpliFi.Class
         public string activity_id { get; set; }
         public string tag_id { get; set; }
         public string tag_name { get; set; }
+        public string tag_url { get; set; }
         public string tag_full_url { get; set; }
 
     }
