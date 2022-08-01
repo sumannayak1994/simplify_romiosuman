@@ -48,6 +48,12 @@ namespace SimpliFi.Class
         public string pod5ImageLink { get; set; }
         public string pod5CTA { get; set; }
         public string pod5CTALink { get; set; }
+        public string pod6headerCopy { get; set; }
+        public string pod6BodyCopy { get; set; }
+        public string pod6Image { get; set; }
+        public string pod6ImageLink { get; set; }
+        public string pod6CTA { get; set; }
+        public string pod6CTALink { get; set; }
 
     }
 }
