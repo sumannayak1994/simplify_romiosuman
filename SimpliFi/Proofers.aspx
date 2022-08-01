@@ -641,9 +641,12 @@
                   </p>
                   <asp:Button  class="btn btn-3" style="font-family:Trebuchet MS;font-size:20px;letter-spacing:2px;top: 2px; left: 0px;"  ID="Button4" runat="server" OnClick="uploadCGENFile" Text="Upload CGEN File" />
                </div>
+                <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
             </div>
             <div id="mainButton" style="padding-top:100px;" align="center">
                <asp:Button class="btnMain btn-5"  style="font-family:Trebuchet MS;font-size:20px;letter-spacing:2px; top: 26px; left: 0px;" ID="Button2" runat="server" OnClick="validate" Text="VALIDATE" OnClientClick="return makeItLive();"  />
+               <br/>
+               <asp:Label ID="Label5" runat="server" Text="" style="color:white"></asp:Label>
             </div>
             <div align="center" id="analysis" style="display:block;padding-top:100px;padding-bottom:0px;">
                <span style="font-family:Trebuchet MS;font-size:25px;color:#dcdcdc;letter-spacing:3px;">ANALYSIS</span>
