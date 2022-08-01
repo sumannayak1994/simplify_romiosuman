@@ -27,13 +27,14 @@ namespace SimpliFi
 {
     public partial class DCMCheck : System.Web.UI.Page
     {
-        public int errorCount = 0;
-        public int successCount = 0;
+        public int errorCount = 0, successCount = 0;        
         public static string dcmPath = string.Empty;
         public List<DCMEntry> dCMEntries = new List<DCMEntry>();
         public List<MSGEntry> mSGEntries = new List<MSGEntry>();
         public List<CGENEntry> cGENEntries = new List<CGENEntry>();
         List<GridViewData> gridViewData = new List<GridViewData>();
+        Tuple<Uri, string> tagUrlTuple;
+        CGENEntry cgen;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -104,7 +105,6 @@ namespace SimpliFi
             string cgenPath = string.Empty;
             try
             {
-
                 if (!Directory.Exists(Server.MapPath("~/UploadedFiles/CGEN")))
                 {
                     Directory.CreateDirectory(Server.MapPath("~/UploadedFiles/CGEN"));
@@ -130,6 +130,17 @@ namespace SimpliFi
         }
         public void validate(object sender, EventArgs e)
         {
+            //dcmPath
+            //if(!isDCMUploadSuccessfull && !isMSGUploadSuccessfull && !isCGENUploadSuccessfull)
+            //{
+            //    Label5.Text = "Please upload all the files correctly..";
+            //    return;
+            //}
+            if (!File.Exists(Common.GetCurrentPath("DCMFile")))
+            {
+                Label5.Text = "Please upload all the files correctly..";
+                return;
+            }
 
             var dCMEntries = loadDCMList();
             var msgEntries = loadMsgList();
@@ -317,8 +328,6 @@ namespace SimpliFi
                     result = dcmEntry.Header_body_copy == msgEntry.headerBodyCopy ? "Header Body Copy Matched" : "Header Body Copy Not matched"
                 });
             }
-
-
             // pod1headerCopy
             if (dcmEntry.Pod1_header != "NA" || msgEntry.pod1headerCopy != "NA")
             {
@@ -369,29 +378,37 @@ namespace SimpliFi
                 });
             }
 
-            var abc = GetTagIdAndFullUrl(msgEntry.pod1ImageLink);
-            var cgen = cgenEntries.Find(x => x.tag_id == abc.Item2);
-
-            gridViewData.Add(new GridViewData()
+            //Pod1ImageLink            
+            if (msgEntry.pod1ImageLink != "NA")
             {
-                activityId = dcmEntry.Activity_id.Trim(),
-                elementType = "Pod1ImageLink",
-                DCMValue = cgen.tag_full_url,
-                MSGValue = abc.Item1.ToString(),
-                result = cgen.tag_url == abc.Item1.GetLeftPart(UriPartial.Path) && cgen.tag_id == abc.Item2 ? "Pod1ImageLink matched" : "Pod1ImageLink Not matched"
-            });
+                tagUrlTuple = GetTagIdAndFullUrl(msgEntry.pod1ImageLink);
+                cgen = cgenEntries.Find(x => x.tag_id == tagUrlTuple.Item2);
 
-            var def = GetTagIdAndFullUrl(msgEntry.pod1CTALink);
+                gridViewData.Add(new GridViewData()
+                {
+                    activityId = dcmEntry.Activity_id.Trim(),
+                    elementType = "Pod1ImageLink",
+                    DCMValue = cgen.tag_full_url,
+                    MSGValue = tagUrlTuple.Item1.ToString(),
+                    result = cgen.tag_url == tagUrlTuple.Item1.GetLeftPart(UriPartial.Path) && cgen.tag_id == tagUrlTuple.Item2 ? "Pod1ImageLink matched" : "Pod1ImageLink Not matched"
+                });
+            }
 
-            gridViewData.Add(new GridViewData()
+            //Pod1CTALink
+            if (msgEntry.pod1CTALink != "NA")
             {
-                activityId = dcmEntry.Activity_id.Trim(),
-                elementType = "Pod1CTALink",
-                DCMValue = cgen.tag_full_url,
-                MSGValue = def.Item1.ToString(),
-                result = cgen.tag_url == def.Item1.GetLeftPart(UriPartial.Path) && cgen.tag_id == def.Item2 ? "Pod1CTALink matched" : "Pod1CTALink Not matched"
-            });
+                tagUrlTuple = null; //initializing the Tuple
+                tagUrlTuple = GetTagIdAndFullUrl(msgEntry.pod1CTALink);            
 
+                gridViewData.Add(new GridViewData()
+                {
+                    activityId = dcmEntry.Activity_id.Trim(),
+                    elementType = "Pod1CTALink",
+                    DCMValue = cgen.tag_full_url,
+                    MSGValue = tagUrlTuple.Item1.ToString(),
+                    result = cgen.tag_url == tagUrlTuple.Item1.GetLeftPart(UriPartial.Path) && cgen.tag_id == tagUrlTuple.Item2 ? "Pod1CTALink matched" : "Pod1CTALink Not matched"
+                });
+            }
 
             // Pod2headerCopy
             if (dcmEntry.Pod2_header != "NA" || msgEntry.pod2headerCopy != "NA")
@@ -405,6 +422,7 @@ namespace SimpliFi
                     result = dcmEntry.Pod2_header == msgEntry.pod2headerCopy ? "Pod2headerCopy Matched" : "Pod2headerCopy Not matched"
                 });
             }
+
             //Pod2BodyCopy
             if (dcmEntry.Pod2_body_copy != "NA" || msgEntry.pod2BodyCopy != "NA")
             {
